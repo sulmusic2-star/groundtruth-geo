@@ -1,0 +1,74 @@
+# CI — proves the benchmark, grader, and MCP server actually run on every push.
+#
+# No API keys, no network, no external services. The whole pipeline is the
+# deterministic verifier itself: if the benchmark JSONL goes invalid, the
+# grader regresses, or the MCP server stops returning records, the build
+# goes red. This is the same eval-gate-as-unit-test pattern used by
+# lastingground.com in production.
+
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify benchmark JSONL — every line is valid JSON with required fields
+        run: |
+          python3 -c "
+          import json
+          required = {'id', 'task', 'question', 'answer', 'source_url',
+                      'source_date', 'record_id', 'fingerprint',
+                      'deterministic', 'llm_in_answer_path', 'reproducible'}
+          with open('groundtruth_geo.jsonl') as f:
+              items = [json.loads(l) for l in f if l.strip()]
+          for it in items:
+              missing = required - set(it)
+              assert not missing, f'item {it.get(\"id\")} missing keys: {missing}'
+              assert it['deterministic'] is True
+              assert it['llm_in_answer_path'] is False
+              assert it['reproducible'] is True
+          print(f'OK — {len(items)} items, all required fields present')
+          "
+
+      - name: Run grader baselines (a constant answer must not win)
+        run: python3 grade_groundtruth.py
+
+      - name: Smoke-test the MCP server end-to-end
+        run: |
+          printf '%s\n' \
+            '{"jsonrpc":"2.0","id":1,"method":"initialize"}' \
+            '{"jsonrpc":"2.0","id":2,"method":"tools/list"}' \
+            '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"lookup_property_truth","arguments":{"address":"72 Easton St, Nantucket, MA"}}}' \
+            '{"jsonrpc":"2.0","id":4,"method":"tools/call","params":{"name":"verify_property_record","arguments":{"record_id":"LG-C020DF82"}}}' \
+            '{"jsonrpc":"2.0","id":5,"method":"tools/call","params":{"name":"lookup_property_truth","arguments":{"address":"123 Nowhere Rd, Boise, ID"}}}' \
+            | python3 ground_truth_mcp.py \
+            | python3 -c "
+          import sys, json
+          rs = [json.loads(l) for l in sys.stdin if l.strip()]
+          assert len(rs) == 5, f'expected 5 responses, got {len(rs)}'
+          assert rs[0]['result']['serverInfo']['name'] == 'ground-truth'
+          assert {t['name'] for t in rs[1]['result']['tools']} == {'lookup_property_truth', 'verify_property_record'}
+          # The Nantucket record reproduces with the documented fingerprint.
+          obj = json.loads(rs[2]['result']['content'][0]['text'])
+          assert obj['fingerprint'] == 'ccd05bcec753', f'fingerprint drifted: {obj[\"fingerprint\"]}'
+          assert len(obj['claims']) == 3
+          # verify_property_record returns the same record.
+          obj4 = json.loads(rs[3]['result']['content'][0]['text'])
+          assert obj4['fingerprint'] == obj['fingerprint']
+          # Out-of-benchmark address returns the structured fallback.
+          obj5 = json.loads(rs[4]['result']['content'][0]['text'])
+          assert obj5.get('not_in_static_benchmark') is True
+          print('MCP smoke: 5/5 — initialize, tools/list, lookup, verify, fallback')
+          "

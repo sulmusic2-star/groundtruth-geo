@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+title: "GroundTruth-Geo: A deterministic, government-cited benchmark of parcel-precise US property facts"
+message: "If you use this benchmark or the accompanying grader / MCP server in academic work or model evaluation, please cite it as below."
+type: dataset
+authors:
+  - family-names: Sullivan
+    given-names: Tim
+    website: "https://lastingground.com"
+abstract: >-
+  GroundTruth-Geo is a machine-gradable benchmark of parcel-precise US
+  property facts on the exact questions frontier large language models fail
+  on geography (GPSBench / MapEval: under 25% on parcel geometry, 1–23% on
+  city-level localization). Each item is a deterministic government record
+  cited to FEMA / NPS / EPA with an official source URL, a source date, and
+  a reproducible content fingerprint. The repository ships a deterministic
+  grader using field-standard factuality metrics (SimpleQA F1,
+  AA-Omniscience Index) and a JSON-RPC stdio MCP server exposing the
+  records as agent tools. No LLM is in the answer path — the verifier is
+  external government ground truth and is, by construction, ungameable.
+repository-code: "https://github.com/sulmusic2-star/groundtruth-geo"
+url: "https://github.com/sulmusic2-star/groundtruth-geo"
+license: MIT
+keywords:
+  - benchmark
+  - factuality
+  - large-language-models
+  - model-context-protocol
+  - mcp-server
+  - llm-evaluation
+  - geospatial
+  - deterministic-verifier
+references:
+  - type: article
+    title: "Measuring short-form factuality in large language models"
+    authors:
+      - family-names: Wei
+        given-names: Jason
+      - family-names: et al.
+    identifiers:
+      - type: other
+        value: "arXiv:2411.04368"
+  - type: article
+    title: "AA-Omniscience: A Holistic Knowledge Benchmark with the Omniscience Index"
+    identifiers:
+      - type: other
+        value: "arXiv:2511.13029"

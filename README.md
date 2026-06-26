@@ -1,5 +1,9 @@
 # GroundTruth-Geo
 
+[![ci](https://github.com/sulmusic2-star/groundtruth-geo/actions/workflows/ci.yml/badge.svg)](https://github.com/sulmusic2-star/groundtruth-geo/actions/workflows/ci.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-2c5b3a)](LICENSE)
+[![engine](https://img.shields.io/badge/engine-lastingground.com-34d399)](https://lastingground.com)
+
 **A deterministic, government-cited, reproducible benchmark of parcel-precise US property facts — on the exact questions frontier models fail.**
 
 Frontier LLMs are demonstrably weak at real-world geography: on published benchmarks (GPSBench, MapEval) **no model exceeds ~67%**, city-level localization sits at **1–23%**, and parcel/polygon-geometry tasks fall **under 25%**. Yet these are the facts that decide ~$30T of US property: *Is the building in a FEMA flood zone? Is the parcel in a National Register historic district? Are there EPA-listed contamination sites nearby?*

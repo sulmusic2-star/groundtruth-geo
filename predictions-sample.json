@@ -1,0 +1,10 @@
+{
+  "_comment": "Sample predictions file showing the exact shape grade_groundtruth.py expects. Map each benchmark item id (from groundtruth_geo.jsonl) to a JSON object keyed on the gold key for that task. To abstain, return {\"NOT_ATTEMPTED\": true} — the grader rewards calibrated abstention.",
+
+  "gtg-be9c68f9073f": {"in_sfha": true, "zone": "AE"},
+  "gtg-7762a3857b56": {"in_historic_district": true, "district": "Nantucket Historic District"},
+  "gtg-f9028d76bd4d": {"has_nearby_site": false, "count": 0},
+
+  "gtg-example-abstain": {"NOT_ATTEMPTED": true},
+  "gtg-example-hallucination": {"in_sfha": false, "zone": null}
+}
