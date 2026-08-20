@@ -1,0 +1,72 @@
+{
+  "schema_version": "groundtruth_geo_replicated_review_summary.v1",
+  "reviewed_at": "2026-08-20T22:48:45Z",
+  "review_status": "multi_method_replicated_not_independent_human",
+  "independent_human_review": false,
+  "gold_hidden_during_derivation": true,
+  "totals": {
+    "cases": 133,
+    "passed": 133,
+    "unresolved": 0,
+    "adversarial_mutations": 1064,
+    "adversarial_mutations_detected": 1064,
+    "unique_live_government_urls": 227,
+    "live_government_responses_unchanged": 227
+  },
+  "collections": [
+    {
+      "collection": "public",
+      "cases": 33,
+      "passed": 33,
+      "adversarial_mutations": 264,
+      "detected": 264,
+      "live_urls": 55,
+      "unchanged": 55,
+      "receipt": "proof/replicated-review-public-receipt-20260820.json"
+    },
+    {
+      "collection": "private",
+      "cases": 100,
+      "passed": 100,
+      "adversarial_mutations": 800,
+      "detected": 800,
+      "live_urls": 172,
+      "unchanged": 172,
+      "receipt": "proof/replicated-review-private-receipt-20260820.json"
+    }
+  ],
+  "tasks": [
+    {
+      "task": "FEMA flood-zone point test",
+      "public_cases": 11,
+      "private_cases": 34,
+      "total_cases": 45,
+      "passed": 45
+    },
+    {
+      "task": "National Register district point test",
+      "public_cases": 11,
+      "private_cases": 33,
+      "total_cases": 44,
+      "passed": 44
+    },
+    {
+      "task": "EPA cleanup-site quarter-mile test",
+      "public_cases": 11,
+      "private_cases": 33,
+      "total_cases": 44,
+      "passed": 44
+    }
+  ],
+  "adversarial_variants": [
+    {"code": "A", "variant": "Source domain", "attempted": 133, "detected": 133, "detection_rate": 1.0},
+    {"code": "B", "variant": "Query point", "attempted": 133, "detected": 133, "detection_rate": 1.0},
+    {"code": "C", "variant": "Stale evidence", "attempted": 133, "detected": 133, "detection_rate": 1.0},
+    {"code": "D", "variant": "Property coordinate", "attempted": 133, "detected": 133, "detection_rate": 1.0},
+    {"code": "E", "variant": "Returned count", "attempted": 133, "detected": 133, "detection_rate": 1.0},
+    {"code": "F", "variant": "Qualifying records", "attempted": 133, "detected": 133, "detection_rate": 1.0},
+    {"code": "G", "variant": "Stored answer", "attempted": 133, "detected": 133, "detection_rate": 1.0},
+    {"code": "H", "variant": "Error forced to no", "attempted": 133, "detected": 133, "detection_rate": 1.0}
+  ],
+  "claim_boundary": "This establishes replicated agreement and control behavior on the reviewed cases. It is not independent human review, representative statewide or national accuracy, or a professional determination."
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": "groundtruth_geo_replicated_review_receipt.v1",
+  "collection": "private",
+  "reviewed_at": "2026-08-20T22:48:45Z",
+  "review_status": "multi_method_replicated_not_independent_human",
+  "independent_human_review": false,
+  "gold_hidden_during_derivation": true,
+  "data": {
+    "dataset_name": "gold.jsonl",
+    "dataset_sha256": "28bb14f45a217f616966d13e3e2a9c981fa5a9c02b6a4c7ea76b00930ef220ac",
+    "cases": 100,
+    "task_counts": {
+      "contamination_nearby": 33,
+      "fema_sfha": 34,
+      "historic_district": 33
+    }
+  },
+  "results": {
+    "status_counts": {
+      "passed": 100
+    },
+    "task_passed": {
+      "contamination_nearby": 33,
+      "fema_sfha": 34,
+      "historic_district": 33
+    },
+    "agreement_rate": 1.0,
+    "issue_counts": {}
+  },
+  "adversarial": {
+    "attempted": 800,
+    "detected": 800,
+    "detection_rate": 1.0,
+    "variants": {
+      "stale_evidence": {
+        "attempted": 100,
+        "detected": 100
+      },
+      "unknown_forced_to_no": {
+        "attempted": 100,
+        "detected": 100
+      },
+      "wrong_gold_answer": {
+        "attempted": 100,
+        "detected": 100
+      },
+      "wrong_property_coordinate": {
+        "attempted": 100,
+        "detected": 100
+      },
+      "wrong_qualifying_records": {
+        "attempted": 100,
+        "detected": 100
+      },
+      "wrong_query_point": {
+        "attempted": 100,
+        "detected": 100
+      },
+      "wrong_returned_count": {
+        "attempted": 100,
+        "detected": 100
+      },
+      "wrong_source_domain": {
+        "attempted": 100,
+        "detected": 100
+      }
+    }
+  },
+  "live_replay": {
+    "urls": 172,
+    "counts": {
+      "unchanged": 172
+    },
+    "all_unchanged": true
+  },
+  "detailed_review_sha256": "1bcce3990e99145cd204f7ac9f7f1b1f7e977f28d4cf90e840a68162c3cdd2a5",
+  "claim_boundary": "Replicated automated review; not independent human review or representative accuracy proof."
+}

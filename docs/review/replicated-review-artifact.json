@@ -1,0 +1,193 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "GroundTruth-Geo replicated review",
+    "description": "A gold-blind second-implementation review of public and private property-evidence cases.",
+    "generatedAt": "2026-08-20T22:48:45Z",
+    "cards": [
+      {
+        "id": "cases_card",
+        "description": "Stored benchmark cases re-derived from raw government responses.",
+        "dataset": "headline",
+        "sourceId": "headline_sql",
+        "metrics": [{"label": "Cases re-derived", "field": "cases", "format": "number"}]
+      },
+      {
+        "id": "mutations_card",
+        "description": "Internally re-hashed bad-evidence variants rejected by semantic gates.",
+        "dataset": "headline",
+        "sourceId": "headline_sql",
+        "metrics": [{"label": "Mutations rejected", "field": "mutations_detected", "format": "number"}]
+      },
+      {
+        "id": "live_card",
+        "description": "Unique live government responses that still matched the stored evidence.",
+        "dataset": "headline",
+        "sourceId": "headline_sql",
+        "metrics": [{"label": "Live records unchanged", "field": "live_unchanged", "format": "number"}]
+      },
+      {
+        "id": "unresolved_card",
+        "description": "Cases left unresolved after the second derivation and live replay.",
+        "dataset": "headline",
+        "sourceId": "headline_sql",
+        "metrics": [{"label": "Unresolved cases", "field": "unresolved", "format": "number"}]
+      }
+    ],
+    "charts": [
+      {
+        "id": "mutation_detection_chart",
+        "title": "Detection rate across eight mutation classes",
+        "subtitle": "Codes A-H map to the exact mutation key below; 133 attempts per class",
+        "type": "bar",
+        "dataset": "mutations",
+        "sourceId": "mutations_sql",
+        "valueFormat": "percent",
+        "settings": {"showValues": false},
+        "encodings": {
+          "x": {"field": "code", "type": "nominal", "label": "Mutation class"},
+          "y": {"field": "detection_rate", "type": "quantitative", "label": "Detection rate"},
+          "tooltip": [
+            {"field": "variant", "type": "nominal", "label": "Mutation"},
+            {"field": "attempted", "type": "quantitative", "label": "Attempted", "format": "number"},
+            {"field": "detected", "type": "quantitative", "label": "Detected", "format": "number"}
+          ]
+        }
+      }
+    ],
+    "tables": [],
+    "sources": [
+      {"id": "headline_sql", "label": "Replicated review headline query", "path": "proof/replicated-review-summary-20260820.json"},
+      {"id": "mutations_sql", "label": "Adversarial mutation query", "path": "proof/replicated-review-summary-20260820.json"},
+      {"id": "tasks_sql", "label": "Reviewed task query", "path": "proof/replicated-review-summary-20260820.json"},
+      {"id": "reviewer_code", "label": "Gold-blind reviewer implementation", "path": "replicated_review.py"}
+    ],
+    "blocks": [
+      {"id": "title", "type": "markdown", "body": "# GroundTruth-Geo replicated review"},
+      {
+        "id": "technical_summary",
+        "type": "markdown",
+        "sourceId": "headline_sql",
+        "body": "## The second implementation agreed on all 133 cases\n\nGroundTruth-Geo passed a gold-blind review that derives each answer from the raw government response before revealing the stored answer. All **133 of 133** cases agreed, all **1,064** adversarial mutations were rejected, and all **227** unique live government responses remained unchanged. This is strong replicated internal evidence—not independent human review or representative field-accuracy proof."
+      },
+      {
+        "id": "control_finding",
+        "type": "markdown",
+        "sourceId": "mutations_sql",
+        "body": "## Every designed bad-evidence class failed closed\n\nThe attacks changed more than checksums: most mutated receipts were re-hashed after the source, property, count, date or query point was altered. The reviewer still rejected every variant because it recalculates meaning from the raw record. The 100% rate describes these eight designed attacks only; it is not a claim that every possible real-world failure is known."
+      },
+      {"id": "mutation_chart", "type": "chart", "chartId": "mutation_detection_chart"},
+      {
+        "id": "mutation_results",
+        "type": "markdown",
+        "sourceId": "mutations_sql",
+        "body": "### Mutation key\n\n**A** Source domain · **B** Query point · **C** Stale evidence · **D** Property coordinate · **E** Returned count · **F** Qualifying records · **G** Stored answer · **H** Error forced to no. Each class was attempted 133 times and detected 133 times."
+      },
+      {
+        "id": "scope_definitions",
+        "type": "markdown",
+        "sourceId": "tasks_sql",
+        "body": "## What was reviewed—and what the rates mean\n\nThe review covers three permit-free point questions: **45** FEMA Special Flood Hazard Area cases, **44** listed National Register district cases, and **44** EPA Superfund or Brownfields quarter-mile cases. All passed. A case passes only when property identity, official source, query geometry, raw response, independently derived answer, citation contract and freshness all pass. ‘Agreement’ means the second implementation derived the same answer on this fixed set; it does not estimate accuracy across all U.S. properties."
+      },
+      {
+        "id": "methodology",
+        "type": "markdown",
+        "sourceId": "reviewer_code",
+        "body": "## A gold-blind reviewer, not a second pass through the generator\n\nThe reviewer imports neither the public evidence generator nor the private holdout builder. It reconstructs the address match from raw Census or MassGIS data, validates the exact government layer and point, recalculates task rules from returned features, and only then compares the result with the stored answer. A source error or ambiguous FEMA intersection is unresolved; it cannot become ‘no.’"
+      },
+      {
+        "id": "limitations",
+        "type": "markdown",
+        "body": "## What this still cannot prove\n\n- The benchmark owner also controls both implementations, so organizational independence is absent.\n- Hashes expose changes against published commitments; they are not government digital signatures.\n- Both implementations can share a mistaken interpretation of a regulation or dataset.\n- Point evidence does not replace parcel, legal, engineering, lending or professional determinations.\n- The cases are stratified tests, not a representative statewide or national sample."
+      },
+      {
+        "id": "next_steps",
+        "type": "markdown",
+        "body": "## Make this the release gate\n\n1. Run the second implementation, adversarial suite and live replay before each benchmark release.\n2. Stop release on any disagreement, missed mutation, source drift or unavailable required record.\n3. Preserve the private case-level report with mode 0600 and publish only its aggregate commitment.\n4. Add boundary-near cases, multi-feature intersections and documented source-schema changes as new adversarial families.\n5. Seek an external reviewer when buyer procurement or professional accountability—not internal correctness—is the remaining gate."
+      },
+      {
+        "id": "further_questions",
+        "type": "markdown",
+        "body": "## The next hard questions\n\nWhich cases sit closest to flood, historic or quarter-mile boundaries? How often do official layers change between releases? Can a third implementation using independently written geographic libraries reproduce the same outcomes? And which buyers will accept this evidence without rebuilding the lookup themselves?"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-08-20T22:48:45Z",
+    "status": "ready",
+    "datasets": {
+      "headline": [{"cases": 133, "mutations_detected": 1064, "live_unchanged": 227, "unresolved": 0}],
+      "mutations": [
+        {"code": "A", "variant": "Source domain", "attempted": 133, "detected": 133, "detection_rate": 1.0},
+        {"code": "B", "variant": "Query point", "attempted": 133, "detected": 133, "detection_rate": 1.0},
+        {"code": "C", "variant": "Stale evidence", "attempted": 133, "detected": 133, "detection_rate": 1.0},
+        {"code": "D", "variant": "Property coordinate", "attempted": 133, "detected": 133, "detection_rate": 1.0},
+        {"code": "E", "variant": "Returned count", "attempted": 133, "detected": 133, "detection_rate": 1.0},
+        {"code": "F", "variant": "Qualifying records", "attempted": 133, "detected": 133, "detection_rate": 1.0},
+        {"code": "G", "variant": "Stored answer", "attempted": 133, "detected": 133, "detection_rate": 1.0},
+        {"code": "H", "variant": "Error forced to no", "attempted": 133, "detected": 133, "detection_rate": 1.0}
+      ],
+      "tasks": [
+        {"task": "FEMA flood-zone point test", "public_cases": 11, "private_cases": 34, "total_cases": 45, "passed": 45},
+        {"task": "National Register district point test", "public_cases": 11, "private_cases": 33, "total_cases": 44, "passed": 44},
+        {"task": "EPA cleanup-site quarter-mile test", "public_cases": 11, "private_cases": 33, "total_cases": 44, "passed": 44}
+      ]
+    },
+    "accessIssues": []
+  },
+  "sources": [
+    {
+      "id": "headline_sql",
+      "label": "Replicated review headline query",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT\n  totals.cases AS cases,\n  totals.adversarial_mutations_detected AS mutations_detected,\n  totals.live_government_responses_unchanged AS live_unchanged,\n  totals.unresolved AS unresolved\nFROM read_json_auto(\n  'proof/replicated-review-summary-20260820.json'\n)",
+        "description": "Loads the headline totals from the public-safe replicated review summary.",
+        "executed_at": "2026-08-20T22:48:45Z",
+        "tables_used": ["proof/replicated-review-summary-20260820.json"],
+        "filters": ["public 33-case set", "private 100-case holdout", "permit-free evidence tasks"]
+      }
+    },
+    {
+      "id": "mutations_sql",
+      "label": "Adversarial mutation query",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT\n  v.code,\n  v.variant,\n  v.attempted,\n  v.detected,\n  v.detection_rate\nFROM read_json_auto(\n  'proof/replicated-review-summary-20260820.json'\n),\nUNNEST(adversarial_variants) AS t(v)",
+        "description": "Loads attempted and detected counts for each adversarial mutation class.",
+        "executed_at": "2026-08-20T22:48:45Z",
+        "tables_used": ["proof/replicated-review-summary-20260820.json"],
+        "filters": ["eight designed mutation classes", "133 cases per class"]
+      }
+    },
+    {
+      "id": "tasks_sql",
+      "label": "Reviewed task query",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT\n  v.task,\n  v.public_cases,\n  v.private_cases,\n  v.total_cases,\n  v.passed\nFROM read_json_auto(\n  'proof/replicated-review-summary-20260820.json'\n),\nUNNEST(tasks) AS t(v)",
+        "description": "Loads reviewed and passed case counts by evidence task and collection.",
+        "executed_at": "2026-08-20T22:48:45Z",
+        "tables_used": ["proof/replicated-review-summary-20260820.json"],
+        "filters": ["three permit-free evidence tasks"]
+      }
+    },
+    {
+      "id": "reviewer_code",
+      "label": "Gold-blind reviewer implementation",
+      "query": {
+        "engine": "python",
+        "language": "python",
+        "description": "Separate implementation for property identity, source authority, task derivation, answer adjudication, freshness, adversarial mutations and live replay.",
+        "executed_at": "2026-08-20T22:48:45Z",
+        "tables_used": ["replicated_review.py"]
+      }
+    }
+  ]
+}

@@ -46,6 +46,12 @@ jobs:
       - name: Verify all dated evidence receipts
         run: python3 refresh_evidence.py --validate
 
+      - name: Run gold-blind second-implementation review and adversarial suite
+        run: |
+          python3 replicated_review.py \
+            --collection public \
+            --output /tmp/groundtruth-replicated-review.json
+
       - name: Run benchmark and audit tests
         run: python3 -m unittest discover -s tests -v
 

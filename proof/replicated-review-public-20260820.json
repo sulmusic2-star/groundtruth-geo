@@ -1,0 +1,1594 @@
+{
+  "schema_version": "groundtruth_geo_replicated_review.v1",
+  "collection": "public",
+  "reviewed_at": "2026-08-20T22:48:42Z",
+  "review_status": "multi_method_replicated_not_independent_human",
+  "independent_human_review": false,
+  "gold_hidden_during_derivation": true,
+  "reviewer_implementation": "replicated_review.py; no imports from evidence generator or holdout builder",
+  "data": {
+    "dataset_name": "groundtruth_geo.jsonl",
+    "dataset_sha256": "1d3d147bad2433ecea266afd2dce96f281f64276a1ced2a8391f626eb26a758a",
+    "cases": 33,
+    "task_counts": {
+      "contamination_nearby": 11,
+      "fema_sfha": 11,
+      "historic_district": 11
+    }
+  },
+  "results": {
+    "status_counts": {
+      "passed": 33
+    },
+    "task_passed": {
+      "contamination_nearby": 11,
+      "fema_sfha": 11,
+      "historic_district": 11
+    },
+    "agreement_rate": 1.0,
+    "issue_counts": {}
+  },
+  "adversarial": {
+    "attempted": 264,
+    "detected": 264,
+    "detection_rate": 1.0,
+    "variants": {
+      "stale_evidence": {
+        "attempted": 33,
+        "detected": 33,
+        "missed_case_ids": []
+      },
+      "unknown_forced_to_no": {
+        "attempted": 33,
+        "detected": 33,
+        "missed_case_ids": []
+      },
+      "wrong_gold_answer": {
+        "attempted": 33,
+        "detected": 33,
+        "missed_case_ids": []
+      },
+      "wrong_property_coordinate": {
+        "attempted": 33,
+        "detected": 33,
+        "missed_case_ids": []
+      },
+      "wrong_qualifying_records": {
+        "attempted": 33,
+        "detected": 33,
+        "missed_case_ids": []
+      },
+      "wrong_query_point": {
+        "attempted": 33,
+        "detected": 33,
+        "missed_case_ids": []
+      },
+      "wrong_returned_count": {
+        "attempted": 33,
+        "detected": 33,
+        "missed_case_ids": []
+      },
+      "wrong_source_domain": {
+        "attempted": 33,
+        "detected": 33,
+        "missed_case_ids": []
+      }
+    }
+  },
+  "limitations": [
+    "This is a second implementation and multi-role automated review, not an independent human review.",
+    "The same project owner controls the benchmark and review code; organizational independence is absent.",
+    "SHA-256 commitments reveal later changes but are not government digital signatures and cannot prove the original response was never fabricated.",
+    "Point-based answers do not replace parcel, boundary, regulatory, legal, engineering, lending, or professional determinations.",
+    "The reviewed cases are stratified benchmark cases, not a representative estimate of national or statewide field accuracy."
+  ],
+  "cases": [
+    {
+      "id": "gtg-be9c68f9073f",
+      "task": "fema_sfha",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_sfha": true,
+        "zone": "AE"
+      },
+      "stored_answer": {
+        "in_sfha": true,
+        "zone": "AE"
+      },
+      "property": {
+        "requested_address": "72 Easton St, Nantucket, MA",
+        "matched_address": "72 EASTON ST, NANTUCKET, MA, 02554"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-7762a3857b56",
+      "task": "historic_district",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_historic_district": true,
+        "district": "Nantucket Historic District",
+        "districts": [
+          "Nantucket Historic District"
+        ]
+      },
+      "stored_answer": {
+        "district": "Nantucket Historic District",
+        "districts": [
+          "Nantucket Historic District"
+        ],
+        "in_historic_district": true
+      },
+      "property": {
+        "requested_address": "72 Easton St, Nantucket, MA",
+        "matched_address": "72 EASTON ST, NANTUCKET, MA, 02554"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-f9028d76bd4d",
+      "task": "contamination_nearby",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "has_nearby_site": false,
+        "count": 0,
+        "radius_miles": 0.25,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ]
+      },
+      "stored_answer": {
+        "count": 0,
+        "has_nearby_site": false,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ],
+        "radius_miles": 0.25
+      },
+      "property": {
+        "requested_address": "72 Easton St, Nantucket, MA",
+        "matched_address": "72 EASTON ST, NANTUCKET, MA, 02554"
+      },
+      "official_query_count": 2,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-be1cf97ed345",
+      "task": "fema_sfha",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_sfha": false,
+        "zone": "X"
+      },
+      "stored_answer": {
+        "in_sfha": false,
+        "zone": "X"
+      },
+      "property": {
+        "requested_address": "1 City Hall Sq, Boston, MA",
+        "matched_address": "1 CITY HALL AVE, BOSTON, MA, 02108"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-80da65d9429f",
+      "task": "historic_district",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_historic_district": false,
+        "district": null,
+        "districts": []
+      },
+      "stored_answer": {
+        "district": null,
+        "districts": [],
+        "in_historic_district": false
+      },
+      "property": {
+        "requested_address": "1 City Hall Sq, Boston, MA",
+        "matched_address": "1 CITY HALL AVE, BOSTON, MA, 02108"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-92b4d253e4ce",
+      "task": "contamination_nearby",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "has_nearby_site": true,
+        "count": 1,
+        "radius_miles": 0.25,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ]
+      },
+      "stored_answer": {
+        "count": 1,
+        "has_nearby_site": true,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ],
+        "radius_miles": 0.25
+      },
+      "property": {
+        "requested_address": "1 City Hall Sq, Boston, MA",
+        "matched_address": "1 CITY HALL AVE, BOSTON, MA, 02108"
+      },
+      "official_query_count": 2,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-2a73ad2c28f8",
+      "task": "fema_sfha",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_sfha": false,
+        "zone": "X"
+      },
+      "stored_answer": {
+        "in_sfha": false,
+        "zone": "X"
+      },
+      "property": {
+        "requested_address": "60 Esterbrook Rd, Acton, MA",
+        "matched_address": "60 ESTERBROOK RD, ACTON, MA, 01720"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-676366fd1083",
+      "task": "historic_district",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_historic_district": false,
+        "district": null,
+        "districts": []
+      },
+      "stored_answer": {
+        "district": null,
+        "districts": [],
+        "in_historic_district": false
+      },
+      "property": {
+        "requested_address": "60 Esterbrook Rd, Acton, MA",
+        "matched_address": "60 ESTERBROOK RD, ACTON, MA, 01720"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-aacfe611988e",
+      "task": "contamination_nearby",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "has_nearby_site": false,
+        "count": 0,
+        "radius_miles": 0.25,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ]
+      },
+      "stored_answer": {
+        "count": 0,
+        "has_nearby_site": false,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ],
+        "radius_miles": 0.25
+      },
+      "property": {
+        "requested_address": "60 Esterbrook Rd, Acton, MA",
+        "matched_address": "60 ESTERBROOK RD, ACTON, MA, 01720"
+      },
+      "official_query_count": 2,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-98f774d913a0",
+      "task": "fema_sfha",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_sfha": true,
+        "zone": "AE"
+      },
+      "stored_answer": {
+        "in_sfha": true,
+        "zone": "AE"
+      },
+      "property": {
+        "requested_address": "1300 Ocean Dr, Miami Beach, FL",
+        "matched_address": "1300 OCEAN DR, MIAMI BEACH, FL, 33139"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-1677cda2e9dd",
+      "task": "historic_district",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_historic_district": true,
+        "district": "Miami Beach Architectural District",
+        "districts": [
+          "Miami Beach Architectural District"
+        ]
+      },
+      "stored_answer": {
+        "district": "Miami Beach Architectural District",
+        "districts": [
+          "Miami Beach Architectural District"
+        ],
+        "in_historic_district": true
+      },
+      "property": {
+        "requested_address": "1300 Ocean Dr, Miami Beach, FL",
+        "matched_address": "1300 OCEAN DR, MIAMI BEACH, FL, 33139"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-d77d1ff51d57",
+      "task": "contamination_nearby",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "has_nearby_site": false,
+        "count": 0,
+        "radius_miles": 0.25,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ]
+      },
+      "stored_answer": {
+        "count": 0,
+        "has_nearby_site": false,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ],
+        "radius_miles": 0.25
+      },
+      "property": {
+        "requested_address": "1300 Ocean Dr, Miami Beach, FL",
+        "matched_address": "1300 OCEAN DR, MIAMI BEACH, FL, 33139"
+      },
+      "official_query_count": 2,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-016ec6e2246a",
+      "task": "fema_sfha",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_sfha": true,
+        "zone": "AE"
+      },
+      "stored_answer": {
+        "in_sfha": true,
+        "zone": "AE"
+      },
+      "property": {
+        "requested_address": "1100 Brickell Ave, Miami, FL",
+        "matched_address": "1100 BRICKELL AVE, MIAMI, FL, 33131"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-2baf0c9ed2a3",
+      "task": "historic_district",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_historic_district": false,
+        "district": null,
+        "districts": []
+      },
+      "stored_answer": {
+        "district": null,
+        "districts": [],
+        "in_historic_district": false
+      },
+      "property": {
+        "requested_address": "1100 Brickell Ave, Miami, FL",
+        "matched_address": "1100 BRICKELL AVE, MIAMI, FL, 33131"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-641b3c16d345",
+      "task": "contamination_nearby",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "has_nearby_site": false,
+        "count": 0,
+        "radius_miles": 0.25,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ]
+      },
+      "stored_answer": {
+        "count": 0,
+        "has_nearby_site": false,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ],
+        "radius_miles": 0.25
+      },
+      "property": {
+        "requested_address": "1100 Brickell Ave, Miami, FL",
+        "matched_address": "1100 BRICKELL AVE, MIAMI, FL, 33131"
+      },
+      "official_query_count": 2,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-99b44019ed93",
+      "task": "fema_sfha",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_sfha": false,
+        "zone": "X"
+      },
+      "stored_answer": {
+        "in_sfha": false,
+        "zone": "X"
+      },
+      "property": {
+        "requested_address": "10 E Liberty St, Savannah, GA",
+        "matched_address": "10 E LIBERTY, SAVANNAH, GA, 31401"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-2f956d024d0d",
+      "task": "historic_district",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_historic_district": true,
+        "district": "Savannah Historic District",
+        "districts": [
+          "Savannah Historic District"
+        ]
+      },
+      "stored_answer": {
+        "district": "Savannah Historic District",
+        "districts": [
+          "Savannah Historic District"
+        ],
+        "in_historic_district": true
+      },
+      "property": {
+        "requested_address": "10 E Liberty St, Savannah, GA",
+        "matched_address": "10 E LIBERTY, SAVANNAH, GA, 31401"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-1fd6174a7c24",
+      "task": "contamination_nearby",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "has_nearby_site": false,
+        "count": 0,
+        "radius_miles": 0.25,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ]
+      },
+      "stored_answer": {
+        "count": 0,
+        "has_nearby_site": false,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ],
+        "radius_miles": 0.25
+      },
+      "property": {
+        "requested_address": "10 E Liberty St, Savannah, GA",
+        "matched_address": "10 E LIBERTY, SAVANNAH, GA, 31401"
+      },
+      "official_query_count": 2,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-c92174f87ea0",
+      "task": "fema_sfha",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_sfha": false,
+        "zone": "X"
+      },
+      "stored_answer": {
+        "in_sfha": false,
+        "zone": "X"
+      },
+      "property": {
+        "requested_address": "200 N Spring St, Los Angeles, CA",
+        "matched_address": "200 S SPRING ST, LOS ANGELES, CA, 90012"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-b5a2d59b5fb1",
+      "task": "historic_district",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_historic_district": false,
+        "district": null,
+        "districts": []
+      },
+      "stored_answer": {
+        "district": null,
+        "districts": [],
+        "in_historic_district": false
+      },
+      "property": {
+        "requested_address": "200 N Spring St, Los Angeles, CA",
+        "matched_address": "200 S SPRING ST, LOS ANGELES, CA, 90012"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-2345aa4a8782",
+      "task": "contamination_nearby",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "has_nearby_site": true,
+        "count": 1,
+        "radius_miles": 0.25,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ]
+      },
+      "stored_answer": {
+        "count": 1,
+        "has_nearby_site": true,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ],
+        "radius_miles": 0.25
+      },
+      "property": {
+        "requested_address": "200 N Spring St, Los Angeles, CA",
+        "matched_address": "200 S SPRING ST, LOS ANGELES, CA, 90012"
+      },
+      "official_query_count": 2,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-b3342da02166",
+      "task": "fema_sfha",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_sfha": false,
+        "zone": "X"
+      },
+      "stored_answer": {
+        "in_sfha": false,
+        "zone": "X"
+      },
+      "property": {
+        "requested_address": "600 Congress Ave, Austin, TX",
+        "matched_address": "600 CONGRESS AVE, AUSTIN, TX, 78701"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-263dd970290e",
+      "task": "historic_district",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_historic_district": true,
+        "district": "Congress Avenue Historic District; Sixth Street Historic District",
+        "districts": [
+          "Congress Avenue Historic District",
+          "Sixth Street Historic District"
+        ]
+      },
+      "stored_answer": {
+        "district": "Congress Avenue Historic District; Sixth Street Historic District",
+        "districts": [
+          "Congress Avenue Historic District",
+          "Sixth Street Historic District"
+        ],
+        "in_historic_district": true
+      },
+      "property": {
+        "requested_address": "600 Congress Ave, Austin, TX",
+        "matched_address": "600 CONGRESS AVE, AUSTIN, TX, 78701"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-9464428a9faa",
+      "task": "contamination_nearby",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "has_nearby_site": true,
+        "count": 1,
+        "radius_miles": 0.25,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ]
+      },
+      "stored_answer": {
+        "count": 1,
+        "has_nearby_site": true,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ],
+        "radius_miles": 0.25
+      },
+      "property": {
+        "requested_address": "600 Congress Ave, Austin, TX",
+        "matched_address": "600 CONGRESS AVE, AUSTIN, TX, 78701"
+      },
+      "official_query_count": 2,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-906449faa09a",
+      "task": "fema_sfha",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_sfha": false,
+        "zone": "X"
+      },
+      "stored_answer": {
+        "in_sfha": false,
+        "zone": "X"
+      },
+      "property": {
+        "requested_address": "1600 Pennsylvania Ave NW, Washington, DC",
+        "matched_address": "1600 PENNSYLVANIA AVE NW, WASHINGTON, DC, 20500"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-d5f5fad520ca",
+      "task": "historic_district",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_historic_district": true,
+        "district": "Civil War Fort Sites; Lafayette Square Historic District",
+        "districts": [
+          "Civil War Fort Sites",
+          "Lafayette Square Historic District"
+        ]
+      },
+      "stored_answer": {
+        "district": "Civil War Fort Sites; Lafayette Square Historic District",
+        "districts": [
+          "Civil War Fort Sites",
+          "Lafayette Square Historic District"
+        ],
+        "in_historic_district": true
+      },
+      "property": {
+        "requested_address": "1600 Pennsylvania Ave NW, Washington, DC",
+        "matched_address": "1600 PENNSYLVANIA AVE NW, WASHINGTON, DC, 20500"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-99f0dbb84162",
+      "task": "contamination_nearby",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "has_nearby_site": false,
+        "count": 0,
+        "radius_miles": 0.25,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ]
+      },
+      "stored_answer": {
+        "count": 0,
+        "has_nearby_site": false,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ],
+        "radius_miles": 0.25
+      },
+      "property": {
+        "requested_address": "1600 Pennsylvania Ave NW, Washington, DC",
+        "matched_address": "1600 PENNSYLVANIA AVE NW, WASHINGTON, DC, 20500"
+      },
+      "official_query_count": 2,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-8837aeb98483",
+      "task": "fema_sfha",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_sfha": false,
+        "zone": "X"
+      },
+      "stored_answer": {
+        "in_sfha": false,
+        "zone": "X"
+      },
+      "property": {
+        "requested_address": "233 S Wacker Dr, Chicago, IL",
+        "matched_address": "233 S WACKER DR, CHICAGO, IL, 60606"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-904282143a79",
+      "task": "historic_district",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_historic_district": false,
+        "district": null,
+        "districts": []
+      },
+      "stored_answer": {
+        "district": null,
+        "districts": [],
+        "in_historic_district": false
+      },
+      "property": {
+        "requested_address": "233 S Wacker Dr, Chicago, IL",
+        "matched_address": "233 S WACKER DR, CHICAGO, IL, 60606"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-1cf14a0cbce1",
+      "task": "contamination_nearby",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "has_nearby_site": false,
+        "count": 0,
+        "radius_miles": 0.25,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ]
+      },
+      "stored_answer": {
+        "count": 0,
+        "has_nearby_site": false,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ],
+        "radius_miles": 0.25
+      },
+      "property": {
+        "requested_address": "233 S Wacker Dr, Chicago, IL",
+        "matched_address": "233 S WACKER DR, CHICAGO, IL, 60606"
+      },
+      "official_query_count": 2,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-2911556d2067",
+      "task": "fema_sfha",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_sfha": true,
+        "zone": "AE"
+      },
+      "stored_answer": {
+        "in_sfha": true,
+        "zone": "AE"
+      },
+      "property": {
+        "requested_address": "100 N Tampa St, Tampa, FL",
+        "matched_address": "100 TAMPA ST N, TAMPA, FL, 33602"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-286e545bbd5a",
+      "task": "historic_district",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "in_historic_district": false,
+        "district": null,
+        "districts": []
+      },
+      "stored_answer": {
+        "district": null,
+        "districts": [],
+        "in_historic_district": false
+      },
+      "property": {
+        "requested_address": "100 N Tampa St, Tampa, FL",
+        "matched_address": "100 TAMPA ST N, TAMPA, FL, 33602"
+      },
+      "official_query_count": 1,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    },
+    {
+      "id": "gtg-a656ff9f2446",
+      "task": "contamination_nearby",
+      "status": "passed",
+      "gold_hidden_during_derivation": true,
+      "derived_answer": {
+        "has_nearby_site": true,
+        "count": 3,
+        "radius_miles": 0.25,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ]
+      },
+      "stored_answer": {
+        "count": 3,
+        "has_nearby_site": true,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ],
+        "radius_miles": 0.25
+      },
+      "property": {
+        "requested_address": "100 N Tampa St, Tampa, FL",
+        "matched_address": "100 TAMPA ST N, TAMPA, FL, 33602"
+      },
+      "official_query_count": 2,
+      "roles": {
+        "case_contract": "passed",
+        "integrity": "passed",
+        "property_identity": "passed",
+        "source_authority": "passed",
+        "domain_derivation": "passed",
+        "answer_adjudication": "passed",
+        "freshness": "passed"
+      },
+      "issues": []
+    }
+  ],
+  "live_replay": {
+    "urls": 55,
+    "counts": {
+      "unchanged": 55
+    },
+    "all_unchanged": true,
+    "results": [
+      {
+        "url_sha256": "e29eec179dcbc2766353efe3e682d045f628125c859adc7f29bbb95a8b63673b",
+        "status": "unchanged",
+        "expected_response_sha256": "94d079508bf6a4c915f60ba0cf372e447ebc477011321f03cf8f65f4caba8715",
+        "observed_response_sha256": "94d079508bf6a4c915f60ba0cf372e447ebc477011321f03cf8f65f4caba8715",
+        "source_error": null
+      },
+      {
+        "url_sha256": "9208b1639bf9a24e2ea3b62fd1330e3a1d6c1c13360459e26a0608563874ae7d",
+        "status": "unchanged",
+        "expected_response_sha256": "7ce4993d1fdfea9c452fe0cada6223b623a307b54daa698e575bda3013e733d2",
+        "observed_response_sha256": "7ce4993d1fdfea9c452fe0cada6223b623a307b54daa698e575bda3013e733d2",
+        "source_error": null
+      },
+      {
+        "url_sha256": "ad28f79cd94620daad6a2821cad8708e68a81dc88b29cc7a0f16a7c481a7e29b",
+        "status": "unchanged",
+        "expected_response_sha256": "0e0d1c6bd08e2ecb16b32f5b8ea91865a85d50a4540e32cc51fa5c8d249dc150",
+        "observed_response_sha256": "0e0d1c6bd08e2ecb16b32f5b8ea91865a85d50a4540e32cc51fa5c8d249dc150",
+        "source_error": null
+      },
+      {
+        "url_sha256": "106fba0b84eb0cc270730115e9a1512347103eea8e21c9939c12ccebc6b58a39",
+        "status": "unchanged",
+        "expected_response_sha256": "0238cd2df1b19451603f5a69fa924c1d7c1f1eb7a073ab64dd9ae3173646a682",
+        "observed_response_sha256": "0238cd2df1b19451603f5a69fa924c1d7c1f1eb7a073ab64dd9ae3173646a682",
+        "source_error": null
+      },
+      {
+        "url_sha256": "a59c07722a22c93b7b4150369fb20922432d09cf2e2a477a2e4bac3ca6d71ded",
+        "status": "unchanged",
+        "expected_response_sha256": "679660d18743661f0270397fafa076cd611265d627500d4d90cfb299f2fa85f3",
+        "observed_response_sha256": "679660d18743661f0270397fafa076cd611265d627500d4d90cfb299f2fa85f3",
+        "source_error": null
+      },
+      {
+        "url_sha256": "81f6e59576c0ab507daec14042c2552c58c389fcaf147d2e880159ef6344ef45",
+        "status": "unchanged",
+        "expected_response_sha256": "3fa3ccf440891ee483b6fd84a91cc126e60a8f7d8ea5c2c3d3a11d5533d4457a",
+        "observed_response_sha256": "3fa3ccf440891ee483b6fd84a91cc126e60a8f7d8ea5c2c3d3a11d5533d4457a",
+        "source_error": null
+      },
+      {
+        "url_sha256": "92f98680fec53879f8be77b1c90b3bf76946d950b171ce475a6444c0a1da8b04",
+        "status": "unchanged",
+        "expected_response_sha256": "17a19e727b10a3418d9574fb7c1019581e0c7ae00870b4315068a1c34f3b6522",
+        "observed_response_sha256": "17a19e727b10a3418d9574fb7c1019581e0c7ae00870b4315068a1c34f3b6522",
+        "source_error": null
+      },
+      {
+        "url_sha256": "db5109c37546c43557583daf1ddb8638e13ac2f4467d55a9aa5cab62c651f4dd",
+        "status": "unchanged",
+        "expected_response_sha256": "14d44ed27e4dc9e3499c5cd2bf305de6acc13054e4614c2a6f97d990ff789b87",
+        "observed_response_sha256": "14d44ed27e4dc9e3499c5cd2bf305de6acc13054e4614c2a6f97d990ff789b87",
+        "source_error": null
+      },
+      {
+        "url_sha256": "b3aa523c9cd1c159cdad8b2f76a7026a445021d4868aec215ae23083fede3137",
+        "status": "unchanged",
+        "expected_response_sha256": "4ff8743675e04148f93c78af08b72765a8f8508f9425d511332bc7679583a9d6",
+        "observed_response_sha256": "4ff8743675e04148f93c78af08b72765a8f8508f9425d511332bc7679583a9d6",
+        "source_error": null
+      },
+      {
+        "url_sha256": "aa25ea99f0df09ec2bdca5b307a2cc4d3fa78ab4f4e03aadf1e9590b88cb60ae",
+        "status": "unchanged",
+        "expected_response_sha256": "98f3530c20da0115298af25ebc3f6b07184cb3c66ec93933b8b31787707a26f5",
+        "observed_response_sha256": "98f3530c20da0115298af25ebc3f6b07184cb3c66ec93933b8b31787707a26f5",
+        "source_error": null
+      },
+      {
+        "url_sha256": "4796b770a47d09a899fdf8895580d6489cedaaed0db5df4ccf41914c71a6febd",
+        "status": "unchanged",
+        "expected_response_sha256": "e737af6b15107bbbb4968dc037cc3f810dc5b2c1873a84a46add421639a1fa8f",
+        "observed_response_sha256": "e737af6b15107bbbb4968dc037cc3f810dc5b2c1873a84a46add421639a1fa8f",
+        "source_error": null
+      },
+      {
+        "url_sha256": "f573656868ef46cf5f32325f796579c27698a257f22687251196152eba43a418",
+        "status": "unchanged",
+        "expected_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "observed_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "source_error": null
+      },
+      {
+        "url_sha256": "2ce7809c502ec93a2e5410b13cd17eb1758fe4321741c9cbb151a76755ec3277",
+        "status": "unchanged",
+        "expected_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "observed_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "source_error": null
+      },
+      {
+        "url_sha256": "ab38ac35aea98bb8097f4c94bee2c5f3c39be5461d8c8e7573ee0896abfdbccd",
+        "status": "unchanged",
+        "expected_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "observed_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "source_error": null
+      },
+      {
+        "url_sha256": "6754e00fd3fe671916482b510d2ab75e0e4b45d2adba610f02ec3e44edbe30f3",
+        "status": "unchanged",
+        "expected_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "observed_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "source_error": null
+      },
+      {
+        "url_sha256": "4a394146fb76202dade13d3b161cc90ef04d8a9d39707c26a1ab70a842333950",
+        "status": "unchanged",
+        "expected_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "observed_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "source_error": null
+      },
+      {
+        "url_sha256": "b750706b668c226f36689f367a1e944068d42c76a84a0037e107d620b0685bca",
+        "status": "unchanged",
+        "expected_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "observed_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "source_error": null
+      },
+      {
+        "url_sha256": "28375f98cdd598fe6aa0d7b883ceb99562d8054b0eac679112a9a87460cd4807",
+        "status": "unchanged",
+        "expected_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "observed_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "source_error": null
+      },
+      {
+        "url_sha256": "08d4a36dc08c6cbd84d6a85bb372e10e52ae3ad1b0f08e947c351700a928c66f",
+        "status": "unchanged",
+        "expected_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "observed_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "source_error": null
+      },
+      {
+        "url_sha256": "410fc8b05e68b59984b496fbf6b28906cbd033a66344873fbf4c512051247fa4",
+        "status": "unchanged",
+        "expected_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "observed_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "source_error": null
+      },
+      {
+        "url_sha256": "c4b2e7bf8d56210620f5ee0830eaa3606d88aaaafd519db1c2b6866c120174de",
+        "status": "unchanged",
+        "expected_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "observed_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "source_error": null
+      },
+      {
+        "url_sha256": "deb69d6ed1d347721fc019c1bd1565aaa190e13253668efa119ea98ceba2e43d",
+        "status": "unchanged",
+        "expected_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "observed_response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+        "source_error": null
+      },
+      {
+        "url_sha256": "f5d6aed435faa9ef1618979e2a08c4190837764f4c0af5279e0665aa700f711a",
+        "status": "unchanged",
+        "expected_response_sha256": "e9eeb57334d0e6530f432339739ea431d15223cfbc2742d3892cd179b6e5a27e",
+        "observed_response_sha256": "e9eeb57334d0e6530f432339739ea431d15223cfbc2742d3892cd179b6e5a27e",
+        "source_error": null
+      },
+      {
+        "url_sha256": "0452d9b120920b723fd19f0e70b63359337a7383020aac18ab0b855553ef6c14",
+        "status": "unchanged",
+        "expected_response_sha256": "fec416444ad8996804cb297c8cbd5c03f08772ef72bb127179d6cf032f5f0f73",
+        "observed_response_sha256": "fec416444ad8996804cb297c8cbd5c03f08772ef72bb127179d6cf032f5f0f73",
+        "source_error": null
+      },
+      {
+        "url_sha256": "378decb422fbc4604807deb1713a54786e9e4dee2871161d5745e4ccbc55b921",
+        "status": "unchanged",
+        "expected_response_sha256": "a57f1d766e19edaa05ed316d556db4dd45c44cf1ecfdb95f726156a154c9d427",
+        "observed_response_sha256": "a57f1d766e19edaa05ed316d556db4dd45c44cf1ecfdb95f726156a154c9d427",
+        "source_error": null
+      },
+      {
+        "url_sha256": "c8a4177d3969de96f4b252df9a91e306d4e965174965f97d04aa583451043a6c",
+        "status": "unchanged",
+        "expected_response_sha256": "fec416444ad8996804cb297c8cbd5c03f08772ef72bb127179d6cf032f5f0f73",
+        "observed_response_sha256": "fec416444ad8996804cb297c8cbd5c03f08772ef72bb127179d6cf032f5f0f73",
+        "source_error": null
+      },
+      {
+        "url_sha256": "c9e681c57e021a271da38539ef44485fe3e2fe2aac8fad78b260228dec57a323",
+        "status": "unchanged",
+        "expected_response_sha256": "fec416444ad8996804cb297c8cbd5c03f08772ef72bb127179d6cf032f5f0f73",
+        "observed_response_sha256": "fec416444ad8996804cb297c8cbd5c03f08772ef72bb127179d6cf032f5f0f73",
+        "source_error": null
+      },
+      {
+        "url_sha256": "77e6e216e4f0cf4b09801ff0cabc0ae4cd22bbf97e6f92a152996fa901c16461",
+        "status": "unchanged",
+        "expected_response_sha256": "fec416444ad8996804cb297c8cbd5c03f08772ef72bb127179d6cf032f5f0f73",
+        "observed_response_sha256": "fec416444ad8996804cb297c8cbd5c03f08772ef72bb127179d6cf032f5f0f73",
+        "source_error": null
+      },
+      {
+        "url_sha256": "8cefd93bf4605b76336e9937e29ff722b98c0aa7308282d9b5ebce897b5fd8b4",
+        "status": "unchanged",
+        "expected_response_sha256": "fec416444ad8996804cb297c8cbd5c03f08772ef72bb127179d6cf032f5f0f73",
+        "observed_response_sha256": "fec416444ad8996804cb297c8cbd5c03f08772ef72bb127179d6cf032f5f0f73",
+        "source_error": null
+      },
+      {
+        "url_sha256": "a88aa5c984ba0a792c6a09163315fe07f6b7b8e331d1f8db935933a80a8884ea",
+        "status": "unchanged",
+        "expected_response_sha256": "fec416444ad8996804cb297c8cbd5c03f08772ef72bb127179d6cf032f5f0f73",
+        "observed_response_sha256": "fec416444ad8996804cb297c8cbd5c03f08772ef72bb127179d6cf032f5f0f73",
+        "source_error": null
+      },
+      {
+        "url_sha256": "9742ce9113832e9f6e4920415aca66f0e78a12f54a17e5b02997cdb243b89978",
+        "status": "unchanged",
+        "expected_response_sha256": "fbd33b4b4b9e3834e8512897dd34f46bf5fd347eea499fec7dfe664b8731bdbd",
+        "observed_response_sha256": "fbd33b4b4b9e3834e8512897dd34f46bf5fd347eea499fec7dfe664b8731bdbd",
+        "source_error": null
+      },
+      {
+        "url_sha256": "29f033536087c070c439d611e2e94129e8c3cbfca3d724d9caaa7588769e525b",
+        "status": "unchanged",
+        "expected_response_sha256": "fec416444ad8996804cb297c8cbd5c03f08772ef72bb127179d6cf032f5f0f73",
+        "observed_response_sha256": "fec416444ad8996804cb297c8cbd5c03f08772ef72bb127179d6cf032f5f0f73",
+        "source_error": null
+      },
+      {
+        "url_sha256": "69c9ada1b0e319053b5a6f067eb9784d591e7535cb7c880780fca713002c8665",
+        "status": "unchanged",
+        "expected_response_sha256": "1169d148bb331315714e7fe5dc9a722de6b38add163b13ef9aaa999263703702",
+        "observed_response_sha256": "1169d148bb331315714e7fe5dc9a722de6b38add163b13ef9aaa999263703702",
+        "source_error": null
+      },
+      {
+        "url_sha256": "7b899a06f71b846687cc83ff70df8f946e4b64a8aaae1bdb6192e37c0a2af36f",
+        "status": "unchanged",
+        "expected_response_sha256": "6dc2554dfbff96a8092162a7b9392cd1025f35c37356ad37a7855c6d1d1be643",
+        "observed_response_sha256": "6dc2554dfbff96a8092162a7b9392cd1025f35c37356ad37a7855c6d1d1be643",
+        "source_error": null
+      },
+      {
+        "url_sha256": "8c0e1116e01bbff1280709224c0da91a92f16556bea7d7b4cb77c51b01f102dc",
+        "status": "unchanged",
+        "expected_response_sha256": "48fed52796e594acfba8dc5744ed40ad49787593a74f7094f90d2d88cfa40aca",
+        "observed_response_sha256": "48fed52796e594acfba8dc5744ed40ad49787593a74f7094f90d2d88cfa40aca",
+        "source_error": null
+      },
+      {
+        "url_sha256": "00f99da069094fd353a3dae223e2c0c8287218902bc4d9564e3ea55b96e4ea73",
+        "status": "unchanged",
+        "expected_response_sha256": "3c5b7d8e63a4db8251d27638b529c555563e53ab408aad986b2f6e8a54d9bf20",
+        "observed_response_sha256": "3c5b7d8e63a4db8251d27638b529c555563e53ab408aad986b2f6e8a54d9bf20",
+        "source_error": null
+      },
+      {
+        "url_sha256": "2edbe933d6d4a6ac44e4341b547613b8ae4bbd4e3e88d4471ccacf92fc29a741",
+        "status": "unchanged",
+        "expected_response_sha256": "c3569dc61223d2a4a4cd124c5fea6c36c46ccc43785dbefe1faff1774444dea7",
+        "observed_response_sha256": "c3569dc61223d2a4a4cd124c5fea6c36c46ccc43785dbefe1faff1774444dea7",
+        "source_error": null
+      },
+      {
+        "url_sha256": "c1fd87505283106559c090d7d85527500c4db3c73a284865a6cd7cf796f583d3",
+        "status": "unchanged",
+        "expected_response_sha256": "7647c43018a4f98ccb05caaf1f62796b34ee1444fd385eb3566b3ad280049214",
+        "observed_response_sha256": "7647c43018a4f98ccb05caaf1f62796b34ee1444fd385eb3566b3ad280049214",
+        "source_error": null
+      },
+      {
+        "url_sha256": "ee34c193391981049962a16a15a39838d4a0bafe6cafdad00c5b7043d81c4cf1",
+        "status": "unchanged",
+        "expected_response_sha256": "9f9bad70519c82a46eaadcf7bc9067741cc0a1950999d43bef76e8f0cfc4bbb5",
+        "observed_response_sha256": "9f9bad70519c82a46eaadcf7bc9067741cc0a1950999d43bef76e8f0cfc4bbb5",
+        "source_error": null
+      },
+      {
+        "url_sha256": "089db61f8c39d9092e05b3d90c989729c836f696ef132cb5e4aa12553a42fffc",
+        "status": "unchanged",
+        "expected_response_sha256": "33eb9a1c7f7dc22cb3fc7b845e74ffcd0ed8f265965fe056bb7c38714f2e0b59",
+        "observed_response_sha256": "33eb9a1c7f7dc22cb3fc7b845e74ffcd0ed8f265965fe056bb7c38714f2e0b59",
+        "source_error": null
+      },
+      {
+        "url_sha256": "e9b5865829497c5a4571c5e512a2b35c70f6dd006d3354d67a0a6e2298861043",
+        "status": "unchanged",
+        "expected_response_sha256": "e1f8642ab82bdaf00100e0274c81b5537f5da76b09afeddae65db4eda4cca4c2",
+        "observed_response_sha256": "e1f8642ab82bdaf00100e0274c81b5537f5da76b09afeddae65db4eda4cca4c2",
+        "source_error": null
+      },
+      {
+        "url_sha256": "532964ee2714ae759405c0e050c1219f0aa41c3257df738f3ca1f181ea09ff20",
+        "status": "unchanged",
+        "expected_response_sha256": "7cb6b1ce3c43e229cd579b2fbb03ee8b524d83ecb373dbd2570f4be1a8710b6e",
+        "observed_response_sha256": "7cb6b1ce3c43e229cd579b2fbb03ee8b524d83ecb373dbd2570f4be1a8710b6e",
+        "source_error": null
+      },
+      {
+        "url_sha256": "75093d132c0305c2ecdaa21823f516c1b255502962a0849117176c71d0d94656",
+        "status": "unchanged",
+        "expected_response_sha256": "f5672840b30cb1a6434915719aee0105fe51717e3ca85913cff43c06cf92fa3b",
+        "observed_response_sha256": "f5672840b30cb1a6434915719aee0105fe51717e3ca85913cff43c06cf92fa3b",
+        "source_error": null
+      },
+      {
+        "url_sha256": "2bc065b597dc87578ae9e2fd80bbde31c9f473bc66cd8540ac51eebb5eaa49fe",
+        "status": "unchanged",
+        "expected_response_sha256": "363f8d942662638274f2969387a5efb5c08f3f7a0b17fd9dafa8daa5c6e29280",
+        "observed_response_sha256": "363f8d942662638274f2969387a5efb5c08f3f7a0b17fd9dafa8daa5c6e29280",
+        "source_error": null
+      },
+      {
+        "url_sha256": "2e65d716566c2f14e400636bdce959533096983a09a7d74b000ef09ba121dc97",
+        "status": "unchanged",
+        "expected_response_sha256": "d966bdc5a6ee8fcfb120d10c1d96313e6120fda67b313771e0392c2a0baf55df",
+        "observed_response_sha256": "d966bdc5a6ee8fcfb120d10c1d96313e6120fda67b313771e0392c2a0baf55df",
+        "source_error": null
+      },
+      {
+        "url_sha256": "0d41499f1cc3f799ea84a9802fd7cc861c7dfb9e80d648562a79e6796c34e272",
+        "status": "unchanged",
+        "expected_response_sha256": "89109946474a28b528adccd0fe7e75dfcd2b3034fc908fb2d0e90b4fc0501656",
+        "observed_response_sha256": "89109946474a28b528adccd0fe7e75dfcd2b3034fc908fb2d0e90b4fc0501656",
+        "source_error": null
+      },
+      {
+        "url_sha256": "0a1c24f71732a6246ce9a7935c2f3464a180d07297dd685343cdcae990221b09",
+        "status": "unchanged",
+        "expected_response_sha256": "d966bdc5a6ee8fcfb120d10c1d96313e6120fda67b313771e0392c2a0baf55df",
+        "observed_response_sha256": "d966bdc5a6ee8fcfb120d10c1d96313e6120fda67b313771e0392c2a0baf55df",
+        "source_error": null
+      },
+      {
+        "url_sha256": "801f8674eced1e4f853103ad4d4a7bde2796c78942701c7f8bb13f91d57808d1",
+        "status": "unchanged",
+        "expected_response_sha256": "99f3e76803a57493bce4a1535d3c148895d810a4805061c919bfe9d19318e9eb",
+        "observed_response_sha256": "99f3e76803a57493bce4a1535d3c148895d810a4805061c919bfe9d19318e9eb",
+        "source_error": null
+      },
+      {
+        "url_sha256": "7f3d138bd178088ed33ee90e70344f2a59926e17f24967abfb6cfb6e9a99ad7b",
+        "status": "unchanged",
+        "expected_response_sha256": "c50b881d5b1c53735c1f105dcff328f3e22d182c5e1ef5bd06bf2a055123fb20",
+        "observed_response_sha256": "c50b881d5b1c53735c1f105dcff328f3e22d182c5e1ef5bd06bf2a055123fb20",
+        "source_error": null
+      },
+      {
+        "url_sha256": "eb69e700b5aac1c60e5219e2a74517a5f5c981baa85094aac28bbca7b0c63fc8",
+        "status": "unchanged",
+        "expected_response_sha256": "67613e883bc85484323b5988ade01f6292e4b67e8a12be118388be61e05d0cc9",
+        "observed_response_sha256": "67613e883bc85484323b5988ade01f6292e4b67e8a12be118388be61e05d0cc9",
+        "source_error": null
+      },
+      {
+        "url_sha256": "269e982d8b52d9576ad8138e15382446c257a72c440d1b3bfa043e44ca126ecd",
+        "status": "unchanged",
+        "expected_response_sha256": "d966bdc5a6ee8fcfb120d10c1d96313e6120fda67b313771e0392c2a0baf55df",
+        "observed_response_sha256": "d966bdc5a6ee8fcfb120d10c1d96313e6120fda67b313771e0392c2a0baf55df",
+        "source_error": null
+      },
+      {
+        "url_sha256": "e9da5c6917afe0cfe238d46354c2c92998b4823fd1a791aa44b57badc0d48297",
+        "status": "unchanged",
+        "expected_response_sha256": "e54fcdad859de5d83853c3a9606e6e5c93862b16a5bb32f31fc4f27b3c61cb9d",
+        "observed_response_sha256": "e54fcdad859de5d83853c3a9606e6e5c93862b16a5bb32f31fc4f27b3c61cb9d",
+        "source_error": null
+      },
+      {
+        "url_sha256": "07fc29a0126977ea2e39bf28fafe2aa508926e5f1ab78932f2f95a449b56a89d",
+        "status": "unchanged",
+        "expected_response_sha256": "d966bdc5a6ee8fcfb120d10c1d96313e6120fda67b313771e0392c2a0baf55df",
+        "observed_response_sha256": "d966bdc5a6ee8fcfb120d10c1d96313e6120fda67b313771e0392c2a0baf55df",
+        "source_error": null
+      },
+      {
+        "url_sha256": "ac81c17e166f9136c9060b4425fc993b02e99b01344c16c14660c08cda3b5fb2",
+        "status": "unchanged",
+        "expected_response_sha256": "d966bdc5a6ee8fcfb120d10c1d96313e6120fda67b313771e0392c2a0baf55df",
+        "observed_response_sha256": "d966bdc5a6ee8fcfb120d10c1d96313e6120fda67b313771e0392c2a0baf55df",
+        "source_error": null
+      },
+      {
+        "url_sha256": "9640c30182fa6e9bc22ca12138fbd5282dced474994b781b5e8457a889411ed2",
+        "status": "unchanged",
+        "expected_response_sha256": "cab5b07a59f5cb29237019ea545236d214e8be293773bf4b07b488b9ff3ae0fb",
+        "observed_response_sha256": "cab5b07a59f5cb29237019ea545236d214e8be293773bf4b07b488b9ff3ae0fb",
+        "source_error": null
+      }
+    ]
+  }
+}

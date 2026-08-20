@@ -1,0 +1,78 @@
+{
+  "schema_version": "groundtruth_geo_replicated_review_receipt.v1",
+  "collection": "public",
+  "reviewed_at": "2026-08-20T22:48:42Z",
+  "review_status": "multi_method_replicated_not_independent_human",
+  "independent_human_review": false,
+  "gold_hidden_during_derivation": true,
+  "data": {
+    "dataset_name": "groundtruth_geo.jsonl",
+    "dataset_sha256": "1d3d147bad2433ecea266afd2dce96f281f64276a1ced2a8391f626eb26a758a",
+    "cases": 33,
+    "task_counts": {
+      "contamination_nearby": 11,
+      "fema_sfha": 11,
+      "historic_district": 11
+    }
+  },
+  "results": {
+    "status_counts": {
+      "passed": 33
+    },
+    "task_passed": {
+      "contamination_nearby": 11,
+      "fema_sfha": 11,
+      "historic_district": 11
+    },
+    "agreement_rate": 1.0,
+    "issue_counts": {}
+  },
+  "adversarial": {
+    "attempted": 264,
+    "detected": 264,
+    "detection_rate": 1.0,
+    "variants": {
+      "stale_evidence": {
+        "attempted": 33,
+        "detected": 33
+      },
+      "unknown_forced_to_no": {
+        "attempted": 33,
+        "detected": 33
+      },
+      "wrong_gold_answer": {
+        "attempted": 33,
+        "detected": 33
+      },
+      "wrong_property_coordinate": {
+        "attempted": 33,
+        "detected": 33
+      },
+      "wrong_qualifying_records": {
+        "attempted": 33,
+        "detected": 33
+      },
+      "wrong_query_point": {
+        "attempted": 33,
+        "detected": 33
+      },
+      "wrong_returned_count": {
+        "attempted": 33,
+        "detected": 33
+      },
+      "wrong_source_domain": {
+        "attempted": 33,
+        "detected": 33
+      }
+    }
+  },
+  "live_replay": {
+    "urls": 55,
+    "counts": {
+      "unchanged": 55
+    },
+    "all_unchanged": true
+  },
+  "detailed_review_sha256": "8ac1cc44deeaec80de09af291b7a3dd6fc9d9faf573011689ed88848a3682700",
+  "claim_boundary": "Replicated automated review; not independent human review or representative accuracy proof."
+}
