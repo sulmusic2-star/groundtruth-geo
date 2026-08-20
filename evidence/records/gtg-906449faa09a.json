@@ -1,0 +1,180 @@
+{
+  "schema_version": "2.0",
+  "item_id": "gtg-906449faa09a",
+  "task": "fema_sfha",
+  "retrieved_at": "2026-08-20T20:14:12Z",
+  "status": "verified",
+  "property_identity": {
+    "status": "verified_census_match",
+    "requested_address": "1600 Pennsylvania Ave NW, Washington, DC",
+    "matched_address": "1600 PENNSYLVANIA AVE NW, WASHINGTON, DC, 20500",
+    "longitude": -77.03518753691,
+    "latitude": 38.89869893252,
+    "geocoder": "United States Census Geocoder",
+    "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=1600+Pennsylvania+Ave+NW%2C+Washington%2C+DC&benchmark=Public_AR_Current&format=json",
+    "response_sha256": "3fa3ccf440891ee483b6fd84a91cc126e60a8f7d8ea5c2c3d3a11d5533d4457a",
+    "reviewed_exception": null,
+    "raw_response": {
+      "result": {
+        "input": {
+          "address": {
+            "address": "1600 Pennsylvania Ave NW, Washington, DC"
+          },
+          "benchmark": {
+            "isDefault": true,
+            "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+            "id": "4",
+            "benchmarkName": "Public_AR_Current"
+          }
+        },
+        "addressMatches": [
+          {
+            "tigerLine": {
+              "side": "L",
+              "tigerLineId": "76225813"
+            },
+            "coordinates": {
+              "x": -77.03518753691,
+              "y": 38.89869893252
+            },
+            "addressComponents": {
+              "zip": "20500",
+              "streetName": "PENNSYLVANIA",
+              "preType": "",
+              "city": "WASHINGTON",
+              "preDirection": "",
+              "suffixDirection": "NW",
+              "fromAddress": "1600",
+              "state": "DC",
+              "suffixType": "AVE",
+              "toAddress": "1648",
+              "suffixQualifier": "",
+              "preQualifier": ""
+            },
+            "matchedAddress": "1600 PENNSYLVANIA AVE NW, WASHINGTON, DC, 20500"
+          }
+        ]
+      }
+    }
+  },
+  "official_queries": [
+    {
+      "source": "FEMA National Flood Hazard Layer",
+      "record_url": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query?f=json&geometry=-77.03518753691%2C38.89869893252&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CDFIRM_ID%2CFLD_AR_ID%2CFLD_ZONE%2CZONE_SUBTY%2CSFHA_TF%2CSOURCE_CIT%2CGFID%2CGlobalID&returnGeometry=false",
+      "response_sha256": "7647c43018a4f98ccb05caaf1f62796b34ee1444fd385eb3566b3ad280049214",
+      "returned_record_count": 1,
+      "qualifying_record_count": 1,
+      "qualifying_records": [
+        {
+          "OBJECTID": 17579832,
+          "DFIRM_ID": "110001",
+          "FLD_AR_ID": "110001_321",
+          "FLD_ZONE": "X",
+          "ZONE_SUBTY": "AREA OF MINIMAL FLOOD HAZARD",
+          "SFHA_TF": "F",
+          "SOURCE_CIT": "110001_STUDY1",
+          "GFID": "b3fec236-3d93-402a-8f6e-9650ed92ae89",
+          "GlobalID": "{E4032AF4-7D2D-4AAC-AF8D-C21FED379FA5}"
+        }
+      ],
+      "raw_response": {
+        "displayFieldName": "FLD_AR_ID",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "DFIRM_ID": "DFIRM_ID",
+          "FLD_AR_ID": "FLD_AR_ID",
+          "FLD_ZONE": "FLD_ZONE",
+          "ZONE_SUBTY": "ZONE_SUBTY",
+          "SFHA_TF": "SFHA_TF",
+          "SOURCE_CIT": "SOURCE_CIT",
+          "GFID": "GFID",
+          "GlobalID": "GlobalID"
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "DFIRM_ID",
+            "type": "esriFieldTypeString",
+            "alias": "DFIRM_ID",
+            "length": 6
+          },
+          {
+            "name": "FLD_AR_ID",
+            "type": "esriFieldTypeString",
+            "alias": "FLD_AR_ID",
+            "length": 32
+          },
+          {
+            "name": "FLD_ZONE",
+            "type": "esriFieldTypeString",
+            "alias": "FLD_ZONE",
+            "length": 17
+          },
+          {
+            "name": "ZONE_SUBTY",
+            "type": "esriFieldTypeString",
+            "alias": "ZONE_SUBTY",
+            "length": 76
+          },
+          {
+            "name": "SFHA_TF",
+            "type": "esriFieldTypeString",
+            "alias": "SFHA_TF",
+            "length": 1
+          },
+          {
+            "name": "SOURCE_CIT",
+            "type": "esriFieldTypeString",
+            "alias": "SOURCE_CIT",
+            "length": 21
+          },
+          {
+            "name": "GFID",
+            "type": "esriFieldTypeString",
+            "alias": "GFID",
+            "length": 36
+          },
+          {
+            "name": "GlobalID",
+            "type": "esriFieldTypeGlobalID",
+            "alias": "GlobalID",
+            "length": 38
+          }
+        ],
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 17579832,
+              "DFIRM_ID": "110001",
+              "FLD_AR_ID": "110001_321",
+              "FLD_ZONE": "X",
+              "ZONE_SUBTY": "AREA OF MINIMAL FLOOD HAZARD",
+              "SFHA_TF": "F",
+              "SOURCE_CIT": "110001_STUDY1",
+              "GFID": "b3fec236-3d93-402a-8f6e-9650ed92ae89",
+              "GlobalID": "{E4032AF4-7D2D-4AAC-AF8D-C21FED379FA5}"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "derivation_rule": {
+    "id": "fema-nfhl-point-sfha-v2",
+    "plain_language": "The point must intersect one FEMA flood-zone polygon. SFHA_TF=T means yes; SFHA_TF=F means no.",
+    "predicate": "feature_count == 1 and SFHA_TF in {'T','F'}"
+  },
+  "gold_answer": {
+    "in_sfha": false,
+    "zone": "X"
+  },
+  "review": {
+    "automated_official_source_check": true,
+    "independent_human_review": false,
+    "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+  }
+}

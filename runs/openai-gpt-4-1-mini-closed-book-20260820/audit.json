@@ -1,0 +1,661 @@
+{
+  "schema_version": "2.0",
+  "run_id": "openai-gpt-4-1-mini-closed-book-20260820",
+  "condition": "closed_book_no_tools",
+  "model_requested": "gpt-4.1-mini-2025-04-14",
+  "models_returned": [
+    "gpt-4.1-mini-2025-04-14"
+  ],
+  "dataset_sha256": "1d3d147bad2433ecea266afd2dce96f281f64276a1ced2a8391f626eb26a758a",
+  "summary": {
+    "items": 33,
+    "attempted": 0,
+    "abstained": 33,
+    "boolean_answers_correct": 0,
+    "accepted_answers": 0,
+    "acceptance_rate": 0.0,
+    "abstention_rate": 1.0,
+    "zero_critical_error_pass": true,
+    "wrong_property": 0,
+    "wrong_source": 0,
+    "unsupported_answer": 0,
+    "unusable_citation": 0,
+    "failure_to_abstain": 0,
+    "stale_or_undated_evidence": 0
+  },
+  "by_task": {
+    "contamination_nearby": {
+      "items": 11,
+      "attempted": 0,
+      "abstained": 11,
+      "accepted": 0,
+      "wrong_property": 0,
+      "wrong_source": 0,
+      "unsupported_answer": 0,
+      "unusable_citation": 0,
+      "failure_to_abstain": 0,
+      "stale_or_undated_evidence": 0
+    },
+    "fema_sfha": {
+      "items": 11,
+      "attempted": 0,
+      "abstained": 11,
+      "accepted": 0,
+      "wrong_property": 0,
+      "wrong_source": 0,
+      "unsupported_answer": 0,
+      "unusable_citation": 0,
+      "failure_to_abstain": 0,
+      "stale_or_undated_evidence": 0
+    },
+    "historic_district": {
+      "items": 11,
+      "attempted": 0,
+      "abstained": 11,
+      "accepted": 0,
+      "wrong_property": 0,
+      "wrong_source": 0,
+      "unsupported_answer": 0,
+      "unusable_citation": 0,
+      "failure_to_abstain": 0,
+      "stale_or_undated_evidence": 0
+    }
+  },
+  "details": [
+    {
+      "item_id": "gtg-be9c68f9073f",
+      "task": "fema_sfha",
+      "address": "72 EASTON ST, NANTUCKET, MA",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-7762a3857b56",
+      "task": "historic_district",
+      "address": "72 EASTON ST, NANTUCKET, MA",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-f9028d76bd4d",
+      "task": "contamination_nearby",
+      "address": "72 EASTON ST, NANTUCKET, MA",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-be1cf97ed345",
+      "task": "fema_sfha",
+      "address": "1 CITY HALL SQ, BOSTON, MA",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-80da65d9429f",
+      "task": "historic_district",
+      "address": "1 CITY HALL SQ, BOSTON, MA",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-92b4d253e4ce",
+      "task": "contamination_nearby",
+      "address": "1 CITY HALL SQ, BOSTON, MA",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-2a73ad2c28f8",
+      "task": "fema_sfha",
+      "address": "60 ESTERBROOK RD, ACTON, MA",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-676366fd1083",
+      "task": "historic_district",
+      "address": "60 ESTERBROOK RD, ACTON, MA",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-aacfe611988e",
+      "task": "contamination_nearby",
+      "address": "60 ESTERBROOK RD, ACTON, MA",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-98f774d913a0",
+      "task": "fema_sfha",
+      "address": "1300 OCEAN DR, MIAMI BEACH, FL",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-1677cda2e9dd",
+      "task": "historic_district",
+      "address": "1300 OCEAN DR, MIAMI BEACH, FL",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-d77d1ff51d57",
+      "task": "contamination_nearby",
+      "address": "1300 OCEAN DR, MIAMI BEACH, FL",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-016ec6e2246a",
+      "task": "fema_sfha",
+      "address": "1100 BRICKELL AVE, MIAMI, FL",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-2baf0c9ed2a3",
+      "task": "historic_district",
+      "address": "1100 BRICKELL AVE, MIAMI, FL",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-641b3c16d345",
+      "task": "contamination_nearby",
+      "address": "1100 BRICKELL AVE, MIAMI, FL",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-99b44019ed93",
+      "task": "fema_sfha",
+      "address": "10 E LIBERTY ST, SAVANNAH, GA",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-2f956d024d0d",
+      "task": "historic_district",
+      "address": "10 E LIBERTY ST, SAVANNAH, GA",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-1fd6174a7c24",
+      "task": "contamination_nearby",
+      "address": "10 E LIBERTY ST, SAVANNAH, GA",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-c92174f87ea0",
+      "task": "fema_sfha",
+      "address": "200 N SPRING ST, LOS ANGELES, CA",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-b5a2d59b5fb1",
+      "task": "historic_district",
+      "address": "200 N SPRING ST, LOS ANGELES, CA",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-2345aa4a8782",
+      "task": "contamination_nearby",
+      "address": "200 N SPRING ST, LOS ANGELES, CA",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-b3342da02166",
+      "task": "fema_sfha",
+      "address": "600 CONGRESS AVE, AUSTIN, TX",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-263dd970290e",
+      "task": "historic_district",
+      "address": "600 CONGRESS AVE, AUSTIN, TX",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-9464428a9faa",
+      "task": "contamination_nearby",
+      "address": "600 CONGRESS AVE, AUSTIN, TX",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-906449faa09a",
+      "task": "fema_sfha",
+      "address": "1600 PENNSYLVANIA AVE NW, WASHINGTON, DC",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-d5f5fad520ca",
+      "task": "historic_district",
+      "address": "1600 PENNSYLVANIA AVE NW, WASHINGTON, DC",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-99f0dbb84162",
+      "task": "contamination_nearby",
+      "address": "1600 PENNSYLVANIA AVE NW, WASHINGTON, DC",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-8837aeb98483",
+      "task": "fema_sfha",
+      "address": "233 S WACKER DR, CHICAGO, IL",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-904282143a79",
+      "task": "historic_district",
+      "address": "233 S WACKER DR, CHICAGO, IL",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-1cf14a0cbce1",
+      "task": "contamination_nearby",
+      "address": "233 S WACKER DR, CHICAGO, IL",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-2911556d2067",
+      "task": "fema_sfha",
+      "address": "100 N TAMPA ST, TAMPA, FL",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-286e545bbd5a",
+      "task": "historic_district",
+      "address": "100 N TAMPA ST, TAMPA, FL",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    },
+    {
+      "item_id": "gtg-a656ff9f2446",
+      "task": "contamination_nearby",
+      "address": "100 N TAMPA ST, TAMPA, FL",
+      "attempted": false,
+      "abstained": true,
+      "answer_correct": null,
+      "wrong_property": false,
+      "wrong_source": false,
+      "unsupported_answer": false,
+      "unusable_citation": false,
+      "failure_to_abstain": false,
+      "stale_or_undated_evidence": false,
+      "accepted": false,
+      "reasons": [
+        "model abstained"
+      ]
+    }
+  ],
+  "interpretation": "An accepted answer must be correct, tied to the reviewed property, supported by the right official source, cited at record level and current. Abstention avoids a critical error but does not count as an accepted answer."
+}

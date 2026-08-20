@@ -1,0 +1,180 @@
+{
+  "schema_version": "2.0",
+  "item_id": "gtg-2911556d2067",
+  "task": "fema_sfha",
+  "retrieved_at": "2026-08-20T20:14:12Z",
+  "status": "verified",
+  "property_identity": {
+    "status": "verified_census_match",
+    "requested_address": "100 N Tampa St, Tampa, FL",
+    "matched_address": "100 TAMPA ST N, TAMPA, FL, 33602",
+    "longitude": -82.457851467841,
+    "latitude": 27.945188619189,
+    "geocoder": "United States Census Geocoder",
+    "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=100+N+Tampa+St%2C+Tampa%2C+FL&benchmark=Public_AR_Current&format=json",
+    "response_sha256": "0e0d1c6bd08e2ecb16b32f5b8ea91865a85d50a4540e32cc51fa5c8d249dc150",
+    "reviewed_exception": null,
+    "raw_response": {
+      "result": {
+        "input": {
+          "address": {
+            "address": "100 N Tampa St, Tampa, FL"
+          },
+          "benchmark": {
+            "isDefault": true,
+            "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+            "id": "4",
+            "benchmarkName": "Public_AR_Current"
+          }
+        },
+        "addressMatches": [
+          {
+            "tigerLine": {
+              "side": "L",
+              "tigerLineId": "104530174"
+            },
+            "coordinates": {
+              "x": -82.457851467841,
+              "y": 27.945188619189
+            },
+            "addressComponents": {
+              "zip": "33602",
+              "streetName": "TAMPA",
+              "preType": "",
+              "city": "TAMPA",
+              "preDirection": "",
+              "suffixDirection": "N",
+              "fromAddress": "100",
+              "state": "FL",
+              "suffixType": "ST",
+              "toAddress": "198",
+              "suffixQualifier": "",
+              "preQualifier": ""
+            },
+            "matchedAddress": "100 TAMPA ST N, TAMPA, FL, 33602"
+          }
+        ]
+      }
+    }
+  },
+  "official_queries": [
+    {
+      "source": "FEMA National Flood Hazard Layer",
+      "record_url": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query?f=json&geometry=-82.457851467841%2C27.945188619189&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CDFIRM_ID%2CFLD_AR_ID%2CFLD_ZONE%2CZONE_SUBTY%2CSFHA_TF%2CSOURCE_CIT%2CGFID%2CGlobalID&returnGeometry=false",
+      "response_sha256": "7cb6b1ce3c43e229cd579b2fbb03ee8b524d83ecb373dbd2570f4be1a8710b6e",
+      "returned_record_count": 1,
+      "qualifying_record_count": 1,
+      "qualifying_records": [
+        {
+          "OBJECTID": 24824404,
+          "DFIRM_ID": "12057C",
+          "FLD_AR_ID": "12057C_6873",
+          "FLD_ZONE": "AE",
+          "ZONE_SUBTY": "COASTAL FLOODPLAIN",
+          "SFHA_TF": "T",
+          "SOURCE_CIT": "12057C_STUDY7",
+          "GFID": "a1111d4c-cb64-4cfa-bb59-9e676a0bf8b6",
+          "GlobalID": "{71A40FCA-A82B-48D1-A368-DC0588C24A56}"
+        }
+      ],
+      "raw_response": {
+        "displayFieldName": "FLD_AR_ID",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "DFIRM_ID": "DFIRM_ID",
+          "FLD_AR_ID": "FLD_AR_ID",
+          "FLD_ZONE": "FLD_ZONE",
+          "ZONE_SUBTY": "ZONE_SUBTY",
+          "SFHA_TF": "SFHA_TF",
+          "SOURCE_CIT": "SOURCE_CIT",
+          "GFID": "GFID",
+          "GlobalID": "GlobalID"
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "DFIRM_ID",
+            "type": "esriFieldTypeString",
+            "alias": "DFIRM_ID",
+            "length": 6
+          },
+          {
+            "name": "FLD_AR_ID",
+            "type": "esriFieldTypeString",
+            "alias": "FLD_AR_ID",
+            "length": 32
+          },
+          {
+            "name": "FLD_ZONE",
+            "type": "esriFieldTypeString",
+            "alias": "FLD_ZONE",
+            "length": 17
+          },
+          {
+            "name": "ZONE_SUBTY",
+            "type": "esriFieldTypeString",
+            "alias": "ZONE_SUBTY",
+            "length": 76
+          },
+          {
+            "name": "SFHA_TF",
+            "type": "esriFieldTypeString",
+            "alias": "SFHA_TF",
+            "length": 1
+          },
+          {
+            "name": "SOURCE_CIT",
+            "type": "esriFieldTypeString",
+            "alias": "SOURCE_CIT",
+            "length": 21
+          },
+          {
+            "name": "GFID",
+            "type": "esriFieldTypeString",
+            "alias": "GFID",
+            "length": 36
+          },
+          {
+            "name": "GlobalID",
+            "type": "esriFieldTypeGlobalID",
+            "alias": "GlobalID",
+            "length": 38
+          }
+        ],
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 24824404,
+              "DFIRM_ID": "12057C",
+              "FLD_AR_ID": "12057C_6873",
+              "FLD_ZONE": "AE",
+              "ZONE_SUBTY": "COASTAL FLOODPLAIN",
+              "SFHA_TF": "T",
+              "SOURCE_CIT": "12057C_STUDY7",
+              "GFID": "a1111d4c-cb64-4cfa-bb59-9e676a0bf8b6",
+              "GlobalID": "{71A40FCA-A82B-48D1-A368-DC0588C24A56}"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "derivation_rule": {
+    "id": "fema-nfhl-point-sfha-v2",
+    "plain_language": "The point must intersect one FEMA flood-zone polygon. SFHA_TF=T means yes; SFHA_TF=F means no.",
+    "predicate": "feature_count == 1 and SFHA_TF in {'T','F'}"
+  },
+  "gold_answer": {
+    "in_sfha": true,
+    "zone": "AE"
+  },
+  "review": {
+    "automated_official_source_check": true,
+    "independent_human_review": false,
+    "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+  }
+}

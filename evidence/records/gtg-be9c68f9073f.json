@@ -1,0 +1,180 @@
+{
+  "schema_version": "2.0",
+  "item_id": "gtg-be9c68f9073f",
+  "task": "fema_sfha",
+  "retrieved_at": "2026-08-20T20:14:12Z",
+  "status": "verified",
+  "property_identity": {
+    "status": "verified_census_match",
+    "requested_address": "72 Easton St, Nantucket, MA",
+    "matched_address": "72 EASTON ST, NANTUCKET, MA, 02554",
+    "longitude": -70.099282282903,
+    "latitude": 41.287994698016,
+    "geocoder": "United States Census Geocoder",
+    "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=72+Easton+St%2C+Nantucket%2C+MA&benchmark=Public_AR_Current&format=json",
+    "response_sha256": "e737af6b15107bbbb4968dc037cc3f810dc5b2c1873a84a46add421639a1fa8f",
+    "reviewed_exception": null,
+    "raw_response": {
+      "result": {
+        "input": {
+          "address": {
+            "address": "72 Easton St, Nantucket, MA"
+          },
+          "benchmark": {
+            "isDefault": true,
+            "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+            "id": "4",
+            "benchmarkName": "Public_AR_Current"
+          }
+        },
+        "addressMatches": [
+          {
+            "tigerLine": {
+              "side": "R",
+              "tigerLineId": "118740369"
+            },
+            "coordinates": {
+              "x": -70.099282282903,
+              "y": 41.287994698016
+            },
+            "addressComponents": {
+              "zip": "02554",
+              "streetName": "EASTON",
+              "preType": "",
+              "city": "NANTUCKET",
+              "preDirection": "",
+              "suffixDirection": "",
+              "fromAddress": "88",
+              "state": "MA",
+              "suffixType": "ST",
+              "toAddress": "68",
+              "suffixQualifier": "",
+              "preQualifier": ""
+            },
+            "matchedAddress": "72 EASTON ST, NANTUCKET, MA, 02554"
+          }
+        ]
+      }
+    }
+  },
+  "official_queries": [
+    {
+      "source": "FEMA National Flood Hazard Layer",
+      "record_url": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query?f=json&geometry=-70.099282282903%2C41.287994698016&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CDFIRM_ID%2CFLD_AR_ID%2CFLD_ZONE%2CZONE_SUBTY%2CSFHA_TF%2CSOURCE_CIT%2CGFID%2CGlobalID&returnGeometry=false",
+      "response_sha256": "48fed52796e594acfba8dc5744ed40ad49787593a74f7094f90d2d88cfa40aca",
+      "returned_record_count": 1,
+      "qualifying_record_count": 1,
+      "qualifying_records": [
+        {
+          "OBJECTID": 18604881,
+          "DFIRM_ID": "25019C",
+          "FLD_AR_ID": "25019C_64",
+          "FLD_ZONE": "AE",
+          "ZONE_SUBTY": null,
+          "SFHA_TF": "T",
+          "SOURCE_CIT": "25019C_STUDY1",
+          "GFID": "28f8a500-7bba-4e1f-977f-c86f52d0e663",
+          "GlobalID": "{4BE50B43-0D87-4B10-9434-DCEB3AE26854}"
+        }
+      ],
+      "raw_response": {
+        "displayFieldName": "FLD_AR_ID",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "DFIRM_ID": "DFIRM_ID",
+          "FLD_AR_ID": "FLD_AR_ID",
+          "FLD_ZONE": "FLD_ZONE",
+          "ZONE_SUBTY": "ZONE_SUBTY",
+          "SFHA_TF": "SFHA_TF",
+          "SOURCE_CIT": "SOURCE_CIT",
+          "GFID": "GFID",
+          "GlobalID": "GlobalID"
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "DFIRM_ID",
+            "type": "esriFieldTypeString",
+            "alias": "DFIRM_ID",
+            "length": 6
+          },
+          {
+            "name": "FLD_AR_ID",
+            "type": "esriFieldTypeString",
+            "alias": "FLD_AR_ID",
+            "length": 32
+          },
+          {
+            "name": "FLD_ZONE",
+            "type": "esriFieldTypeString",
+            "alias": "FLD_ZONE",
+            "length": 17
+          },
+          {
+            "name": "ZONE_SUBTY",
+            "type": "esriFieldTypeString",
+            "alias": "ZONE_SUBTY",
+            "length": 76
+          },
+          {
+            "name": "SFHA_TF",
+            "type": "esriFieldTypeString",
+            "alias": "SFHA_TF",
+            "length": 1
+          },
+          {
+            "name": "SOURCE_CIT",
+            "type": "esriFieldTypeString",
+            "alias": "SOURCE_CIT",
+            "length": 21
+          },
+          {
+            "name": "GFID",
+            "type": "esriFieldTypeString",
+            "alias": "GFID",
+            "length": 36
+          },
+          {
+            "name": "GlobalID",
+            "type": "esriFieldTypeGlobalID",
+            "alias": "GlobalID",
+            "length": 38
+          }
+        ],
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 18604881,
+              "DFIRM_ID": "25019C",
+              "FLD_AR_ID": "25019C_64",
+              "FLD_ZONE": "AE",
+              "ZONE_SUBTY": null,
+              "SFHA_TF": "T",
+              "SOURCE_CIT": "25019C_STUDY1",
+              "GFID": "28f8a500-7bba-4e1f-977f-c86f52d0e663",
+              "GlobalID": "{4BE50B43-0D87-4B10-9434-DCEB3AE26854}"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "derivation_rule": {
+    "id": "fema-nfhl-point-sfha-v2",
+    "plain_language": "The point must intersect one FEMA flood-zone polygon. SFHA_TF=T means yes; SFHA_TF=F means no.",
+    "predicate": "feature_count == 1 and SFHA_TF in {'T','F'}"
+  },
+  "gold_answer": {
+    "in_sfha": true,
+    "zone": "AE"
+  },
+  "review": {
+    "automated_official_source_check": true,
+    "independent_human_review": false,
+    "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+  }
+}

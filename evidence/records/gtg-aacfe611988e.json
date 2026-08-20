@@ -1,0 +1,360 @@
+{
+  "schema_version": "2.0",
+  "item_id": "gtg-aacfe611988e",
+  "task": "contamination_nearby",
+  "retrieved_at": "2026-08-20T20:14:12Z",
+  "status": "verified",
+  "property_identity": {
+    "status": "verified_census_match",
+    "requested_address": "60 Esterbrook Rd, Acton, MA",
+    "matched_address": "60 ESTERBROOK RD, ACTON, MA, 01720",
+    "longitude": -71.41087078947,
+    "latitude": 42.487875756426,
+    "geocoder": "United States Census Geocoder",
+    "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=60+Esterbrook+Rd%2C+Acton%2C+MA&benchmark=Public_AR_Current&format=json",
+    "response_sha256": "4ff8743675e04148f93c78af08b72765a8f8508f9425d511332bc7679583a9d6",
+    "reviewed_exception": null,
+    "raw_response": {
+      "result": {
+        "input": {
+          "address": {
+            "address": "60 Esterbrook Rd, Acton, MA"
+          },
+          "benchmark": {
+            "isDefault": true,
+            "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+            "id": "4",
+            "benchmarkName": "Public_AR_Current"
+          }
+        },
+        "addressMatches": [
+          {
+            "tigerLine": {
+              "side": "R",
+              "tigerLineId": "640144512"
+            },
+            "coordinates": {
+              "x": -71.41087078947,
+              "y": 42.487875756426
+            },
+            "addressComponents": {
+              "zip": "01720",
+              "streetName": "ESTERBROOK",
+              "preType": "",
+              "city": "ACTON",
+              "preDirection": "",
+              "suffixDirection": "",
+              "fromAddress": "98",
+              "state": "MA",
+              "suffixType": "RD",
+              "toAddress": "44",
+              "suffixQualifier": "",
+              "preQualifier": ""
+            },
+            "matchedAddress": "60 ESTERBROOK RD, ACTON, MA, 01720"
+          }
+        ]
+      }
+    }
+  },
+  "official_queries": [
+    {
+      "source": "EPA Envirofacts Superfund",
+      "record_url": "https://geopub.epa.gov/ArcGIS/rest/services/EMEF/efpoints/MapServer/0/query?f=json&geometry=-71.41087078947%2C42.487875756426&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&distance=0.25&units=esriSRUnit_StatuteMile&outSR=4326",
+      "response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+      "returned_record_count": 0,
+      "qualifying_record_count": 0,
+      "qualifying_records": [],
+      "raw_response": {
+        "displayFieldName": "PRIMARY_NAME",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "registry_id": "Registry ID",
+          "site_id": "Site ID",
+          "primary_name": "Primary Name",
+          "location_address": "Address",
+          "city_name": "City",
+          "county_name": "County",
+          "state_code": "State",
+          "epa_region": "EPA Region",
+          "postal_code": "ZIP Code",
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "pgm_sys_acrnm": "Program_System Acronym",
+          "pgm_sys_id": "Program System ID",
+          "fips_code": "FIPS Code",
+          "huc_code": "HUC Code",
+          "facility_url": "Facility URL",
+          "profile_url": "Profile URL"
+        },
+        "geometryType": "esriGeometryPoint",
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "registry_id",
+            "type": "esriFieldTypeString",
+            "alias": "Registry ID",
+            "length": 12
+          },
+          {
+            "name": "site_id",
+            "type": "esriFieldTypeString",
+            "alias": "Site ID",
+            "length": 7
+          },
+          {
+            "name": "primary_name",
+            "type": "esriFieldTypeString",
+            "alias": "Primary Name",
+            "length": 73
+          },
+          {
+            "name": "location_address",
+            "type": "esriFieldTypeString",
+            "alias": "Address",
+            "length": 50
+          },
+          {
+            "name": "city_name",
+            "type": "esriFieldTypeString",
+            "alias": "City",
+            "length": 57
+          },
+          {
+            "name": "county_name",
+            "type": "esriFieldTypeString",
+            "alias": "County",
+            "length": 20
+          },
+          {
+            "name": "state_code",
+            "type": "esriFieldTypeString",
+            "alias": "State",
+            "length": 2
+          },
+          {
+            "name": "epa_region",
+            "type": "esriFieldTypeString",
+            "alias": "EPA Region",
+            "length": 9
+          },
+          {
+            "name": "postal_code",
+            "type": "esriFieldTypeString",
+            "alias": "ZIP Code",
+            "length": 10
+          },
+          {
+            "name": "latitude",
+            "type": "esriFieldTypeDouble",
+            "alias": "Latitude"
+          },
+          {
+            "name": "longitude",
+            "type": "esriFieldTypeDouble",
+            "alias": "Longitude"
+          },
+          {
+            "name": "pgm_sys_acrnm",
+            "type": "esriFieldTypeString",
+            "alias": "Program_System Acronym",
+            "length": 4
+          },
+          {
+            "name": "pgm_sys_id",
+            "type": "esriFieldTypeString",
+            "alias": "Program System ID",
+            "length": 12
+          },
+          {
+            "name": "fips_code",
+            "type": "esriFieldTypeString",
+            "alias": "FIPS Code",
+            "length": 2
+          },
+          {
+            "name": "huc_code",
+            "type": "esriFieldTypeString",
+            "alias": "HUC Code",
+            "length": 2
+          },
+          {
+            "name": "facility_url",
+            "type": "esriFieldTypeString",
+            "alias": "Facility URL",
+            "length": 67
+          },
+          {
+            "name": "profile_url",
+            "type": "esriFieldTypeString",
+            "alias": "Profile URL",
+            "length": 66
+          }
+        ],
+        "features": []
+      }
+    },
+    {
+      "source": "EPA Envirofacts Brownfields",
+      "record_url": "https://geopub.epa.gov/ArcGIS/rest/services/EMEF/efpoints/MapServer/5/query?f=json&geometry=-71.41087078947%2C42.487875756426&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&distance=0.25&units=esriSRUnit_StatuteMile&outSR=4326",
+      "response_sha256": "fec416444ad8996804cb297c8cbd5c03f08772ef72bb127179d6cf032f5f0f73",
+      "returned_record_count": 0,
+      "qualifying_record_count": 0,
+      "qualifying_records": [],
+      "raw_response": {
+        "displayFieldName": "PRIMARY_NAME",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "registry_id": "Registry ID",
+          "primary_name": "Primary Name",
+          "location_address": "Address",
+          "city_name": "City",
+          "county_name": "County",
+          "state_code": "State",
+          "epa_region": "EPA Region",
+          "postal_code": "ZIP Code",
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "pgm_sys_acrnm": "Program_System Acronym",
+          "pgm_sys_id": "Program System ID",
+          "fips_code": "FIPS Code",
+          "huc_code": "HUC Code",
+          "facility_url": "Facility URL"
+        },
+        "geometryType": "esriGeometryPoint",
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "registry_id",
+            "type": "esriFieldTypeString",
+            "alias": "Registry ID",
+            "length": 12
+          },
+          {
+            "name": "primary_name",
+            "type": "esriFieldTypeString",
+            "alias": "Primary Name",
+            "length": 79
+          },
+          {
+            "name": "location_address",
+            "type": "esriFieldTypeString",
+            "alias": "Address",
+            "length": 80
+          },
+          {
+            "name": "city_name",
+            "type": "esriFieldTypeString",
+            "alias": "City",
+            "length": 39
+          },
+          {
+            "name": "county_name",
+            "type": "esriFieldTypeString",
+            "alias": "County",
+            "length": 35
+          },
+          {
+            "name": "state_code",
+            "type": "esriFieldTypeString",
+            "alias": "State",
+            "length": 2
+          },
+          {
+            "name": "epa_region",
+            "type": "esriFieldTypeString",
+            "alias": "EPA Region",
+            "length": 9
+          },
+          {
+            "name": "postal_code",
+            "type": "esriFieldTypeString",
+            "alias": "ZIP Code",
+            "length": 10
+          },
+          {
+            "name": "latitude",
+            "type": "esriFieldTypeDouble",
+            "alias": "Latitude"
+          },
+          {
+            "name": "longitude",
+            "type": "esriFieldTypeDouble",
+            "alias": "Longitude"
+          },
+          {
+            "name": "pgm_sys_acrnm",
+            "type": "esriFieldTypeString",
+            "alias": "Program_System Acronym",
+            "length": 5
+          },
+          {
+            "name": "pgm_sys_id",
+            "type": "esriFieldTypeString",
+            "alias": "Program System ID",
+            "length": 6
+          },
+          {
+            "name": "fips_code",
+            "type": "esriFieldTypeString",
+            "alias": "FIPS Code",
+            "length": 2
+          },
+          {
+            "name": "huc_code",
+            "type": "esriFieldTypeString",
+            "alias": "HUC Code",
+            "length": 2
+          },
+          {
+            "name": "facility_url",
+            "type": "esriFieldTypeString",
+            "alias": "Facility URL",
+            "length": 68
+          }
+        ],
+        "features": []
+      }
+    }
+  ],
+  "derivation_rule": {
+    "id": "epa-superfund-brownfields-quarter-mile-v2",
+    "plain_language": "Count unique EPA Superfund and Brownfields program records within 0.25 statute mile of the geocoded point.",
+    "predicate": "distance_miles <= 0.25 and program_layer in {'Superfund','Brownfields'}",
+    "deduplication_key": [
+      "program_layer",
+      "registry_id",
+      "pgm_sys_id_or_site_id"
+    ]
+  },
+  "gold_answer": {
+    "has_nearby_site": false,
+    "count": 0,
+    "radius_miles": 0.25,
+    "programs": [
+      "Brownfields",
+      "Superfund"
+    ]
+  },
+  "review": {
+    "automated_official_source_check": true,
+    "independent_human_review": false,
+    "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+  }
+}

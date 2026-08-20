@@ -1,0 +1,238 @@
+{
+  "schema_version": "2.0",
+  "item_id": "gtg-7762a3857b56",
+  "task": "historic_district",
+  "retrieved_at": "2026-08-20T20:14:12Z",
+  "status": "verified",
+  "property_identity": {
+    "status": "verified_census_match",
+    "requested_address": "72 Easton St, Nantucket, MA",
+    "matched_address": "72 EASTON ST, NANTUCKET, MA, 02554",
+    "longitude": -70.099282282903,
+    "latitude": 41.287994698016,
+    "geocoder": "United States Census Geocoder",
+    "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=72+Easton+St%2C+Nantucket%2C+MA&benchmark=Public_AR_Current&format=json",
+    "response_sha256": "e737af6b15107bbbb4968dc037cc3f810dc5b2c1873a84a46add421639a1fa8f",
+    "reviewed_exception": null,
+    "raw_response": {
+      "result": {
+        "input": {
+          "address": {
+            "address": "72 Easton St, Nantucket, MA"
+          },
+          "benchmark": {
+            "isDefault": true,
+            "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+            "id": "4",
+            "benchmarkName": "Public_AR_Current"
+          }
+        },
+        "addressMatches": [
+          {
+            "tigerLine": {
+              "side": "R",
+              "tigerLineId": "118740369"
+            },
+            "coordinates": {
+              "x": -70.099282282903,
+              "y": 41.287994698016
+            },
+            "addressComponents": {
+              "zip": "02554",
+              "streetName": "EASTON",
+              "preType": "",
+              "city": "NANTUCKET",
+              "preDirection": "",
+              "suffixDirection": "",
+              "fromAddress": "88",
+              "state": "MA",
+              "suffixType": "ST",
+              "toAddress": "68",
+              "suffixQualifier": "",
+              "preQualifier": ""
+            },
+            "matchedAddress": "72 EASTON ST, NANTUCKET, MA, 02554"
+          }
+        ]
+      }
+    }
+  },
+  "official_queries": [
+    {
+      "source": "National Park Service National Register polygons",
+      "record_url": "https://mapservices.nps.gov/arcgis/rest/services/cultural_resources/nrhp_locations/MapServer/1/query?f=json&geometry=-70.099282282903%2C41.287994698016&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CNRIS_Refnum%2CRESNAME%2CResType%2CAddress%2CCity%2CState%2CCertDate%2CCR_ID%2CPROPERTY_ID%2CSTATUS%2CNARA_URL%2CEDIT_DATE%2CSOURCE%2CSRC_DATE&returnGeometry=false",
+      "response_sha256": "89109946474a28b528adccd0fe7e75dfcd2b3034fc908fb2d0e90b4fc0501656",
+      "returned_record_count": 1,
+      "qualifying_record_count": 1,
+      "qualifying_records": [
+        {
+          "OBJECTID": 447591,
+          "NRIS_Refnum": "66000772",
+          "RESNAME": "Nantucket Historic District",
+          "ResType": "district",
+          "Address": "Nantucket Island",
+          "City": "Nantucket",
+          "State": "MASSACHUSETTS",
+          "CertDate": "11/13/66",
+          "CR_ID": "{3A1D8813-3A7D-4E30-A64D-8B7F886B1927}",
+          "PROPERTY_ID": "66000772",
+          "STATUS": "Listed",
+          "NARA_URL": "",
+          "EDIT_DATE": 1701907200000,
+          "SOURCE": "State of Massachusetts tax parcels layer and 2021 Aerial Orthoimagery.",
+          "SRC_DATE": 1701907200000
+        }
+      ],
+      "raw_response": {
+        "displayFieldName": "RESNAME",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "NRIS_Refnum": "NRIS_Refnum",
+          "RESNAME": "Resource Name",
+          "ResType": "Resource Type",
+          "Address": "Address",
+          "City": "City",
+          "State": "State",
+          "CertDate": "Certification Date",
+          "CR_ID": "Cultural Resource GUID",
+          "PROPERTY_ID": "PROPERTY ID",
+          "STATUS": "STATUS",
+          "NARA_URL": "NARA_URL",
+          "EDIT_DATE": "Last Edit Date",
+          "SOURCE": "Source",
+          "SRC_DATE": "Source Date"
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "NRIS_Refnum",
+            "type": "esriFieldTypeString",
+            "alias": "NRIS_Refnum",
+            "length": 11
+          },
+          {
+            "name": "RESNAME",
+            "type": "esriFieldTypeString",
+            "alias": "Resource Name",
+            "length": 255
+          },
+          {
+            "name": "ResType",
+            "type": "esriFieldTypeString",
+            "alias": "Resource Type",
+            "length": 10
+          },
+          {
+            "name": "Address",
+            "type": "esriFieldTypeString",
+            "alias": "Address",
+            "length": 255
+          },
+          {
+            "name": "City",
+            "type": "esriFieldTypeString",
+            "alias": "City",
+            "length": 255
+          },
+          {
+            "name": "State",
+            "type": "esriFieldTypeString",
+            "alias": "State",
+            "length": 255
+          },
+          {
+            "name": "CertDate",
+            "type": "esriFieldTypeString",
+            "alias": "Certification Date",
+            "length": 11
+          },
+          {
+            "name": "CR_ID",
+            "type": "esriFieldTypeString",
+            "alias": "Cultural Resource GUID",
+            "length": 50
+          },
+          {
+            "name": "PROPERTY_ID",
+            "type": "esriFieldTypeString",
+            "alias": "PROPERTY ID",
+            "length": 11
+          },
+          {
+            "name": "STATUS",
+            "type": "esriFieldTypeString",
+            "alias": "STATUS",
+            "length": 10
+          },
+          {
+            "name": "NARA_URL",
+            "type": "esriFieldTypeString",
+            "alias": "NARA_URL",
+            "length": 255
+          },
+          {
+            "name": "EDIT_DATE",
+            "type": "esriFieldTypeDate",
+            "alias": "Last Edit Date",
+            "length": 8
+          },
+          {
+            "name": "SOURCE",
+            "type": "esriFieldTypeString",
+            "alias": "Source",
+            "length": 250
+          },
+          {
+            "name": "SRC_DATE",
+            "type": "esriFieldTypeDate",
+            "alias": "Source Date",
+            "length": 8
+          }
+        ],
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 447591,
+              "NRIS_Refnum": "66000772",
+              "RESNAME": "Nantucket Historic District",
+              "ResType": "district",
+              "Address": "Nantucket Island",
+              "City": "Nantucket",
+              "State": "MASSACHUSETTS",
+              "CertDate": "11/13/66",
+              "CR_ID": "{3A1D8813-3A7D-4E30-A64D-8B7F886B1927}",
+              "PROPERTY_ID": "66000772",
+              "STATUS": "Listed",
+              "NARA_URL": "",
+              "EDIT_DATE": 1701907200000,
+              "SOURCE": "State of Massachusetts tax parcels layer and 2021 Aerial Orthoimagery.",
+              "SRC_DATE": 1701907200000
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "derivation_rule": {
+    "id": "nps-nrhp-listed-district-point-v2",
+    "plain_language": "Only intersecting National Register polygons labeled as a listed district count. Buildings, objects, sites and structures do not.",
+    "predicate": "lower(ResType) == 'district' and lower(STATUS) == 'listed'",
+    "excluded_intersections": []
+  },
+  "gold_answer": {
+    "in_historic_district": true,
+    "district": "Nantucket Historic District",
+    "districts": [
+      "Nantucket Historic District"
+    ]
+  },
+  "review": {
+    "automated_official_source_check": true,
+    "independent_human_review": false,
+    "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+  }
+}

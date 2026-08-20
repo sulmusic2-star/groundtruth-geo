@@ -1,0 +1,198 @@
+{
+  "schema_version": "2.0",
+  "item_id": "gtg-286e545bbd5a",
+  "task": "historic_district",
+  "retrieved_at": "2026-08-20T20:14:12Z",
+  "status": "verified",
+  "property_identity": {
+    "status": "verified_census_match",
+    "requested_address": "100 N Tampa St, Tampa, FL",
+    "matched_address": "100 TAMPA ST N, TAMPA, FL, 33602",
+    "longitude": -82.457851467841,
+    "latitude": 27.945188619189,
+    "geocoder": "United States Census Geocoder",
+    "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=100+N+Tampa+St%2C+Tampa%2C+FL&benchmark=Public_AR_Current&format=json",
+    "response_sha256": "0e0d1c6bd08e2ecb16b32f5b8ea91865a85d50a4540e32cc51fa5c8d249dc150",
+    "reviewed_exception": null,
+    "raw_response": {
+      "result": {
+        "input": {
+          "address": {
+            "address": "100 N Tampa St, Tampa, FL"
+          },
+          "benchmark": {
+            "isDefault": true,
+            "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+            "id": "4",
+            "benchmarkName": "Public_AR_Current"
+          }
+        },
+        "addressMatches": [
+          {
+            "tigerLine": {
+              "side": "L",
+              "tigerLineId": "104530174"
+            },
+            "coordinates": {
+              "x": -82.457851467841,
+              "y": 27.945188619189
+            },
+            "addressComponents": {
+              "zip": "33602",
+              "streetName": "TAMPA",
+              "preType": "",
+              "city": "TAMPA",
+              "preDirection": "",
+              "suffixDirection": "N",
+              "fromAddress": "100",
+              "state": "FL",
+              "suffixType": "ST",
+              "toAddress": "198",
+              "suffixQualifier": "",
+              "preQualifier": ""
+            },
+            "matchedAddress": "100 TAMPA ST N, TAMPA, FL, 33602"
+          }
+        ]
+      }
+    }
+  },
+  "official_queries": [
+    {
+      "source": "National Park Service National Register polygons",
+      "record_url": "https://mapservices.nps.gov/arcgis/rest/services/cultural_resources/nrhp_locations/MapServer/1/query?f=json&geometry=-82.457851467841%2C27.945188619189&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CNRIS_Refnum%2CRESNAME%2CResType%2CAddress%2CCity%2CState%2CCertDate%2CCR_ID%2CPROPERTY_ID%2CSTATUS%2CNARA_URL%2CEDIT_DATE%2CSOURCE%2CSRC_DATE&returnGeometry=false",
+      "response_sha256": "d966bdc5a6ee8fcfb120d10c1d96313e6120fda67b313771e0392c2a0baf55df",
+      "returned_record_count": 0,
+      "qualifying_record_count": 0,
+      "qualifying_records": [],
+      "raw_response": {
+        "displayFieldName": "RESNAME",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "NRIS_Refnum": "NRIS_Refnum",
+          "RESNAME": "Resource Name",
+          "ResType": "Resource Type",
+          "Address": "Address",
+          "City": "City",
+          "State": "State",
+          "CertDate": "Certification Date",
+          "CR_ID": "Cultural Resource GUID",
+          "PROPERTY_ID": "PROPERTY ID",
+          "STATUS": "STATUS",
+          "NARA_URL": "NARA_URL",
+          "EDIT_DATE": "Last Edit Date",
+          "SOURCE": "Source",
+          "SRC_DATE": "Source Date"
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "NRIS_Refnum",
+            "type": "esriFieldTypeString",
+            "alias": "NRIS_Refnum",
+            "length": 11
+          },
+          {
+            "name": "RESNAME",
+            "type": "esriFieldTypeString",
+            "alias": "Resource Name",
+            "length": 255
+          },
+          {
+            "name": "ResType",
+            "type": "esriFieldTypeString",
+            "alias": "Resource Type",
+            "length": 10
+          },
+          {
+            "name": "Address",
+            "type": "esriFieldTypeString",
+            "alias": "Address",
+            "length": 255
+          },
+          {
+            "name": "City",
+            "type": "esriFieldTypeString",
+            "alias": "City",
+            "length": 255
+          },
+          {
+            "name": "State",
+            "type": "esriFieldTypeString",
+            "alias": "State",
+            "length": 255
+          },
+          {
+            "name": "CertDate",
+            "type": "esriFieldTypeString",
+            "alias": "Certification Date",
+            "length": 11
+          },
+          {
+            "name": "CR_ID",
+            "type": "esriFieldTypeString",
+            "alias": "Cultural Resource GUID",
+            "length": 50
+          },
+          {
+            "name": "PROPERTY_ID",
+            "type": "esriFieldTypeString",
+            "alias": "PROPERTY ID",
+            "length": 11
+          },
+          {
+            "name": "STATUS",
+            "type": "esriFieldTypeString",
+            "alias": "STATUS",
+            "length": 10
+          },
+          {
+            "name": "NARA_URL",
+            "type": "esriFieldTypeString",
+            "alias": "NARA_URL",
+            "length": 255
+          },
+          {
+            "name": "EDIT_DATE",
+            "type": "esriFieldTypeDate",
+            "alias": "Last Edit Date",
+            "length": 8
+          },
+          {
+            "name": "SOURCE",
+            "type": "esriFieldTypeString",
+            "alias": "Source",
+            "length": 250
+          },
+          {
+            "name": "SRC_DATE",
+            "type": "esriFieldTypeDate",
+            "alias": "Source Date",
+            "length": 8
+          }
+        ],
+        "features": []
+      }
+    }
+  ],
+  "derivation_rule": {
+    "id": "nps-nrhp-listed-district-point-v2",
+    "plain_language": "Only intersecting National Register polygons labeled as a listed district count. Buildings, objects, sites and structures do not.",
+    "predicate": "lower(ResType) == 'district' and lower(STATUS) == 'listed'",
+    "excluded_intersections": []
+  },
+  "gold_answer": {
+    "in_historic_district": false,
+    "district": null,
+    "districts": []
+  },
+  "review": {
+    "automated_official_source_check": true,
+    "independent_human_review": false,
+    "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "schema_version": "2.0",
+  "item_id": "gtg-98f774d913a0",
+  "task": "fema_sfha",
+  "retrieved_at": "2026-08-20T20:14:12Z",
+  "status": "verified",
+  "property_identity": {
+    "status": "verified_census_match",
+    "requested_address": "1300 Ocean Dr, Miami Beach, FL",
+    "matched_address": "1300 OCEAN DR, MIAMI BEACH, FL, 33139",
+    "longitude": -80.130012291578,
+    "latitude": 25.783989158428,
+    "geocoder": "United States Census Geocoder",
+    "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=1300+Ocean+Dr%2C+Miami+Beach%2C+FL&benchmark=Public_AR_Current&format=json",
+    "response_sha256": "679660d18743661f0270397fafa076cd611265d627500d4d90cfb299f2fa85f3",
+    "reviewed_exception": null,
+    "raw_response": {
+      "result": {
+        "input": {
+          "address": {
+            "address": "1300 Ocean Dr, Miami Beach, FL"
+          },
+          "benchmark": {
+            "isDefault": true,
+            "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+            "id": "4",
+            "benchmarkName": "Public_AR_Current"
+          }
+        },
+        "addressMatches": [
+          {
+            "tigerLine": {
+              "side": "L",
+              "tigerLineId": "116249028"
+            },
+            "coordinates": {
+              "x": -80.130012291578,
+              "y": 25.783989158428
+            },
+            "addressComponents": {
+              "zip": "33139",
+              "streetName": "OCEAN",
+              "preType": "",
+              "city": "MIAMI BEACH",
+              "preDirection": "",
+              "suffixDirection": "",
+              "fromAddress": "1300",
+              "state": "FL",
+              "suffixType": "DR",
+              "toAddress": "1398",
+              "suffixQualifier": "",
+              "preQualifier": ""
+            },
+            "matchedAddress": "1300 OCEAN DR, MIAMI BEACH, FL, 33139"
+          }
+        ]
+      }
+    }
+  },
+  "official_queries": [
+    {
+      "source": "FEMA National Flood Hazard Layer",
+      "record_url": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query?f=json&geometry=-80.130012291578%2C25.783989158428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CDFIRM_ID%2CFLD_AR_ID%2CFLD_ZONE%2CZONE_SUBTY%2CSFHA_TF%2CSOURCE_CIT%2CGFID%2CGlobalID&returnGeometry=false",
+      "response_sha256": "9f9bad70519c82a46eaadcf7bc9067741cc0a1950999d43bef76e8f0cfc4bbb5",
+      "returned_record_count": 1,
+      "qualifying_record_count": 1,
+      "qualifying_records": [
+        {
+          "OBJECTID": 24264652,
+          "DFIRM_ID": "12086C",
+          "FLD_AR_ID": "12086C_1179",
+          "FLD_ZONE": "AE",
+          "ZONE_SUBTY": null,
+          "SFHA_TF": "T",
+          "SOURCE_CIT": "12086C_FIS1",
+          "GFID": "ed99de47-3bd7-4dbf-ab3c-0bc35e2587bf",
+          "GlobalID": "{19742E14-90AB-4B52-9C78-A250BA35405C}"
+        }
+      ],
+      "raw_response": {
+        "displayFieldName": "FLD_AR_ID",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "DFIRM_ID": "DFIRM_ID",
+          "FLD_AR_ID": "FLD_AR_ID",
+          "FLD_ZONE": "FLD_ZONE",
+          "ZONE_SUBTY": "ZONE_SUBTY",
+          "SFHA_TF": "SFHA_TF",
+          "SOURCE_CIT": "SOURCE_CIT",
+          "GFID": "GFID",
+          "GlobalID": "GlobalID"
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "DFIRM_ID",
+            "type": "esriFieldTypeString",
+            "alias": "DFIRM_ID",
+            "length": 6
+          },
+          {
+            "name": "FLD_AR_ID",
+            "type": "esriFieldTypeString",
+            "alias": "FLD_AR_ID",
+            "length": 32
+          },
+          {
+            "name": "FLD_ZONE",
+            "type": "esriFieldTypeString",
+            "alias": "FLD_ZONE",
+            "length": 17
+          },
+          {
+            "name": "ZONE_SUBTY",
+            "type": "esriFieldTypeString",
+            "alias": "ZONE_SUBTY",
+            "length": 76
+          },
+          {
+            "name": "SFHA_TF",
+            "type": "esriFieldTypeString",
+            "alias": "SFHA_TF",
+            "length": 1
+          },
+          {
+            "name": "SOURCE_CIT",
+            "type": "esriFieldTypeString",
+            "alias": "SOURCE_CIT",
+            "length": 21
+          },
+          {
+            "name": "GFID",
+            "type": "esriFieldTypeString",
+            "alias": "GFID",
+            "length": 36
+          },
+          {
+            "name": "GlobalID",
+            "type": "esriFieldTypeGlobalID",
+            "alias": "GlobalID",
+            "length": 38
+          }
+        ],
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 24264652,
+              "DFIRM_ID": "12086C",
+              "FLD_AR_ID": "12086C_1179",
+              "FLD_ZONE": "AE",
+              "ZONE_SUBTY": null,
+              "SFHA_TF": "T",
+              "SOURCE_CIT": "12086C_FIS1",
+              "GFID": "ed99de47-3bd7-4dbf-ab3c-0bc35e2587bf",
+              "GlobalID": "{19742E14-90AB-4B52-9C78-A250BA35405C}"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "derivation_rule": {
+    "id": "fema-nfhl-point-sfha-v2",
+    "plain_language": "The point must intersect one FEMA flood-zone polygon. SFHA_TF=T means yes; SFHA_TF=F means no.",
+    "predicate": "feature_count == 1 and SFHA_TF in {'T','F'}"
+  },
+  "gold_answer": {
+    "in_sfha": true,
+    "zone": "AE"
+  },
+  "review": {
+    "automated_official_source_check": true,
+    "independent_human_review": false,
+    "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+  }
+}

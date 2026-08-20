@@ -1,0 +1,503 @@
+{
+  "schema_version": "2.0",
+  "item_id": "gtg-a656ff9f2446",
+  "task": "contamination_nearby",
+  "retrieved_at": "2026-08-20T20:14:12Z",
+  "status": "verified",
+  "property_identity": {
+    "status": "verified_census_match",
+    "requested_address": "100 N Tampa St, Tampa, FL",
+    "matched_address": "100 TAMPA ST N, TAMPA, FL, 33602",
+    "longitude": -82.457851467841,
+    "latitude": 27.945188619189,
+    "geocoder": "United States Census Geocoder",
+    "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=100+N+Tampa+St%2C+Tampa%2C+FL&benchmark=Public_AR_Current&format=json",
+    "response_sha256": "0e0d1c6bd08e2ecb16b32f5b8ea91865a85d50a4540e32cc51fa5c8d249dc150",
+    "reviewed_exception": null,
+    "raw_response": {
+      "result": {
+        "input": {
+          "address": {
+            "address": "100 N Tampa St, Tampa, FL"
+          },
+          "benchmark": {
+            "isDefault": true,
+            "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+            "id": "4",
+            "benchmarkName": "Public_AR_Current"
+          }
+        },
+        "addressMatches": [
+          {
+            "tigerLine": {
+              "side": "L",
+              "tigerLineId": "104530174"
+            },
+            "coordinates": {
+              "x": -82.457851467841,
+              "y": 27.945188619189
+            },
+            "addressComponents": {
+              "zip": "33602",
+              "streetName": "TAMPA",
+              "preType": "",
+              "city": "TAMPA",
+              "preDirection": "",
+              "suffixDirection": "N",
+              "fromAddress": "100",
+              "state": "FL",
+              "suffixType": "ST",
+              "toAddress": "198",
+              "suffixQualifier": "",
+              "preQualifier": ""
+            },
+            "matchedAddress": "100 TAMPA ST N, TAMPA, FL, 33602"
+          }
+        ]
+      }
+    }
+  },
+  "official_queries": [
+    {
+      "source": "EPA Envirofacts Superfund",
+      "record_url": "https://geopub.epa.gov/ArcGIS/rest/services/EMEF/efpoints/MapServer/0/query?f=json&geometry=-82.457851467841%2C27.945188619189&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&distance=0.25&units=esriSRUnit_StatuteMile&outSR=4326",
+      "response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+      "returned_record_count": 0,
+      "qualifying_record_count": 0,
+      "qualifying_records": [],
+      "raw_response": {
+        "displayFieldName": "PRIMARY_NAME",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "registry_id": "Registry ID",
+          "site_id": "Site ID",
+          "primary_name": "Primary Name",
+          "location_address": "Address",
+          "city_name": "City",
+          "county_name": "County",
+          "state_code": "State",
+          "epa_region": "EPA Region",
+          "postal_code": "ZIP Code",
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "pgm_sys_acrnm": "Program_System Acronym",
+          "pgm_sys_id": "Program System ID",
+          "fips_code": "FIPS Code",
+          "huc_code": "HUC Code",
+          "facility_url": "Facility URL",
+          "profile_url": "Profile URL"
+        },
+        "geometryType": "esriGeometryPoint",
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "registry_id",
+            "type": "esriFieldTypeString",
+            "alias": "Registry ID",
+            "length": 12
+          },
+          {
+            "name": "site_id",
+            "type": "esriFieldTypeString",
+            "alias": "Site ID",
+            "length": 7
+          },
+          {
+            "name": "primary_name",
+            "type": "esriFieldTypeString",
+            "alias": "Primary Name",
+            "length": 73
+          },
+          {
+            "name": "location_address",
+            "type": "esriFieldTypeString",
+            "alias": "Address",
+            "length": 50
+          },
+          {
+            "name": "city_name",
+            "type": "esriFieldTypeString",
+            "alias": "City",
+            "length": 57
+          },
+          {
+            "name": "county_name",
+            "type": "esriFieldTypeString",
+            "alias": "County",
+            "length": 20
+          },
+          {
+            "name": "state_code",
+            "type": "esriFieldTypeString",
+            "alias": "State",
+            "length": 2
+          },
+          {
+            "name": "epa_region",
+            "type": "esriFieldTypeString",
+            "alias": "EPA Region",
+            "length": 9
+          },
+          {
+            "name": "postal_code",
+            "type": "esriFieldTypeString",
+            "alias": "ZIP Code",
+            "length": 10
+          },
+          {
+            "name": "latitude",
+            "type": "esriFieldTypeDouble",
+            "alias": "Latitude"
+          },
+          {
+            "name": "longitude",
+            "type": "esriFieldTypeDouble",
+            "alias": "Longitude"
+          },
+          {
+            "name": "pgm_sys_acrnm",
+            "type": "esriFieldTypeString",
+            "alias": "Program_System Acronym",
+            "length": 4
+          },
+          {
+            "name": "pgm_sys_id",
+            "type": "esriFieldTypeString",
+            "alias": "Program System ID",
+            "length": 12
+          },
+          {
+            "name": "fips_code",
+            "type": "esriFieldTypeString",
+            "alias": "FIPS Code",
+            "length": 2
+          },
+          {
+            "name": "huc_code",
+            "type": "esriFieldTypeString",
+            "alias": "HUC Code",
+            "length": 2
+          },
+          {
+            "name": "facility_url",
+            "type": "esriFieldTypeString",
+            "alias": "Facility URL",
+            "length": 67
+          },
+          {
+            "name": "profile_url",
+            "type": "esriFieldTypeString",
+            "alias": "Profile URL",
+            "length": 66
+          }
+        ],
+        "features": []
+      }
+    },
+    {
+      "source": "EPA Envirofacts Brownfields",
+      "record_url": "https://geopub.epa.gov/ArcGIS/rest/services/EMEF/efpoints/MapServer/5/query?f=json&geometry=-82.457851467841%2C27.945188619189&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&distance=0.25&units=esriSRUnit_StatuteMile&outSR=4326",
+      "response_sha256": "fbd33b4b4b9e3834e8512897dd34f46bf5fd347eea499fec7dfe664b8731bdbd",
+      "returned_record_count": 3,
+      "qualifying_record_count": 3,
+      "qualifying_records": [
+        {
+          "OBJECTID": 11418,
+          "registry_id": "110039550492",
+          "primary_name": "ROBBINS MANUFACTURING COMPANY",
+          "location_address": "300 ASHLEY DR N",
+          "city_name": "TAMPA",
+          "county_name": "HILLSBOROUGH",
+          "state_code": "FL",
+          "epa_region": "Region 04",
+          "postal_code": "33602",
+          "latitude": 27.946585,
+          "longitude": -82.459311,
+          "pgm_sys_acrnm": "ACRES",
+          "pgm_sys_id": "12764",
+          "fips_code": "",
+          "huc_code": "",
+          "facility_url": "https://ofmpub.epa.gov/apex/cimc/f?p=CIMC:31::::Y,31,0:P31_ID:12764",
+          "geometry": {
+            "x": -82.45931099999996,
+            "y": 27.946585000000027
+          },
+          "program_layer": "Brownfields"
+        },
+        {
+          "OBJECTID": 18972,
+          "registry_id": "110061014307",
+          "primary_name": "TAMPA SHIPBUILDING REPAIR COMPANY",
+          "location_address": "300 ASHLEY DR N",
+          "city_name": "TAMPA",
+          "county_name": "HILLSBOROUGH",
+          "state_code": "FL",
+          "epa_region": "Region 04",
+          "postal_code": "33602",
+          "latitude": 27.946585,
+          "longitude": -82.459311,
+          "pgm_sys_acrnm": "ACRES",
+          "pgm_sys_id": "12781",
+          "fips_code": "",
+          "huc_code": "",
+          "facility_url": "https://ofmpub.epa.gov/apex/cimc/f?p=CIMC:31::::Y,31,0:P31_ID:12781",
+          "geometry": {
+            "x": -82.45931099999996,
+            "y": 27.946585000000027
+          },
+          "program_layer": "Brownfields"
+        },
+        {
+          "OBJECTID": 18973,
+          "registry_id": "110061014352",
+          "primary_name": "WASHINGTON STREET CROSSING",
+          "location_address": "300 ASHLEY DR N",
+          "city_name": "TAMPA",
+          "county_name": "HILLSBOROUGH",
+          "state_code": "FL",
+          "epa_region": "Region 04",
+          "postal_code": "33602",
+          "latitude": 27.946585,
+          "longitude": -82.459311,
+          "pgm_sys_acrnm": "ACRES",
+          "pgm_sys_id": "12782",
+          "fips_code": "",
+          "huc_code": "",
+          "facility_url": "https://ofmpub.epa.gov/apex/cimc/f?p=CIMC:31::::Y,31,0:P31_ID:12782",
+          "geometry": {
+            "x": -82.45931099999996,
+            "y": 27.946585000000027
+          },
+          "program_layer": "Brownfields"
+        }
+      ],
+      "raw_response": {
+        "displayFieldName": "PRIMARY_NAME",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "registry_id": "Registry ID",
+          "primary_name": "Primary Name",
+          "location_address": "Address",
+          "city_name": "City",
+          "county_name": "County",
+          "state_code": "State",
+          "epa_region": "EPA Region",
+          "postal_code": "ZIP Code",
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "pgm_sys_acrnm": "Program_System Acronym",
+          "pgm_sys_id": "Program System ID",
+          "fips_code": "FIPS Code",
+          "huc_code": "HUC Code",
+          "facility_url": "Facility URL"
+        },
+        "geometryType": "esriGeometryPoint",
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "registry_id",
+            "type": "esriFieldTypeString",
+            "alias": "Registry ID",
+            "length": 12
+          },
+          {
+            "name": "primary_name",
+            "type": "esriFieldTypeString",
+            "alias": "Primary Name",
+            "length": 79
+          },
+          {
+            "name": "location_address",
+            "type": "esriFieldTypeString",
+            "alias": "Address",
+            "length": 80
+          },
+          {
+            "name": "city_name",
+            "type": "esriFieldTypeString",
+            "alias": "City",
+            "length": 39
+          },
+          {
+            "name": "county_name",
+            "type": "esriFieldTypeString",
+            "alias": "County",
+            "length": 35
+          },
+          {
+            "name": "state_code",
+            "type": "esriFieldTypeString",
+            "alias": "State",
+            "length": 2
+          },
+          {
+            "name": "epa_region",
+            "type": "esriFieldTypeString",
+            "alias": "EPA Region",
+            "length": 9
+          },
+          {
+            "name": "postal_code",
+            "type": "esriFieldTypeString",
+            "alias": "ZIP Code",
+            "length": 10
+          },
+          {
+            "name": "latitude",
+            "type": "esriFieldTypeDouble",
+            "alias": "Latitude"
+          },
+          {
+            "name": "longitude",
+            "type": "esriFieldTypeDouble",
+            "alias": "Longitude"
+          },
+          {
+            "name": "pgm_sys_acrnm",
+            "type": "esriFieldTypeString",
+            "alias": "Program_System Acronym",
+            "length": 5
+          },
+          {
+            "name": "pgm_sys_id",
+            "type": "esriFieldTypeString",
+            "alias": "Program System ID",
+            "length": 6
+          },
+          {
+            "name": "fips_code",
+            "type": "esriFieldTypeString",
+            "alias": "FIPS Code",
+            "length": 2
+          },
+          {
+            "name": "huc_code",
+            "type": "esriFieldTypeString",
+            "alias": "HUC Code",
+            "length": 2
+          },
+          {
+            "name": "facility_url",
+            "type": "esriFieldTypeString",
+            "alias": "Facility URL",
+            "length": 68
+          }
+        ],
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 11418,
+              "registry_id": "110039550492",
+              "primary_name": "ROBBINS MANUFACTURING COMPANY",
+              "location_address": "300 ASHLEY DR N",
+              "city_name": "TAMPA",
+              "county_name": "HILLSBOROUGH",
+              "state_code": "FL",
+              "epa_region": "Region 04",
+              "postal_code": "33602",
+              "latitude": 27.946585,
+              "longitude": -82.459311,
+              "pgm_sys_acrnm": "ACRES",
+              "pgm_sys_id": "12764",
+              "fips_code": "",
+              "huc_code": "",
+              "facility_url": "https://ofmpub.epa.gov/apex/cimc/f?p=CIMC:31::::Y,31,0:P31_ID:12764"
+            },
+            "geometry": {
+              "x": -82.45931099999996,
+              "y": 27.946585000000027
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 18972,
+              "registry_id": "110061014307",
+              "primary_name": "TAMPA SHIPBUILDING REPAIR COMPANY",
+              "location_address": "300 ASHLEY DR N",
+              "city_name": "TAMPA",
+              "county_name": "HILLSBOROUGH",
+              "state_code": "FL",
+              "epa_region": "Region 04",
+              "postal_code": "33602",
+              "latitude": 27.946585,
+              "longitude": -82.459311,
+              "pgm_sys_acrnm": "ACRES",
+              "pgm_sys_id": "12781",
+              "fips_code": "",
+              "huc_code": "",
+              "facility_url": "https://ofmpub.epa.gov/apex/cimc/f?p=CIMC:31::::Y,31,0:P31_ID:12781"
+            },
+            "geometry": {
+              "x": -82.45931099999996,
+              "y": 27.946585000000027
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 18973,
+              "registry_id": "110061014352",
+              "primary_name": "WASHINGTON STREET CROSSING",
+              "location_address": "300 ASHLEY DR N",
+              "city_name": "TAMPA",
+              "county_name": "HILLSBOROUGH",
+              "state_code": "FL",
+              "epa_region": "Region 04",
+              "postal_code": "33602",
+              "latitude": 27.946585,
+              "longitude": -82.459311,
+              "pgm_sys_acrnm": "ACRES",
+              "pgm_sys_id": "12782",
+              "fips_code": "",
+              "huc_code": "",
+              "facility_url": "https://ofmpub.epa.gov/apex/cimc/f?p=CIMC:31::::Y,31,0:P31_ID:12782"
+            },
+            "geometry": {
+              "x": -82.45931099999996,
+              "y": 27.946585000000027
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "derivation_rule": {
+    "id": "epa-superfund-brownfields-quarter-mile-v2",
+    "plain_language": "Count unique EPA Superfund and Brownfields program records within 0.25 statute mile of the geocoded point.",
+    "predicate": "distance_miles <= 0.25 and program_layer in {'Superfund','Brownfields'}",
+    "deduplication_key": [
+      "program_layer",
+      "registry_id",
+      "pgm_sys_id_or_site_id"
+    ]
+  },
+  "gold_answer": {
+    "has_nearby_site": true,
+    "count": 3,
+    "radius_miles": 0.25,
+    "programs": [
+      "Brownfields",
+      "Superfund"
+    ]
+  },
+  "review": {
+    "automated_official_source_check": true,
+    "independent_human_review": false,
+    "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+  }
+}

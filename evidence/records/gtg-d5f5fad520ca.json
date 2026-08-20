@@ -1,0 +1,348 @@
+{
+  "schema_version": "2.0",
+  "item_id": "gtg-d5f5fad520ca",
+  "task": "historic_district",
+  "retrieved_at": "2026-08-20T20:14:12Z",
+  "status": "verified",
+  "property_identity": {
+    "status": "verified_census_match",
+    "requested_address": "1600 Pennsylvania Ave NW, Washington, DC",
+    "matched_address": "1600 PENNSYLVANIA AVE NW, WASHINGTON, DC, 20500",
+    "longitude": -77.03518753691,
+    "latitude": 38.89869893252,
+    "geocoder": "United States Census Geocoder",
+    "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=1600+Pennsylvania+Ave+NW%2C+Washington%2C+DC&benchmark=Public_AR_Current&format=json",
+    "response_sha256": "3fa3ccf440891ee483b6fd84a91cc126e60a8f7d8ea5c2c3d3a11d5533d4457a",
+    "reviewed_exception": null,
+    "raw_response": {
+      "result": {
+        "input": {
+          "address": {
+            "address": "1600 Pennsylvania Ave NW, Washington, DC"
+          },
+          "benchmark": {
+            "isDefault": true,
+            "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+            "id": "4",
+            "benchmarkName": "Public_AR_Current"
+          }
+        },
+        "addressMatches": [
+          {
+            "tigerLine": {
+              "side": "L",
+              "tigerLineId": "76225813"
+            },
+            "coordinates": {
+              "x": -77.03518753691,
+              "y": 38.89869893252
+            },
+            "addressComponents": {
+              "zip": "20500",
+              "streetName": "PENNSYLVANIA",
+              "preType": "",
+              "city": "WASHINGTON",
+              "preDirection": "",
+              "suffixDirection": "NW",
+              "fromAddress": "1600",
+              "state": "DC",
+              "suffixType": "AVE",
+              "toAddress": "1648",
+              "suffixQualifier": "",
+              "preQualifier": ""
+            },
+            "matchedAddress": "1600 PENNSYLVANIA AVE NW, WASHINGTON, DC, 20500"
+          }
+        ]
+      }
+    }
+  },
+  "official_queries": [
+    {
+      "source": "National Park Service National Register polygons",
+      "record_url": "https://mapservices.nps.gov/arcgis/rest/services/cultural_resources/nrhp_locations/MapServer/1/query?f=json&geometry=-77.03518753691%2C38.89869893252&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CNRIS_Refnum%2CRESNAME%2CResType%2CAddress%2CCity%2CState%2CCertDate%2CCR_ID%2CPROPERTY_ID%2CSTATUS%2CNARA_URL%2CEDIT_DATE%2CSOURCE%2CSRC_DATE&returnGeometry=false",
+      "response_sha256": "c50b881d5b1c53735c1f105dcff328f3e22d182c5e1ef5bd06bf2a055123fb20",
+      "returned_record_count": 4,
+      "qualifying_record_count": 2,
+      "qualifying_records": [
+        {
+          "OBJECTID": 443649,
+          "NRIS_Refnum": "74000274",
+          "RESNAME": "Civil War Fort Sites",
+          "ResType": "district",
+          "Address": "Civil War Forts from Battery Kemble, NW to Fort Gremble, SW",
+          "City": "Washington",
+          "State": "DISTRICT OF COLUMBIA",
+          "CertDate": "07/15/74",
+          "CR_ID": "{69B84BF8-3547-4758-A8BE-550985FD5D08}",
+          "PROPERTY_ID": "74000274",
+          "STATUS": "Listed",
+          "NARA_URL": "https://catalog.archives.gov/id/117692043",
+          "EDIT_DATE": 1345161600000,
+          "SOURCE": "National Register of Historic Places -- National Park Service",
+          "SRC_DATE": 143078400000
+        },
+        {
+          "OBJECTID": 447558,
+          "NRIS_Refnum": "70000833",
+          "RESNAME": "Lafayette Square Historic District",
+          "ResType": "district",
+          "Address": "Roughly between 15th and 17th Sts. and H St. and State and Treasury Places, exclusive of the White House and its grounds",
+          "City": "Washington",
+          "State": "DISTRICT OF COLUMBIA",
+          "CertDate": "08/29/70",
+          "CR_ID": "{DF80CB8B-49B2-4479-B6E8-4D2C65D45AD2}",
+          "PROPERTY_ID": "70000833",
+          "STATUS": "Listed",
+          "NARA_URL": "https://catalog.archives.gov/id/117691835",
+          "EDIT_DATE": 1642636800000,
+          "SOURCE": "Google Earth",
+          "SRC_DATE": 1642636800000
+        }
+      ],
+      "raw_response": {
+        "displayFieldName": "RESNAME",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "NRIS_Refnum": "NRIS_Refnum",
+          "RESNAME": "Resource Name",
+          "ResType": "Resource Type",
+          "Address": "Address",
+          "City": "City",
+          "State": "State",
+          "CertDate": "Certification Date",
+          "CR_ID": "Cultural Resource GUID",
+          "PROPERTY_ID": "PROPERTY ID",
+          "STATUS": "STATUS",
+          "NARA_URL": "NARA_URL",
+          "EDIT_DATE": "Last Edit Date",
+          "SOURCE": "Source",
+          "SRC_DATE": "Source Date"
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "NRIS_Refnum",
+            "type": "esriFieldTypeString",
+            "alias": "NRIS_Refnum",
+            "length": 11
+          },
+          {
+            "name": "RESNAME",
+            "type": "esriFieldTypeString",
+            "alias": "Resource Name",
+            "length": 255
+          },
+          {
+            "name": "ResType",
+            "type": "esriFieldTypeString",
+            "alias": "Resource Type",
+            "length": 10
+          },
+          {
+            "name": "Address",
+            "type": "esriFieldTypeString",
+            "alias": "Address",
+            "length": 255
+          },
+          {
+            "name": "City",
+            "type": "esriFieldTypeString",
+            "alias": "City",
+            "length": 255
+          },
+          {
+            "name": "State",
+            "type": "esriFieldTypeString",
+            "alias": "State",
+            "length": 255
+          },
+          {
+            "name": "CertDate",
+            "type": "esriFieldTypeString",
+            "alias": "Certification Date",
+            "length": 11
+          },
+          {
+            "name": "CR_ID",
+            "type": "esriFieldTypeString",
+            "alias": "Cultural Resource GUID",
+            "length": 50
+          },
+          {
+            "name": "PROPERTY_ID",
+            "type": "esriFieldTypeString",
+            "alias": "PROPERTY ID",
+            "length": 11
+          },
+          {
+            "name": "STATUS",
+            "type": "esriFieldTypeString",
+            "alias": "STATUS",
+            "length": 10
+          },
+          {
+            "name": "NARA_URL",
+            "type": "esriFieldTypeString",
+            "alias": "NARA_URL",
+            "length": 255
+          },
+          {
+            "name": "EDIT_DATE",
+            "type": "esriFieldTypeDate",
+            "alias": "Last Edit Date",
+            "length": 8
+          },
+          {
+            "name": "SOURCE",
+            "type": "esriFieldTypeString",
+            "alias": "Source",
+            "length": 250
+          },
+          {
+            "name": "SRC_DATE",
+            "type": "esriFieldTypeDate",
+            "alias": "Source Date",
+            "length": 8
+          }
+        ],
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 429847,
+              "NRIS_Refnum": "78000256",
+              "RESNAME": "American Revolution Statuary",
+              "ResType": "object",
+              "Address": "Public buildings and various parks within DC",
+              "City": "Washington",
+              "State": "DISTRICT OF COLUMBIA",
+              "CertDate": "07/14/78",
+              "CR_ID": "{99ADDFB0-4DE2-4A35-A0F2-E3430E579065}",
+              "PROPERTY_ID": "78000256",
+              "STATUS": "Listed",
+              "NARA_URL": "https://catalog.archives.gov/id/117691933",
+              "EDIT_DATE": 1345161600000,
+              "SOURCE": "National Register of Historic Places -- National Park Service",
+              "SRC_DATE": 269222400000
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 443649,
+              "NRIS_Refnum": "74000274",
+              "RESNAME": "Civil War Fort Sites",
+              "ResType": "district",
+              "Address": "Civil War Forts from Battery Kemble, NW to Fort Gremble, SW",
+              "City": "Washington",
+              "State": "DISTRICT OF COLUMBIA",
+              "CertDate": "07/15/74",
+              "CR_ID": "{69B84BF8-3547-4758-A8BE-550985FD5D08}",
+              "PROPERTY_ID": "74000274",
+              "STATUS": "Listed",
+              "NARA_URL": "https://catalog.archives.gov/id/117692043",
+              "EDIT_DATE": 1345161600000,
+              "SOURCE": "National Register of Historic Places -- National Park Service",
+              "SRC_DATE": 143078400000
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 447558,
+              "NRIS_Refnum": "70000833",
+              "RESNAME": "Lafayette Square Historic District",
+              "ResType": "district",
+              "Address": "Roughly between 15th and 17th Sts. and H St. and State and Treasury Places, exclusive of the White House and its grounds",
+              "City": "Washington",
+              "State": "DISTRICT OF COLUMBIA",
+              "CertDate": "08/29/70",
+              "CR_ID": "{DF80CB8B-49B2-4479-B6E8-4D2C65D45AD2}",
+              "PROPERTY_ID": "70000833",
+              "STATUS": "Listed",
+              "NARA_URL": "https://catalog.archives.gov/id/117691835",
+              "EDIT_DATE": 1642636800000,
+              "SOURCE": "Google Earth",
+              "SRC_DATE": 1642636800000
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 449220,
+              "NRIS_Refnum": "97000332",
+              "RESNAME": "L'Enfant Plan of the City of Washington, District of Columbia",
+              "ResType": "structure",
+              "Address": "Roughly bounded by Florida Ave. from Rock Cr., NW. to 15th St., NE., S to C St., and E to the Anacostia River",
+              "City": "Washington",
+              "State": "DISTRICT OF COLUMBIA",
+              "CertDate": "04/24/97",
+              "CR_ID": "{E0A1B1C4-1F92-40E9-AC8C-5711A8FE645A}",
+              "PROPERTY_ID": "97000332",
+              "STATUS": "Listed",
+              "NARA_URL": "https://catalog.archives.gov/id/117692263",
+              "EDIT_DATE": 1345161600000,
+              "SOURCE": "National Register of Historic Places -- National Park Service",
+              "SRC_DATE": 861840000000
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "derivation_rule": {
+    "id": "nps-nrhp-listed-district-point-v2",
+    "plain_language": "Only intersecting National Register polygons labeled as a listed district count. Buildings, objects, sites and structures do not.",
+    "predicate": "lower(ResType) == 'district' and lower(STATUS) == 'listed'",
+    "excluded_intersections": [
+      {
+        "OBJECTID": 429847,
+        "NRIS_Refnum": "78000256",
+        "RESNAME": "American Revolution Statuary",
+        "ResType": "object",
+        "Address": "Public buildings and various parks within DC",
+        "City": "Washington",
+        "State": "DISTRICT OF COLUMBIA",
+        "CertDate": "07/14/78",
+        "CR_ID": "{99ADDFB0-4DE2-4A35-A0F2-E3430E579065}",
+        "PROPERTY_ID": "78000256",
+        "STATUS": "Listed",
+        "NARA_URL": "https://catalog.archives.gov/id/117691933",
+        "EDIT_DATE": 1345161600000,
+        "SOURCE": "National Register of Historic Places -- National Park Service",
+        "SRC_DATE": 269222400000
+      },
+      {
+        "OBJECTID": 449220,
+        "NRIS_Refnum": "97000332",
+        "RESNAME": "L'Enfant Plan of the City of Washington, District of Columbia",
+        "ResType": "structure",
+        "Address": "Roughly bounded by Florida Ave. from Rock Cr., NW. to 15th St., NE., S to C St., and E to the Anacostia River",
+        "City": "Washington",
+        "State": "DISTRICT OF COLUMBIA",
+        "CertDate": "04/24/97",
+        "CR_ID": "{E0A1B1C4-1F92-40E9-AC8C-5711A8FE645A}",
+        "PROPERTY_ID": "97000332",
+        "STATUS": "Listed",
+        "NARA_URL": "https://catalog.archives.gov/id/117692263",
+        "EDIT_DATE": 1345161600000,
+        "SOURCE": "National Register of Historic Places -- National Park Service",
+        "SRC_DATE": 861840000000
+      }
+    ]
+  },
+  "gold_answer": {
+    "in_historic_district": true,
+    "district": "Civil War Fort Sites; Lafayette Square Historic District",
+    "districts": [
+      "Civil War Fort Sites",
+      "Lafayette Square Historic District"
+    ]
+  },
+  "review": {
+    "automated_official_source_check": true,
+    "independent_human_review": false,
+    "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "schema_version": "2.0",
+  "item_id": "gtg-676366fd1083",
+  "task": "historic_district",
+  "retrieved_at": "2026-08-20T20:14:12Z",
+  "status": "verified",
+  "property_identity": {
+    "status": "verified_census_match",
+    "requested_address": "60 Esterbrook Rd, Acton, MA",
+    "matched_address": "60 ESTERBROOK RD, ACTON, MA, 01720",
+    "longitude": -71.41087078947,
+    "latitude": 42.487875756426,
+    "geocoder": "United States Census Geocoder",
+    "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=60+Esterbrook+Rd%2C+Acton%2C+MA&benchmark=Public_AR_Current&format=json",
+    "response_sha256": "4ff8743675e04148f93c78af08b72765a8f8508f9425d511332bc7679583a9d6",
+    "reviewed_exception": null,
+    "raw_response": {
+      "result": {
+        "input": {
+          "address": {
+            "address": "60 Esterbrook Rd, Acton, MA"
+          },
+          "benchmark": {
+            "isDefault": true,
+            "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+            "id": "4",
+            "benchmarkName": "Public_AR_Current"
+          }
+        },
+        "addressMatches": [
+          {
+            "tigerLine": {
+              "side": "R",
+              "tigerLineId": "640144512"
+            },
+            "coordinates": {
+              "x": -71.41087078947,
+              "y": 42.487875756426
+            },
+            "addressComponents": {
+              "zip": "01720",
+              "streetName": "ESTERBROOK",
+              "preType": "",
+              "city": "ACTON",
+              "preDirection": "",
+              "suffixDirection": "",
+              "fromAddress": "98",
+              "state": "MA",
+              "suffixType": "RD",
+              "toAddress": "44",
+              "suffixQualifier": "",
+              "preQualifier": ""
+            },
+            "matchedAddress": "60 ESTERBROOK RD, ACTON, MA, 01720"
+          }
+        ]
+      }
+    }
+  },
+  "official_queries": [
+    {
+      "source": "National Park Service National Register polygons",
+      "record_url": "https://mapservices.nps.gov/arcgis/rest/services/cultural_resources/nrhp_locations/MapServer/1/query?f=json&geometry=-71.41087078947%2C42.487875756426&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CNRIS_Refnum%2CRESNAME%2CResType%2CAddress%2CCity%2CState%2CCertDate%2CCR_ID%2CPROPERTY_ID%2CSTATUS%2CNARA_URL%2CEDIT_DATE%2CSOURCE%2CSRC_DATE&returnGeometry=false",
+      "response_sha256": "99f3e76803a57493bce4a1535d3c148895d810a4805061c919bfe9d19318e9eb",
+      "returned_record_count": 1,
+      "qualifying_record_count": 0,
+      "qualifying_records": [],
+      "raw_response": {
+        "displayFieldName": "RESNAME",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "NRIS_Refnum": "NRIS_Refnum",
+          "RESNAME": "Resource Name",
+          "ResType": "Resource Type",
+          "Address": "Address",
+          "City": "City",
+          "State": "State",
+          "CertDate": "Certification Date",
+          "CR_ID": "Cultural Resource GUID",
+          "PROPERTY_ID": "PROPERTY ID",
+          "STATUS": "STATUS",
+          "NARA_URL": "NARA_URL",
+          "EDIT_DATE": "Last Edit Date",
+          "SOURCE": "Source",
+          "SRC_DATE": "Source Date"
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "NRIS_Refnum",
+            "type": "esriFieldTypeString",
+            "alias": "NRIS_Refnum",
+            "length": 11
+          },
+          {
+            "name": "RESNAME",
+            "type": "esriFieldTypeString",
+            "alias": "Resource Name",
+            "length": 255
+          },
+          {
+            "name": "ResType",
+            "type": "esriFieldTypeString",
+            "alias": "Resource Type",
+            "length": 10
+          },
+          {
+            "name": "Address",
+            "type": "esriFieldTypeString",
+            "alias": "Address",
+            "length": 255
+          },
+          {
+            "name": "City",
+            "type": "esriFieldTypeString",
+            "alias": "City",
+            "length": 255
+          },
+          {
+            "name": "State",
+            "type": "esriFieldTypeString",
+            "alias": "State",
+            "length": 255
+          },
+          {
+            "name": "CertDate",
+            "type": "esriFieldTypeString",
+            "alias": "Certification Date",
+            "length": 11
+          },
+          {
+            "name": "CR_ID",
+            "type": "esriFieldTypeString",
+            "alias": "Cultural Resource GUID",
+            "length": 50
+          },
+          {
+            "name": "PROPERTY_ID",
+            "type": "esriFieldTypeString",
+            "alias": "PROPERTY ID",
+            "length": 11
+          },
+          {
+            "name": "STATUS",
+            "type": "esriFieldTypeString",
+            "alias": "STATUS",
+            "length": 10
+          },
+          {
+            "name": "NARA_URL",
+            "type": "esriFieldTypeString",
+            "alias": "NARA_URL",
+            "length": 255
+          },
+          {
+            "name": "EDIT_DATE",
+            "type": "esriFieldTypeDate",
+            "alias": "Last Edit Date",
+            "length": 8
+          },
+          {
+            "name": "SOURCE",
+            "type": "esriFieldTypeString",
+            "alias": "Source",
+            "length": 250
+          },
+          {
+            "name": "SRC_DATE",
+            "type": "esriFieldTypeDate",
+            "alias": "Source Date",
+            "length": 8
+          }
+        ],
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 449226,
+              "NRIS_Refnum": "72001347",
+              "RESNAME": "Davis, Isaac, Trail",
+              "ResType": "structure",
+              "Address": "Running E-W between towns of Acton and Concord",
+              "City": "Acton",
+              "State": "MASSACHUSETTS",
+              "CertDate": "04/11/72",
+              "CR_ID": "{9E798FBA-C725-4483-A63B-CF25CB73A86B}",
+              "PROPERTY_ID": "72001347",
+              "STATUS": "Listed",
+              "NARA_URL": "https://catalog.archives.gov/id/63796166",
+              "EDIT_DATE": 1345161600000,
+              "SOURCE": "National Register of Historic Places -- National Park Service",
+              "SRC_DATE": 71798400000
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "derivation_rule": {
+    "id": "nps-nrhp-listed-district-point-v2",
+    "plain_language": "Only intersecting National Register polygons labeled as a listed district count. Buildings, objects, sites and structures do not.",
+    "predicate": "lower(ResType) == 'district' and lower(STATUS) == 'listed'",
+    "excluded_intersections": [
+      {
+        "OBJECTID": 449226,
+        "NRIS_Refnum": "72001347",
+        "RESNAME": "Davis, Isaac, Trail",
+        "ResType": "structure",
+        "Address": "Running E-W between towns of Acton and Concord",
+        "City": "Acton",
+        "State": "MASSACHUSETTS",
+        "CertDate": "04/11/72",
+        "CR_ID": "{9E798FBA-C725-4483-A63B-CF25CB73A86B}",
+        "PROPERTY_ID": "72001347",
+        "STATUS": "Listed",
+        "NARA_URL": "https://catalog.archives.gov/id/63796166",
+        "EDIT_DATE": 1345161600000,
+        "SOURCE": "National Register of Historic Places -- National Park Service",
+        "SRC_DATE": 71798400000
+      }
+    ]
+  },
+  "gold_answer": {
+    "in_historic_district": false,
+    "district": null,
+    "districts": []
+  },
+  "review": {
+    "automated_official_source_check": true,
+    "independent_human_review": false,
+    "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+  }
+}

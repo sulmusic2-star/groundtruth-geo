@@ -6,4 +6,8 @@ __pycache__/
 venv/
 *.egg-info/
 .pytest_cache/
-predictions.json
+/predictions.json
+.env
+.env.*
+runs/private/
+private/

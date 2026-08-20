@@ -2,120 +2,117 @@
 
 [![ci](https://github.com/sulmusic2-star/groundtruth-geo/actions/workflows/ci.yml/badge.svg)](https://github.com/sulmusic2-star/groundtruth-geo/actions/workflows/ci.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-2c5b3a)](LICENSE)
-[![engine](https://img.shields.io/badge/engine-lastingground.com-34d399)](https://lastingground.com)
 
-**A small, static evaluation set for testing how agents handle address-specific property questions, abstention, and tool use.**
+GroundTruth-Geo is a small, inspectable test set for address-specific property
+answers. It checks whether a system chose the right property, used the right
+official source, supported its answer, supplied a usable record link, used dated
+evidence, and stopped when it could not know.
 
-> **Evidence boundary.** This repository contains 33 selected records across
-> seven states and three task families. It is an internal demonstration artifact,
-> not a representative sample of US properties, an independently audited
-> benchmark, or evidence of nationwide product accuracy. No external users,
-> customers, revenue, or third-party benchmark adoption are claimed.
+> **What this is not.** The 33 public cases were selected across seven states.
+> They are not a representative sample, statewide or national coverage proof,
+> an independent audit, or a product accuracy score. The evidence was retrieved
+> on August 20, 2026 and is not continuously current. No customer, revenue, or
+> third-party adoption is claimed.
 
-The records ask questions such as: *Is this selected property in a FEMA Special
-Flood Hazard Area? Is it in a National Register historic district? Are listed
-contamination sites nearby?* Each static row contains:
+## What is included
 
-- an agency source label and agency entry-page URL,
-- a snapshot label,
-- a stable content fingerprint for the exported row, and
-- a structured reference answer that the local grader can compare without an
-  LLM judge.
-
-The rows were exported from the **Lasting Ground** development system. The
-repository ships the selected records, a deterministic grader, and an MCP server
-that exposes only those static records. The agency URLs are starting points, not
-record-level citations, and labels such as `current` should not be read as proof
-that a source was rechecked today.
-
-## What this demonstrates
-
-- **Grounding / factuality evaluation plumbing** — compare a structured model
-  answer with a selected reference row.
-- **Abstention-aware scoring** — distinguish incorrect answers from
-  `NOT_ATTEMPTED`.
-- **Tool-use experiments** — expose the same static rows through MCP and test
-  closed-book versus tool-assisted behavior.
-- **Deterministic grading** — run repeatable comparisons without an LLM judge.
-
-## Files
-
-| File | Purpose |
+| Path | Contents |
 |---|---|
-| `groundtruth_geo.jsonl` | The benchmark. One item per line (33 items, 7 states). |
-| `grade_groundtruth.py` | The deterministic grader — field-standard factuality metrics, no LLM judge. |
-| `ground_truth_mcp.py` | An MCP server (JSON-RPC stdio) exposing the records as `lookup_property_truth(address)` and `verify_property_record(record_id)` tools. |
+| `groundtruth_geo.jsonl` | 33 questions: 11 addresses × 3 task families. |
+| `evidence/records/` | Dated receipts with the matched property, exact official queries, returned records, hashes, and derivation rules. |
+| `refresh_evidence.py` | Refreshes or validates every public evidence receipt. |
+| `grade_groundtruth.py` | Deterministic answer grader; no LLM judge. |
+| `audit_run.py` | Scores wrong property, wrong source, unsupported answer, unusable citation, failure to abstain, and stale evidence. |
+| `run_model.py` | Reproducible OpenAI Responses API runner. |
+| `runs/openai-gpt-4-1-mini-closed-book-20260820/` | Exact prompt, requests, responses, traces, predictions, hashes, model version, and audit for one observed run. |
+| `ground_truth_mcp.py` | Local MCP server exposing only the bundled public records. |
+| `proof/private-holdout-receipt.json` | Public-safe receipt for a separate private, permit-free 100-case Massachusetts set; no addresses or gold answers are exposed. |
 
-Each benchmark item looks like:
+## Public questions
 
-```json
-{
-  "id": "gtg-be9c68f9073f",
-  "task": "fema_sfha",
-  "question": "Is the property at \"72 Easton St, Nantucket, MA\" in a FEMA Special Flood Hazard Area?...",
-  "answer": {"in_sfha": true, "zone": "AE"},
-  "source": "FEMA National Flood Hazard Layer",
-  "source_url": "https://msc.fema.gov/portal/home",
-  "source_date": "FEMA NFHL (current)",
-  "address": "72 EASTON ST, NANTUCKET, MA, 02554",
-  "state": "MA",
-  "record_id": "LG-C020DF82",
-  "fingerprint": "ccd05bcec753",
-  "deterministic": true,
-  "llm_in_answer_path": false,
-  "reproducible": true
-}
+The current tasks have deliberately narrow rules:
+
+| Task | Question and rule |
+|---|---|
+| `fema_sfha` | Does the geocoded point intersect one FEMA NFHL flood-zone polygon, and is `SFHA_TF` true? |
+| `historic_district` | Does the point intersect a National Register record whose resource type is `district`? |
+| `contamination_nearby` | Is an EPA Superfund or Brownfields point within 0.25 mile? |
+
+These rules do not replace an official determination or professional review.
+They make the selected reference answers reproducible.
+
+## Validate the evidence
+
+```bash
+python3 refresh_evidence.py --validate
+python3 -m unittest discover -s tests -v
+python3 grade_groundtruth.py
 ```
 
-## Tasks (v1)
+Every public item currently has:
 
-| task | question | gold key |
-|---|---|---|
-| `fema_sfha` | building/parcel in a FEMA Special Flood Hazard Area? | `in_sfha` (+ `zone`) |
-| `historic_district` | parcel within a National Register historic district? | `in_historic_district` (+ `district`) |
-| `contamination_nearby` | EPA/state-listed contamination sites nearby? | `has_nearby_site` (+ `count`) |
+- a Census-matched property point;
+- an exact official record query;
+- the qualifying official records used for the answer;
+- a UTC retrieval time and SHA-256 receipt;
+- a deterministic derivation rule; and
+- `independent_review: false` until a separate reviewer signs it off.
 
-## How to run a local model comparison
+To refresh the public evidence from the live official services:
 
-1. Feed each item's `question` to the model under test; ask for a structured answer keyed on the gold key.
-2. Write `{id: answer}` to `predictions.json`.
-3. Run the grader:
-   ```bash
-   python3 grade_groundtruth.py predictions.json
-   ```
-4. Compare against the always-NO / always-YES / always-ABSTAIN baselines printed by `python3 grade_groundtruth.py` with no args.
+```bash
+python3 refresh_evidence.py --refresh
+```
 
-The grader follows field-standard factuality literature so the result is credible to AI-lab researchers:
+A refresh can change an answer. Review the diff and rerun the tests before using
+the new data.
 
-- **CORRECT / INCORRECT / NOT_ATTEMPTED** buckets (SimpleQA, [arXiv:2411.04368](https://arxiv.org/abs/2411.04368))
-- **SimpleQA F1** = 2·A·C / (A + C), rewarding abstention
-- **Omniscience Index** in [−100, 100] (AA-Omniscience, [arXiv:2511.13029](https://arxiv.org/abs/2511.13029)) — +1 correct, −1 confident-wrong, 0 abstain
-- raw accuracy, abstention rate, hallucination (confident-wrong) rate
+## Observed closed-book run
 
-## v1 exploratory result (33 selected items, 7 states)
+The included run used `gpt-4.1-mini-2025-04-14`, the OpenAI Responses API,
+temperature 0, structured output, `store: false`, and no tools or web access.
+The model abstained on all 33 questions.
 
-| condition | accuracy | SimpleQA-F1 | Omniscience | abstention | hallucination |
-|---|---|---|---|---|---|
-| Frontier model, **calibrated** (may abstain) | 0% | 0 | 0 | **100%** | 0% |
-| Frontier model, **forced-answer** | *refused to guess* | — | — | — | — |
-| Static reference answers | **100%** | 100 | +100 | 0% | 0% |
+| Result | Count |
+|---|---:|
+| Accepted answers | 0 |
+| Safe abstentions | 33 |
+| Critical errors | 0 |
+| Answers still needed | 33 |
 
-The model rows above are an author-run exploratory check, not an independent
-evaluation. The exact predictions are not included in this repository, so those
-rows should not be treated as a reproducible third-party model result.
+That is a useful safety baseline, not an accuracy victory: the model avoided
+unsupported property claims but did not answer any property question. See the
+run directory for the exact prompts, predictions, response traces, hashes, and
+model identifiers.
 
-The static reference answers score 100% because they are the gold data used by
-the grader. That result validates the grading path; it is not an independent
-accuracy measurement of Lasting Ground or evidence that the selected source
-rows remain current.
+To make a new run, set an API key in the environment and use a new output path:
 
-Baselines for sanity: always-NO F1 54.5 / Omni +9, always-YES F1 45.5 / Omni −9, always-ABSTAIN Omni 0 — a constant answer cannot win.
+```bash
+python3 run_model.py \
+  --model gpt-4.1-mini-2025-04-14 \
+  --output-dir runs/private/my-run
+python3 audit_run.py \
+  --run-dir runs/private/my-run
+```
 
-## Use it as an MCP tool
+The private run directory is ignored by git. Review it before deciding whether
+to publish any model output or response identifiers.
 
-`ground_truth_mcp.py` is a minimal JSON-RPC stdio MCP server that exposes the benchmark records as callable agent tools. It works with Claude Desktop or any MCP client.
+## Baseline sanity checks
 
-Claude Desktop config (`claude_desktop_config.json`):
+With the repaired answers, the constant-answer baselines are:
+
+| Baseline | Accuracy | Abstention | Confidently wrong |
+|---|---:|---:|---:|
+| Always no | 60.6% | 0% | 39.4% |
+| Always yes | 39.4% | 0% | 60.6% |
+| Always abstain | 0% | 100% | 0% |
+
+A constant answer does not establish useful property reasoning.
+
+## MCP use
+
+The bundled server returns a result only for an address in the public file:
 
 ```json
 {
@@ -128,31 +125,25 @@ Claude Desktop config (`claude_desktop_config.json`):
 }
 ```
 
-The server exposes two tools:
+- `lookup_property_truth(address)` returns the selected claims and their dated
+  evidence metadata.
+- `verify_property_record(record_id)` retrieves the same static record again.
 
-- `lookup_property_truth(address)` — returns a selected static record, or a
-  structured `not in static benchmark` response.
-- `verify_property_record(record_id)` — re-derives the same record by its `record_id`, returning the reproducible fingerprint.
+Stable retrieval proves the local record is reproducible. It does not prove
+independent accuracy or freshness after the recorded retrieval time.
 
-## Roadmap
+## Private Massachusetts holdout
 
-- Add dated, record-level source links where the publishing agency supports them.
-- Publish prompts and prediction files with future model result rows.
-- Expand only after documenting sampling, refresh, and independent-review rules.
+The private set contains 100 permit-free cases across 39 properties and 22
+Massachusetts municipalities. It is stratified, not representative. The public
+receipt commits to the private questions, gold answers, and evidence manifest by
+hash while keeping all cases and answers private. Independent review is still
+pending.
 
-## Where this came from
+## Origin and license
 
-This selected record set was generated from internal Lasting Ground development
-outputs. [lastingground.com](https://lastingground.com) is a public
-demonstration; no paid use, paying customers, or revenue are claimed. This
-repository makes the static evaluation records, grader, and MCP wrapper
-inspectable while keeping the separate source-acquisition implementation out of
-scope.
-
-The architectural idea demonstrated here is narrow: once a reviewed reference
-row exists, comparison and retrieval can be deterministic. This artifact does
-not replace an official determination or professional judgment.
-
-## License
+The selected rows came from Lasting Ground development work. The separate source
+acquisition system is out of scope here. [lastingground.com](https://lastingground.com)
+is a public demonstration; paid use is not claimed.
 
 MIT — see [LICENSE](LICENSE).
