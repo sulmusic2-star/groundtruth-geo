@@ -24,7 +24,7 @@ that matter in those answers: the wrong property, the wrong official source, an
 unsupported answer, a citation that does not open the record, stale evidence,
 or failing to stop when the record is not enough.
 
-Here is a 20-case example audit: **[stable CITYGRAPH audit URL]**. It is a real
+Here is a 20-case example audit: **https://lasting-ground-citygraph.pages.dev/groundtruth-audit**. It is a real
 closed-book run in which the model stopped on every question; the audit does not
 present that as accuracy, because none of the questions was answered.
 
@@ -35,7 +35,7 @@ writing with whether they are evaluable and what a bounded paid test would need.
 
 Tim Sullivan
 Lasting Ground
-**[public evidence-contract URL]**
+**https://github.com/sulmusic2-star/groundtruth-geo/blob/main/docs/evidence-contract.md**
 
 ## 2. CivicPlus
 
@@ -50,7 +50,7 @@ address-specific answer chose the right property, opened the exact official
 record, supported the answer, used dated evidence, and stopped when the source
 could not answer.
 
-The 20-case example is here: **[stable CITYGRAPH audit URL]**. It shows the model
+The 20-case example is here: **https://lasting-ground-citygraph.pages.dev/groundtruth-audit**. It shows the model
 answer beside the official record and keeps safe abstention separate from a
 usable answer.
 
@@ -60,7 +60,7 @@ whether the method fits and, only then, a bounded paid-evaluation scope.
 
 Tim Sullivan
 Lasting Ground
-**[public evidence-contract URL]**
+**https://github.com/sulmusic2-star/groundtruth-geo/blob/main/docs/evidence-contract.md**
 
 ## 3. Citibot
 
@@ -75,7 +75,7 @@ environmental, historic or land record.
 
 For every answer, the audit checks the property, source, support, citation,
 evidence date and whether the system stopped when it could not know. The
-20-case example is here: **[stable CITYGRAPH audit URL]**.
+20-case example is here: **https://lasting-ground-citygraph.pages.dev/groundtruth-audit**.
 
 Would you be willing to send five representative address-level questions and
 outputs from a test environment or public deployment? I will respond in writing
@@ -84,7 +84,7 @@ scoped paid evaluation—not an open-ended free audit.
 
 Tim Sullivan
 Lasting Ground
-**[public evidence-contract URL]**
+**https://github.com/sulmusic2-star/groundtruth-geo/blob/main/docs/evidence-contract.md**
 
 ## Shared body for vendors 4–20
 
@@ -94,7 +94,7 @@ Use one tailored opening below, then this body:
 > address-specific answer: the property, the official source, support for the
 > answer, whether the citation opens the record, the evidence date, and whether
 > the system stops when it cannot know. A 20-case example audit is here:
-> **[stable CITYGRAPH audit URL]**.
+> **https://lasting-ground-citygraph.pages.dev/groundtruth-audit**.
 >
 > Does that method fit any current product, QA, release or customer-assurance
 > need? If so, send five representative questions and outputs. I will reply in
@@ -104,7 +104,7 @@ Use one tailored opening below, then this body:
 >
 > Tim Sullivan
 > Lasting Ground
-> **[public evidence-contract URL]**
+> **https://github.com/sulmusic2-star/groundtruth-geo/blob/main/docs/evidence-contract.md**
 
 ## Tailored openings 4–20
 
@@ -208,7 +208,7 @@ Hi [name],
 One concise follow-up: is address-specific answer evaluation relevant to your
 product or QA work, and if not, should I close this out?
 
-The example audit is **[stable CITYGRAPH audit URL]**. I am looking for five
+The example audit is **https://lasting-ground-citygraph.pages.dev/groundtruth-audit**. I am looking for five
 representative questions to determine fit before proposing any paid scope.
 
 Tim
