@@ -1,10 +1,9 @@
 # CI — proves the benchmark, grader, and MCP server actually run on every push.
 #
 # No API keys, no network, no external services. The whole pipeline is the
-# deterministic verifier itself: if the benchmark JSONL goes invalid, the
+# deterministic local check itself: if the benchmark JSONL goes invalid, the
 # grader regresses, or the MCP server stops returning records, the build
-# goes red. This is the same eval-gate-as-unit-test pattern used by
-# lastingground.com in production.
+# goes red.
 
 name: ci
 

@@ -1,6 +1,13 @@
 # Baseline results
 
-The benchmark is designed to be ungameable by a constant answer. This document records the v1 baseline results — what the grader actually outputs when run against the constant baselines and against a closed-book frontier model.
+This document records the v1 constant-answer outputs from the local grader and
+an author-run exploratory model check.
+
+> **Interpretation boundary.** The 33 records are selected development outputs,
+> not a representative or independently audited sample. The model prompt and
+> prediction file are not included, so the model rows below are not fully
+> reproducible. The static reference rows score 100% by construction and do not
+> establish product accuracy.
 
 ## Always-NO / always-YES / always-ABSTAIN baselines (deterministic, run by `python3 grade_groundtruth.py`)
 
@@ -28,29 +35,38 @@ Methodology, 33 items, 7 states (MA, FL, GA, CA, TX, DC, IL):
 | Calibrated (may abstain) | **0%** | 0 | 0 | **100%** | 0% |
 | Forced-answer | refused to guess | — | — | — | — |
 
-**The calibrated finding:** Claude abstains on **100%** of these parcel-precise factual questions. It correctly recognizes it cannot answer them from parametric memory: FEMA flood-zone determinations and National Register district boundaries are not in the training corpus at parcel precision.
+**The author-run calibrated result:** Claude abstained on all 33 selected
+questions in this run. No claim is made about other prompts, models, properties,
+or runs.
 
-**The forced-answer finding:** instructed into the *forced-answer* condition, Claude refused to hallucinate, stating that emitting confident booleans about real parcels "is exactly the hallucinated, unverifiable output that causes real harm in this domain." This is itself the on-thesis result for an Anthropic-built model — the model's own calibration is the evidence that a parametric LLM is not the right surface for these answers.
+**The author-run forced-answer result:** the model declined to provide the
+requested booleans. Because the prompt and response artifact are not published,
+this row should be treated as a descriptive note rather than a benchmark score.
 
-## The reference oracle — Lasting Ground (tool-backed)
+## Static reference rows
 
-The Lasting Ground engine (private, live at [lastingground.com](https://lastingground.com)) is the source of the gold answers — it is, by construction, 100% / +100 / 0% hallucination on this benchmark because the benchmark was *generated* from its outputs with deterministic provenance.
+The selected Lasting Ground development outputs are the gold rows used by the
+grader. They are, by construction, 100% / +100 / 0% hallucination when compared
+with themselves.
 
 | condition | accuracy | SimpleQA F1 | Omniscience | abstention | hallucination |
 |---|---|---|---|---|---|
-| Lasting Ground (tool-backed) | **100%** | 100 | +100 | 0% | 0% |
+| Static reference answers | **100%** | 100 | +100 | 0% | 0% |
 
-The closed-book → tool gap is the artifact. The parametric knowledge is absent (the model knows it); the cited engine supplies it.
+This validates the local comparison path. It is not an independent accuracy,
+freshness, or coverage result for Lasting Ground.
 
-## How to publish your own model score
+## How to run your own local model comparison
 
 1. Loop over `groundtruth_geo.jsonl`. For each item, send the `question` to your model.
 2. Ask for a JSON answer keyed on the gold key (see `predictions-sample.json` for the exact shape, including the calibrated `{"NOT_ATTEMPTED": true}` form).
 3. Write `{item_id: model_answer}` to `predictions.json`.
 4. Run `python3 grade_groundtruth.py predictions.json` — it prints per-task and overall metrics.
-5. Open a PR adding your result row to this table (include model name, prompt, and condition).
+5. Preserve the model name, prompt, predictions, and condition with any result
+   you report so another person can reproduce the comparison.
 
-The grader does not call a model. It compares structured booleans against cited government records. No reward-hacking surface.
+The grader does not call a model. It compares structured booleans against the
+selected static records.
 
 ## Why these metrics
 

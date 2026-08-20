@@ -1,17 +1,12 @@
 #!/usr/bin/env python3
-"""Ground Truth (benchmark-static edition) — an MCP server that exposes the
-GroundTruth-Geo cited records as a callable agent tool, with NO LLM in the
-answer path.
+"""Ground Truth (static edition) — an MCP server that exposes selected
+GroundTruth-Geo rows as a callable agent tool, with no LLM in the lookup path.
 
-This is the OPEN-SOURCE STATIC-DATA variant. It answers any address that
-appears in ``groundtruth_geo.jsonl`` with the same deterministic, government-
-source-cited, reproducible record format the live Lasting Ground engine
-returns. Addresses outside the benchmark return a structured "not in static
-benchmark" response that points at the live engine.
-
-The full live engine (parcel-level depth in Massachusetts, point-precise
-nationwide from FEMA / EPA / NPS, ~520 verified state sources across 50
-states) is private and runs at https://lastingground.com.
+This open-source variant returns a row only when an address appears in
+``groundtruth_geo.jsonl``. Those rows are selected development exports. Their
+agency URLs are entry pages and their snapshot labels do not prove that the
+underlying source was rechecked today. Addresses outside the file return a
+structured ``not in static benchmark`` response.
 
 Run locally:
     python3 ground_truth_mcp.py
@@ -94,8 +89,10 @@ def _truth_for_items(items):
             "deterministic": True,
             "llm_in_answer_path": False,
             "reproducible": True,
-            "source": "GroundTruth-Geo benchmark (static edition)",
-            "engine": "Lasting Ground (live engine private; see lastingground.com)",
+            "static_copy": True,
+            "record_freshness_unverified": True,
+            "source": "GroundTruth-Geo selected static rows",
+            "export_origin": "Lasting Ground development output",
         },
     }
 
@@ -116,9 +113,8 @@ def _lookup_by_address(address):
             "not_in_static_benchmark": True,
             "address": address,
             "hint": (
-                "This static benchmark covers 33 questions across 7 states (sample addresses). "
-                "The live Lasting Ground engine answers any US address with cited federal layers; "
-                "see https://lastingground.com."
+                "This static dataset covers 33 selected questions across 7 states. "
+                "No result is available here for the requested address."
             ),
             "benchmark_addresses": sorted({a for a in _BY_ADDR})[:12],
         }
@@ -137,13 +133,11 @@ TOOLS = [
     {
         "name": "lookup_property_truth",
         "description": (
-            "Return the deterministic, government-source-CITED, reproducible property-truth "
-            "record for a US address from the GroundTruth-Geo benchmark. Each record carries "
-            "claims for FEMA Special Flood Hazard Area, National Register historic district, "
-            "and nearby EPA/state-listed contamination sites; every claim cites an official "
-            "source URL and date. NO LLM is in the answer path. Use this to GROUND any "
-            "property claim before an agent asserts it. (Static benchmark — the live engine "
-            "covering any US address is at https://lastingground.com.)"
+            "Return a selected static GroundTruth-Geo row when the address is present in "
+            "the bundled file. Rows contain structured reference answers, agency labels, "
+            "agency entry-page URLs, and snapshot labels for three task families. No LLM "
+            "is in this lookup path. Do not treat the static row as proof that a source is "
+            "current or as an official determination."
         ),
         "inputSchema": {
             "type": "object",
@@ -159,9 +153,9 @@ TOOLS = [
     {
         "name": "verify_property_record",
         "description": (
-            "Re-derive a previously returned property-truth record by its record_id (LG-XXXXXXXX) "
-            "and return the same deterministic record + reproducible content fingerprint. Proves "
-            "the record reproduces identically — no AI, no drift."
+            "Read a selected static row again by its record_id (LG-XXXXXXXX) and return "
+            "the stored record and fingerprint. Matching output proves stable local retrieval, "
+            "not independent accuracy or current source status."
         ),
         "inputSchema": {
             "type": "object",
@@ -195,8 +189,9 @@ def handle(req):
             "capabilities": {"tools": {}},
             "serverInfo": SERVER,
             "instructions": (
-                "Call lookup_property_truth(address) to ground any US property claim in cited, "
-                "deterministic government records before asserting it."
+                "Call lookup_property_truth(address) only to retrieve a selected bundled row. "
+                "Treat absent addresses as unsupported and recheck official sources before "
+                "relying on any returned row."
             ),
         }}
     if method in ("notifications/initialized", "initialized"):

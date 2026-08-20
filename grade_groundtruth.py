@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-"""Grade model predictions against GroundTruth-Geo — deterministically, against cited government records
-(no LLM judge; ungameable). Metrics follow the field-standard factuality literature so the result is
-credible to AI-lab researchers:
+"""Grade model predictions against selected static GroundTruth-Geo reference rows
+without an LLM judge. The output includes:
 
   • CORRECT / INCORRECT / NOT_ATTEMPTED buckets (SimpleQA, arXiv 2411.04368).
   • SimpleQA F1 = 2*A*C/(A+C),  C = correct/N (recall-like),  A = correct/(correct+incorrect) (precision-like).
@@ -13,7 +12,7 @@ credible to AI-lab researchers:
 Usage:
   python3 grade_groundtruth.py predictions.json     # {item_id: {<gold_key>: value}}  or  {"NOT_ATTEMPTED": true}
   python3 grade_groundtruth.py                       # scores always-NO / always-YES / always-ABSTAIN baselines
-A constant answer must NOT win — that's the point of real ground truth.
+A constant answer should not dominate this selected yes/no mix.
 """
 import sys, os, json
 from collections import defaultdict
@@ -70,8 +69,9 @@ def main():
     gold = load_gold()
     if not gold:
         print("No benchmark found — run gen_groundtruth_benchmark.py first."); return
-    print(f"GroundTruth-Geo: {len(gold)} items, {len({g['state'] for g in gold})} states. "
-          "Deterministic, government-cited, reproducible. NO LLM judge.")
+    print(f"GroundTruth-Geo: {len(gold)} selected items, {len({g['state'] for g in gold})} states. "
+          "Static reference rows; no LLM judge.")
+    print("Boundary: not representative, independently audited, or proof of current source status.")
     print("Metrics: accuracy, SimpleQA-F1 (rewards abstention), Omniscience Index [-100,100], abstention & hallucination rates.")
     if len(sys.argv) > 1:
         preds = json.load(open(sys.argv[1]))
@@ -81,7 +81,7 @@ def main():
         report("baseline: always-YES", gold, lambda it: {KEY[it["task"]]: True})
         report("baseline: always-ABSTAIN", gold, lambda it: {"NOT_ATTEMPTED": True})
         print("\nOmniscience Index: +1 correct / -1 confident-wrong / 0 abstain. A constant answer lands near 0 — that's the point.")
-        print("Plug a frontier model's CLOSED-BOOK structured answers in as predictions.json to publish its score.")
+        print("Pass structured answers in predictions.json to run a local comparison.")
 
 if __name__ == "__main__":
     main()

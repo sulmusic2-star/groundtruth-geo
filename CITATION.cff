@@ -1,22 +1,21 @@
 cff-version: 1.2.0
-title: "GroundTruth-Geo: A deterministic, government-cited benchmark of parcel-precise US property facts"
-message: "If you use this benchmark or the accompanying grader / MCP server in academic work or model evaluation, please cite it as below."
+title: "GroundTruth-Geo: A selected static evaluation set for address-specific US property questions"
+message: "If you use this dataset or the accompanying grader / MCP server, please cite it as below and preserve its evidence boundary."
 type: dataset
 authors:
   - family-names: Sullivan
     given-names: Tim
     website: "https://lastingground.com"
 abstract: >-
-  GroundTruth-Geo is a machine-gradable benchmark of parcel-precise US
-  property facts on the exact questions frontier large language models fail
-  on geography (GPSBench / MapEval: under 25% on parcel geometry, 1–23% on
-  city-level localization). Each item is a deterministic government record
-  cited to FEMA / NPS / EPA with an official source URL, a source date, and
-  a reproducible content fingerprint. The repository ships a deterministic
-  grader using field-standard factuality metrics (SimpleQA F1,
-  AA-Omniscience Index) and a JSON-RPC stdio MCP server exposing the
-  records as agent tools. No LLM is in the answer path — the verifier is
-  external government ground truth and is, by construction, ungameable.
+  GroundTruth-Geo contains 33 selected static records across seven states
+  and three address-specific property-question families. Each development
+  export includes a structured reference answer, agency source label,
+  agency entry-page URL, snapshot label, and content fingerprint. The
+  repository ships a deterministic grader using SimpleQA F1 and the
+  AA-Omniscience Index, plus a JSON-RPC stdio MCP server that exposes the
+  bundled rows. This is not a representative or independently audited
+  sample, evidence of nationwide accuracy, or proof that a source was
+  rechecked today.
 repository-code: "https://github.com/sulmusic2-star/groundtruth-geo"
 url: "https://github.com/sulmusic2-star/groundtruth-geo"
 license: MIT
