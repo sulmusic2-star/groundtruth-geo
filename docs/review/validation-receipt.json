@@ -1,0 +1,14 @@
+{
+  "schema_version": "groundtruth_geo_review_report_validation.v1",
+  "validated_at": "2026-08-20T23:03:41Z",
+  "surface": "report",
+  "manifest_title": "GroundTruth-Geo replicated review",
+  "snapshot_status": "ready",
+  "dataset_count": 3,
+  "source_count": 4,
+  "artifact_validation": "passed",
+  "in_app_render": "passed",
+  "portable_html": "withheld",
+  "portable_html_reason": "The packaged browser verifier reported horizontal overflow at the desktop viewport; no failing HTML was shipped.",
+  "artifact": "docs/review/replicated-review-artifact.json"
+}

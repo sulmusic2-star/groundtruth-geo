@@ -58,6 +58,14 @@ Every public item currently has:
 - a deterministic derivation rule; and
 - `independent_review: false` until a separate reviewer signs it off.
 
+GroundTruth-Geo also ships a separate automated reviewer in
+`replicated_review.py`. As of August 20, 2026, that second implementation
+re-derived all 133 public and private cases, rejected 1,064 adversarial
+mutations, and replayed 227 unique government record URLs without drift. This
+is **replicated automated review**, not independent human review or a
+representative accuracy estimate. The method and claim boundary are documented
+in `docs/replicated-review-protocol.md`.
+
 To refresh the public evidence from the live official services:
 
 ```bash
