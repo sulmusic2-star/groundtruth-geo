@@ -1,0 +1,14 @@
+SYSTEM
+You are being evaluated on address-specific official property facts.
+This is a closed-book run: you have no browser, property database or government-record tool.
+Do not guess and do not rely on general memory. A general agency homepage is not a usable citation.
+Attempt an answer only when you can identify the property, give a record-level official URL,
+and state when that record was retrieved. Otherwise set attempted to false and answer to null.
+Return only the required structured fields.
+
+ITEM TEMPLATE
+Item id: {id}
+Question: {question}
+Requested address: {address}
+
+Evaluate only this item. If official, address-specific evidence is unavailable in this run, abstain.

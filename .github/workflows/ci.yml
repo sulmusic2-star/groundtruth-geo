@@ -28,7 +28,9 @@ jobs:
           python3 -c "
           import json
           required = {'id', 'task', 'question', 'answer', 'source_url',
-                      'source_date', 'record_id', 'fingerprint',
+                      'source_date', 'record_id', 'fingerprint', 'retrieved_at',
+                      'evidence_path', 'evidence_sha256', 'evidence_status',
+                      'independent_review',
                       'deterministic', 'llm_in_answer_path', 'reproducible'}
           with open('groundtruth_geo.jsonl') as f:
               items = [json.loads(l) for l in f if l.strip()]
@@ -40,6 +42,12 @@ jobs:
               assert it['reproducible'] is True
           print(f'OK — {len(items)} items, all required fields present')
           "
+
+      - name: Verify all dated evidence receipts
+        run: python3 refresh_evidence.py --validate
+
+      - name: Run benchmark and audit tests
+        run: python3 -m unittest discover -s tests -v
 
       - name: Run grader baselines (a constant answer must not win)
         run: python3 grade_groundtruth.py
@@ -59,10 +67,12 @@ jobs:
           assert len(rs) == 5, f'expected 5 responses, got {len(rs)}'
           assert rs[0]['result']['serverInfo']['name'] == 'ground-truth'
           assert {t['name'] for t in rs[1]['result']['tools']} == {'lookup_property_truth', 'verify_property_record'}
-          # The Nantucket record reproduces with the documented fingerprint.
+          # The Nantucket record reproduces with dated evidence metadata.
           obj = json.loads(rs[2]['result']['content'][0]['text'])
-          assert obj['fingerprint'] == 'ccd05bcec753', f'fingerprint drifted: {obj[\"fingerprint\"]}'
           assert len(obj['claims']) == 3
+          assert all(c['evidence_status'] == 'verified' for c in obj['claims'])
+          assert all(c['retrieved_at'] for c in obj['claims'])
+          assert all(c['independent_review'] is False for c in obj['claims'])
           # verify_property_record returns the same record.
           obj4 = json.loads(rs[3]['result']['content'][0]['text'])
           assert obj4['fingerprint'] == obj['fingerprint']

@@ -1,0 +1,275 @@
+{
+  "schema_version": "2.0",
+  "item_id": "gtg-263dd970290e",
+  "task": "historic_district",
+  "retrieved_at": "2026-08-20T20:14:12Z",
+  "status": "verified",
+  "property_identity": {
+    "status": "verified_census_match",
+    "requested_address": "600 Congress Ave, Austin, TX",
+    "matched_address": "600 CONGRESS AVE, AUSTIN, TX, 78701",
+    "longitude": -97.742856218692,
+    "latitude": 30.268138089752,
+    "geocoder": "United States Census Geocoder",
+    "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=600+Congress+Ave%2C+Austin%2C+TX&benchmark=Public_AR_Current&format=json",
+    "response_sha256": "98f3530c20da0115298af25ebc3f6b07184cb3c66ec93933b8b31787707a26f5",
+    "reviewed_exception": null,
+    "raw_response": {
+      "result": {
+        "input": {
+          "address": {
+            "address": "600 Congress Ave, Austin, TX"
+          },
+          "benchmark": {
+            "isDefault": true,
+            "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+            "id": "4",
+            "benchmarkName": "Public_AR_Current"
+          }
+        },
+        "addressMatches": [
+          {
+            "tigerLine": {
+              "side": "L",
+              "tigerLineId": "63943451"
+            },
+            "coordinates": {
+              "x": -97.742856218692,
+              "y": 30.268138089752
+            },
+            "addressComponents": {
+              "zip": "78701",
+              "streetName": "CONGRESS",
+              "preType": "",
+              "city": "AUSTIN",
+              "preDirection": "",
+              "suffixDirection": "",
+              "fromAddress": "600",
+              "state": "TX",
+              "suffixType": "AVE",
+              "toAddress": "698",
+              "suffixQualifier": "",
+              "preQualifier": ""
+            },
+            "matchedAddress": "600 CONGRESS AVE, AUSTIN, TX, 78701"
+          }
+        ]
+      }
+    }
+  },
+  "official_queries": [
+    {
+      "source": "National Park Service National Register polygons",
+      "record_url": "https://mapservices.nps.gov/arcgis/rest/services/cultural_resources/nrhp_locations/MapServer/1/query?f=json&geometry=-97.742856218692%2C30.268138089752&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CNRIS_Refnum%2CRESNAME%2CResType%2CAddress%2CCity%2CState%2CCertDate%2CCR_ID%2CPROPERTY_ID%2CSTATUS%2CNARA_URL%2CEDIT_DATE%2CSOURCE%2CSRC_DATE&returnGeometry=false",
+      "response_sha256": "cab5b07a59f5cb29237019ea545236d214e8be293773bf4b07b488b9ff3ae0fb",
+      "returned_record_count": 2,
+      "qualifying_record_count": 2,
+      "qualifying_records": [
+        {
+          "OBJECTID": 437112,
+          "NRIS_Refnum": "78002989",
+          "RESNAME": "Congress Avenue Historic District",
+          "ResType": "district",
+          "Address": "Congress Ave. from 1st to 11th Sts.",
+          "City": "Austin",
+          "State": "TEXAS",
+          "CertDate": "08/11/78",
+          "CR_ID": "{87391243-7A5C-4C87-B6AD-F09949B4525C}",
+          "PROPERTY_ID": "78002989",
+          "STATUS": "Listed",
+          "NARA_URL": "https://catalog.archives.gov/id/40973707",
+          "EDIT_DATE": 1345161600000,
+          "SOURCE": "National Register of Historic Places -- National Park Service",
+          "SRC_DATE": 271641600000
+        },
+        {
+          "OBJECTID": 437081,
+          "NRIS_Refnum": "75002132",
+          "RESNAME": "Sixth Street Historic District",
+          "ResType": "district",
+          "Address": "Roughly bounded by 5th, 7th, Lavaca Sts. and I-35",
+          "City": "Austin",
+          "State": "TEXAS",
+          "CertDate": "12/30/75",
+          "CR_ID": "{B09A1EC4-7117-4C7C-922B-8C583A729500}",
+          "PROPERTY_ID": "75002132",
+          "STATUS": "Listed",
+          "NARA_URL": "https://catalog.archives.gov/id/40973709",
+          "EDIT_DATE": 1345161600000,
+          "SOURCE": "National Register of Historic Places -- National Park Service",
+          "SRC_DATE": 189129600000
+        }
+      ],
+      "raw_response": {
+        "displayFieldName": "RESNAME",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "NRIS_Refnum": "NRIS_Refnum",
+          "RESNAME": "Resource Name",
+          "ResType": "Resource Type",
+          "Address": "Address",
+          "City": "City",
+          "State": "State",
+          "CertDate": "Certification Date",
+          "CR_ID": "Cultural Resource GUID",
+          "PROPERTY_ID": "PROPERTY ID",
+          "STATUS": "STATUS",
+          "NARA_URL": "NARA_URL",
+          "EDIT_DATE": "Last Edit Date",
+          "SOURCE": "Source",
+          "SRC_DATE": "Source Date"
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "NRIS_Refnum",
+            "type": "esriFieldTypeString",
+            "alias": "NRIS_Refnum",
+            "length": 11
+          },
+          {
+            "name": "RESNAME",
+            "type": "esriFieldTypeString",
+            "alias": "Resource Name",
+            "length": 255
+          },
+          {
+            "name": "ResType",
+            "type": "esriFieldTypeString",
+            "alias": "Resource Type",
+            "length": 10
+          },
+          {
+            "name": "Address",
+            "type": "esriFieldTypeString",
+            "alias": "Address",
+            "length": 255
+          },
+          {
+            "name": "City",
+            "type": "esriFieldTypeString",
+            "alias": "City",
+            "length": 255
+          },
+          {
+            "name": "State",
+            "type": "esriFieldTypeString",
+            "alias": "State",
+            "length": 255
+          },
+          {
+            "name": "CertDate",
+            "type": "esriFieldTypeString",
+            "alias": "Certification Date",
+            "length": 11
+          },
+          {
+            "name": "CR_ID",
+            "type": "esriFieldTypeString",
+            "alias": "Cultural Resource GUID",
+            "length": 50
+          },
+          {
+            "name": "PROPERTY_ID",
+            "type": "esriFieldTypeString",
+            "alias": "PROPERTY ID",
+            "length": 11
+          },
+          {
+            "name": "STATUS",
+            "type": "esriFieldTypeString",
+            "alias": "STATUS",
+            "length": 10
+          },
+          {
+            "name": "NARA_URL",
+            "type": "esriFieldTypeString",
+            "alias": "NARA_URL",
+            "length": 255
+          },
+          {
+            "name": "EDIT_DATE",
+            "type": "esriFieldTypeDate",
+            "alias": "Last Edit Date",
+            "length": 8
+          },
+          {
+            "name": "SOURCE",
+            "type": "esriFieldTypeString",
+            "alias": "Source",
+            "length": 250
+          },
+          {
+            "name": "SRC_DATE",
+            "type": "esriFieldTypeDate",
+            "alias": "Source Date",
+            "length": 8
+          }
+        ],
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 437081,
+              "NRIS_Refnum": "75002132",
+              "RESNAME": "Sixth Street Historic District",
+              "ResType": "district",
+              "Address": "Roughly bounded by 5th, 7th, Lavaca Sts. and I-35",
+              "City": "Austin",
+              "State": "TEXAS",
+              "CertDate": "12/30/75",
+              "CR_ID": "{B09A1EC4-7117-4C7C-922B-8C583A729500}",
+              "PROPERTY_ID": "75002132",
+              "STATUS": "Listed",
+              "NARA_URL": "https://catalog.archives.gov/id/40973709",
+              "EDIT_DATE": 1345161600000,
+              "SOURCE": "National Register of Historic Places -- National Park Service",
+              "SRC_DATE": 189129600000
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 437112,
+              "NRIS_Refnum": "78002989",
+              "RESNAME": "Congress Avenue Historic District",
+              "ResType": "district",
+              "Address": "Congress Ave. from 1st to 11th Sts.",
+              "City": "Austin",
+              "State": "TEXAS",
+              "CertDate": "08/11/78",
+              "CR_ID": "{87391243-7A5C-4C87-B6AD-F09949B4525C}",
+              "PROPERTY_ID": "78002989",
+              "STATUS": "Listed",
+              "NARA_URL": "https://catalog.archives.gov/id/40973707",
+              "EDIT_DATE": 1345161600000,
+              "SOURCE": "National Register of Historic Places -- National Park Service",
+              "SRC_DATE": 271641600000
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "derivation_rule": {
+    "id": "nps-nrhp-listed-district-point-v2",
+    "plain_language": "Only intersecting National Register polygons labeled as a listed district count. Buildings, objects, sites and structures do not.",
+    "predicate": "lower(ResType) == 'district' and lower(STATUS) == 'listed'",
+    "excluded_intersections": []
+  },
+  "gold_answer": {
+    "in_historic_district": true,
+    "district": "Congress Avenue Historic District; Sixth Street Historic District",
+    "districts": [
+      "Congress Avenue Historic District",
+      "Sixth Street Historic District"
+    ]
+  },
+  "review": {
+    "automated_official_source_check": true,
+    "independent_human_review": false,
+    "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "schema_version": "2.0",
+  "item_id": "gtg-1677cda2e9dd",
+  "task": "historic_district",
+  "retrieved_at": "2026-08-20T20:14:12Z",
+  "status": "verified",
+  "property_identity": {
+    "status": "verified_census_match",
+    "requested_address": "1300 Ocean Dr, Miami Beach, FL",
+    "matched_address": "1300 OCEAN DR, MIAMI BEACH, FL, 33139",
+    "longitude": -80.130012291578,
+    "latitude": 25.783989158428,
+    "geocoder": "United States Census Geocoder",
+    "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=1300+Ocean+Dr%2C+Miami+Beach%2C+FL&benchmark=Public_AR_Current&format=json",
+    "response_sha256": "679660d18743661f0270397fafa076cd611265d627500d4d90cfb299f2fa85f3",
+    "reviewed_exception": null,
+    "raw_response": {
+      "result": {
+        "input": {
+          "address": {
+            "address": "1300 Ocean Dr, Miami Beach, FL"
+          },
+          "benchmark": {
+            "isDefault": true,
+            "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+            "id": "4",
+            "benchmarkName": "Public_AR_Current"
+          }
+        },
+        "addressMatches": [
+          {
+            "tigerLine": {
+              "side": "L",
+              "tigerLineId": "116249028"
+            },
+            "coordinates": {
+              "x": -80.130012291578,
+              "y": 25.783989158428
+            },
+            "addressComponents": {
+              "zip": "33139",
+              "streetName": "OCEAN",
+              "preType": "",
+              "city": "MIAMI BEACH",
+              "preDirection": "",
+              "suffixDirection": "",
+              "fromAddress": "1300",
+              "state": "FL",
+              "suffixType": "DR",
+              "toAddress": "1398",
+              "suffixQualifier": "",
+              "preQualifier": ""
+            },
+            "matchedAddress": "1300 OCEAN DR, MIAMI BEACH, FL, 33139"
+          }
+        ]
+      }
+    }
+  },
+  "official_queries": [
+    {
+      "source": "National Park Service National Register polygons",
+      "record_url": "https://mapservices.nps.gov/arcgis/rest/services/cultural_resources/nrhp_locations/MapServer/1/query?f=json&geometry=-80.130012291578%2C25.783989158428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CNRIS_Refnum%2CRESNAME%2CResType%2CAddress%2CCity%2CState%2CCertDate%2CCR_ID%2CPROPERTY_ID%2CSTATUS%2CNARA_URL%2CEDIT_DATE%2CSOURCE%2CSRC_DATE&returnGeometry=false",
+      "response_sha256": "67613e883bc85484323b5988ade01f6292e4b67e8a12be118388be61e05d0cc9",
+      "returned_record_count": 1,
+      "qualifying_record_count": 1,
+      "qualifying_records": [
+        {
+          "OBJECTID": 441567,
+          "NRIS_Refnum": "79000667",
+          "RESNAME": "Miami Beach Architectural District",
+          "ResType": "district",
+          "Address": "Roughly bounded by Atlantic Ocean, Miami Beach Blvd., Alton Rd. and Collins Canal",
+          "City": "Miami Beach",
+          "State": "FLORIDA",
+          "CertDate": "05/14/79",
+          "CR_ID": "{66CDF349-7877-478E-B3F6-85B0801AC838}",
+          "PROPERTY_ID": "79000667",
+          "STATUS": "Listed",
+          "NARA_URL": "https://catalog.archives.gov/id/77843213",
+          "EDIT_DATE": 1345161600000,
+          "SOURCE": "National Register of Historic Places -- National Park Service",
+          "SRC_DATE": 295488000000
+        }
+      ],
+      "raw_response": {
+        "displayFieldName": "RESNAME",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "NRIS_Refnum": "NRIS_Refnum",
+          "RESNAME": "Resource Name",
+          "ResType": "Resource Type",
+          "Address": "Address",
+          "City": "City",
+          "State": "State",
+          "CertDate": "Certification Date",
+          "CR_ID": "Cultural Resource GUID",
+          "PROPERTY_ID": "PROPERTY ID",
+          "STATUS": "STATUS",
+          "NARA_URL": "NARA_URL",
+          "EDIT_DATE": "Last Edit Date",
+          "SOURCE": "Source",
+          "SRC_DATE": "Source Date"
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "NRIS_Refnum",
+            "type": "esriFieldTypeString",
+            "alias": "NRIS_Refnum",
+            "length": 11
+          },
+          {
+            "name": "RESNAME",
+            "type": "esriFieldTypeString",
+            "alias": "Resource Name",
+            "length": 255
+          },
+          {
+            "name": "ResType",
+            "type": "esriFieldTypeString",
+            "alias": "Resource Type",
+            "length": 10
+          },
+          {
+            "name": "Address",
+            "type": "esriFieldTypeString",
+            "alias": "Address",
+            "length": 255
+          },
+          {
+            "name": "City",
+            "type": "esriFieldTypeString",
+            "alias": "City",
+            "length": 255
+          },
+          {
+            "name": "State",
+            "type": "esriFieldTypeString",
+            "alias": "State",
+            "length": 255
+          },
+          {
+            "name": "CertDate",
+            "type": "esriFieldTypeString",
+            "alias": "Certification Date",
+            "length": 11
+          },
+          {
+            "name": "CR_ID",
+            "type": "esriFieldTypeString",
+            "alias": "Cultural Resource GUID",
+            "length": 50
+          },
+          {
+            "name": "PROPERTY_ID",
+            "type": "esriFieldTypeString",
+            "alias": "PROPERTY ID",
+            "length": 11
+          },
+          {
+            "name": "STATUS",
+            "type": "esriFieldTypeString",
+            "alias": "STATUS",
+            "length": 10
+          },
+          {
+            "name": "NARA_URL",
+            "type": "esriFieldTypeString",
+            "alias": "NARA_URL",
+            "length": 255
+          },
+          {
+            "name": "EDIT_DATE",
+            "type": "esriFieldTypeDate",
+            "alias": "Last Edit Date",
+            "length": 8
+          },
+          {
+            "name": "SOURCE",
+            "type": "esriFieldTypeString",
+            "alias": "Source",
+            "length": 250
+          },
+          {
+            "name": "SRC_DATE",
+            "type": "esriFieldTypeDate",
+            "alias": "Source Date",
+            "length": 8
+          }
+        ],
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 441567,
+              "NRIS_Refnum": "79000667",
+              "RESNAME": "Miami Beach Architectural District",
+              "ResType": "district",
+              "Address": "Roughly bounded by Atlantic Ocean, Miami Beach Blvd., Alton Rd. and Collins Canal",
+              "City": "Miami Beach",
+              "State": "FLORIDA",
+              "CertDate": "05/14/79",
+              "CR_ID": "{66CDF349-7877-478E-B3F6-85B0801AC838}",
+              "PROPERTY_ID": "79000667",
+              "STATUS": "Listed",
+              "NARA_URL": "https://catalog.archives.gov/id/77843213",
+              "EDIT_DATE": 1345161600000,
+              "SOURCE": "National Register of Historic Places -- National Park Service",
+              "SRC_DATE": 295488000000
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "derivation_rule": {
+    "id": "nps-nrhp-listed-district-point-v2",
+    "plain_language": "Only intersecting National Register polygons labeled as a listed district count. Buildings, objects, sites and structures do not.",
+    "predicate": "lower(ResType) == 'district' and lower(STATUS) == 'listed'",
+    "excluded_intersections": []
+  },
+  "gold_answer": {
+    "in_historic_district": true,
+    "district": "Miami Beach Architectural District",
+    "districts": [
+      "Miami Beach Architectural District"
+    ]
+  },
+  "review": {
+    "automated_official_source_check": true,
+    "independent_human_review": false,
+    "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+  }
+}

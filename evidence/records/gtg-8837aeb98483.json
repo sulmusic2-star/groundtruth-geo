@@ -1,0 +1,180 @@
+{
+  "schema_version": "2.0",
+  "item_id": "gtg-8837aeb98483",
+  "task": "fema_sfha",
+  "retrieved_at": "2026-08-20T20:14:12Z",
+  "status": "verified",
+  "property_identity": {
+    "status": "verified_census_match",
+    "requested_address": "233 S Wacker Dr, Chicago, IL",
+    "matched_address": "233 S WACKER DR, CHICAGO, IL, 60606",
+    "longitude": -87.636602795305,
+    "latitude": 41.878916229496,
+    "geocoder": "United States Census Geocoder",
+    "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=233+S+Wacker+Dr%2C+Chicago%2C+IL&benchmark=Public_AR_Current&format=json",
+    "response_sha256": "14d44ed27e4dc9e3499c5cd2bf305de6acc13054e4614c2a6f97d990ff789b87",
+    "reviewed_exception": null,
+    "raw_response": {
+      "result": {
+        "input": {
+          "address": {
+            "address": "233 S Wacker Dr, Chicago, IL"
+          },
+          "benchmark": {
+            "isDefault": true,
+            "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+            "id": "4",
+            "benchmarkName": "Public_AR_Current"
+          }
+        },
+        "addressMatches": [
+          {
+            "tigerLine": {
+              "side": "L",
+              "tigerLineId": "657078844"
+            },
+            "coordinates": {
+              "x": -87.636602795305,
+              "y": 41.878916229496
+            },
+            "addressComponents": {
+              "zip": "60606",
+              "streetName": "WACKER",
+              "preType": "",
+              "city": "CHICAGO",
+              "preDirection": "S",
+              "suffixDirection": "",
+              "fromAddress": "201",
+              "state": "IL",
+              "suffixType": "DR",
+              "toAddress": "299",
+              "suffixQualifier": "",
+              "preQualifier": ""
+            },
+            "matchedAddress": "233 S WACKER DR, CHICAGO, IL, 60606"
+          }
+        ]
+      }
+    }
+  },
+  "official_queries": [
+    {
+      "source": "FEMA National Flood Hazard Layer",
+      "record_url": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query?f=json&geometry=-87.636602795305%2C41.878916229496&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CDFIRM_ID%2CFLD_AR_ID%2CFLD_ZONE%2CZONE_SUBTY%2CSFHA_TF%2CSOURCE_CIT%2CGFID%2CGlobalID&returnGeometry=false",
+      "response_sha256": "f5672840b30cb1a6434915719aee0105fe51717e3ca85913cff43c06cf92fa3b",
+      "returned_record_count": 1,
+      "qualifying_record_count": 1,
+      "qualifying_records": [
+        {
+          "OBJECTID": 24558377,
+          "DFIRM_ID": "17031C",
+          "FLD_AR_ID": "17031C_7541",
+          "FLD_ZONE": "X",
+          "ZONE_SUBTY": "AREA OF MINIMAL FLOOD HAZARD",
+          "SFHA_TF": "F",
+          "SOURCE_CIT": "17031C_STUDY1",
+          "GFID": "c0fb7932-07a4-4fdb-a17c-28e545acc2bb",
+          "GlobalID": "{23C2B81F-FB69-43C0-BE03-409355FC4363}"
+        }
+      ],
+      "raw_response": {
+        "displayFieldName": "FLD_AR_ID",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "DFIRM_ID": "DFIRM_ID",
+          "FLD_AR_ID": "FLD_AR_ID",
+          "FLD_ZONE": "FLD_ZONE",
+          "ZONE_SUBTY": "ZONE_SUBTY",
+          "SFHA_TF": "SFHA_TF",
+          "SOURCE_CIT": "SOURCE_CIT",
+          "GFID": "GFID",
+          "GlobalID": "GlobalID"
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "DFIRM_ID",
+            "type": "esriFieldTypeString",
+            "alias": "DFIRM_ID",
+            "length": 6
+          },
+          {
+            "name": "FLD_AR_ID",
+            "type": "esriFieldTypeString",
+            "alias": "FLD_AR_ID",
+            "length": 32
+          },
+          {
+            "name": "FLD_ZONE",
+            "type": "esriFieldTypeString",
+            "alias": "FLD_ZONE",
+            "length": 17
+          },
+          {
+            "name": "ZONE_SUBTY",
+            "type": "esriFieldTypeString",
+            "alias": "ZONE_SUBTY",
+            "length": 76
+          },
+          {
+            "name": "SFHA_TF",
+            "type": "esriFieldTypeString",
+            "alias": "SFHA_TF",
+            "length": 1
+          },
+          {
+            "name": "SOURCE_CIT",
+            "type": "esriFieldTypeString",
+            "alias": "SOURCE_CIT",
+            "length": 21
+          },
+          {
+            "name": "GFID",
+            "type": "esriFieldTypeString",
+            "alias": "GFID",
+            "length": 36
+          },
+          {
+            "name": "GlobalID",
+            "type": "esriFieldTypeGlobalID",
+            "alias": "GlobalID",
+            "length": 38
+          }
+        ],
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 24558377,
+              "DFIRM_ID": "17031C",
+              "FLD_AR_ID": "17031C_7541",
+              "FLD_ZONE": "X",
+              "ZONE_SUBTY": "AREA OF MINIMAL FLOOD HAZARD",
+              "SFHA_TF": "F",
+              "SOURCE_CIT": "17031C_STUDY1",
+              "GFID": "c0fb7932-07a4-4fdb-a17c-28e545acc2bb",
+              "GlobalID": "{23C2B81F-FB69-43C0-BE03-409355FC4363}"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "derivation_rule": {
+    "id": "fema-nfhl-point-sfha-v2",
+    "plain_language": "The point must intersect one FEMA flood-zone polygon. SFHA_TF=T means yes; SFHA_TF=F means no.",
+    "predicate": "feature_count == 1 and SFHA_TF in {'T','F'}"
+  },
+  "gold_answer": {
+    "in_sfha": false,
+    "zone": "X"
+  },
+  "review": {
+    "automated_official_source_check": true,
+    "independent_human_review": false,
+    "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+  }
+}

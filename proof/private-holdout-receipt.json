@@ -1,0 +1,31 @@
+{
+  "schema_version": "private_holdout_manifest.v1",
+  "generated_at": "2026-08-20T20:30:35Z",
+  "status": "built_not_independently_reviewed",
+  "private": true,
+  "permit_free": true,
+  "properties": 39,
+  "cases": 100,
+  "task_counts": {
+    "fema_sfha": 34,
+    "historic_district": 33,
+    "contamination_nearby": 33
+  },
+  "positive_counts": {
+    "fema_sfha": 10,
+    "historic_district": 14,
+    "contamination_nearby": 12
+  },
+  "negative_counts": {
+    "fema_sfha": 24,
+    "historic_district": 19,
+    "contamination_nearby": 21
+  },
+  "town_count": 22,
+  "selection_method": "stratified official-source property selection with deterministic town-diversity fill",
+  "evidence_manifest_sha256": "89929994610427ff52eb793394de6c4bf38cc2b72c3f8bede982c746b9e7bd23",
+  "independent_review": false,
+  "claim_boundary": "Stratified private evaluation set; not representative statewide accuracy or coverage proof.",
+  "questions_sha256": "50e64ed5594f5c368065d605d31b3c8f047dccc6b5d09f332ad90155cb3c5654",
+  "gold_commitment_sha256": "28bb14f45a217f616966d13e3e2a9c981fa5a9c02b6a4c7ea76b00930ef220ac"
+}

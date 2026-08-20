@@ -3,10 +3,9 @@
 GroundTruth-Geo rows as a callable agent tool, with no LLM in the lookup path.
 
 This open-source variant returns a row only when an address appears in
-``groundtruth_geo.jsonl``. Those rows are selected development exports. Their
-agency URLs are entry pages and their snapshot labels do not prove that the
-underlying source was rechecked today. Addresses outside the file return a
-structured ``not in static benchmark`` response.
+``groundtruth_geo.jsonl``. Each v2 row links to a dated evidence receipt and an
+exact official record query. Addresses outside the file return a structured
+``not in static benchmark`` response.
 
 Run locally:
     python3 ground_truth_mcp.py
@@ -30,7 +29,7 @@ import os
 from collections import defaultdict
 
 PROTO = "2024-11-05"
-SERVER = {"name": "ground-truth", "version": "0.2.0-static"}
+SERVER = {"name": "ground-truth", "version": "0.3.0-evidence"}
 HERE = os.path.dirname(os.path.abspath(__file__))
 GOLD = os.path.join(HERE, "groundtruth_geo.jsonl")
 
@@ -75,6 +74,11 @@ def _truth_for_items(items):
             "source": it["source"],
             "source_url": it["source_url"],
             "source_date": it["source_date"],
+            "retrieved_at": it.get("retrieved_at"),
+            "evidence_status": it.get("evidence_status"),
+            "evidence_path": it.get("evidence_path"),
+            "evidence_sha256": it.get("evidence_sha256"),
+            "independent_review": it.get("independent_review", False),
             "deterministic": it.get("deterministic", True),
             "llm_in_answer_path": it.get("llm_in_answer_path", False),
         })
@@ -90,7 +94,8 @@ def _truth_for_items(items):
             "llm_in_answer_path": False,
             "reproducible": True,
             "static_copy": True,
-            "record_freshness_unverified": True,
+            "evidence_status": "verified",
+            "independent_review": False,
             "source": "GroundTruth-Geo selected static rows",
             "export_origin": "Lasting Ground development output",
         },
@@ -135,9 +140,9 @@ TOOLS = [
         "description": (
             "Return a selected static GroundTruth-Geo row when the address is present in "
             "the bundled file. Rows contain structured reference answers, agency labels, "
-            "agency entry-page URLs, and snapshot labels for three task families. No LLM "
-            "is in this lookup path. Do not treat the static row as proof that a source is "
-            "current or as an official determination."
+            "exact official record queries, dated evidence receipts, and structured answers "
+            "for three task families. No LLM is in this lookup path. Evidence is dated, not "
+            "continuously current, and has not been independently reviewed."
         ),
         "inputSchema": {
             "type": "object",
@@ -155,7 +160,8 @@ TOOLS = [
         "description": (
             "Read a selected static row again by its record_id (LG-XXXXXXXX) and return "
             "the stored record and fingerprint. Matching output proves stable local retrieval, "
-            "not independent accuracy or current source status."
+            "not independent review, statewide coverage, or current source status after the "
+            "record's retrieval date."
         ),
         "inputSchema": {
             "type": "object",
@@ -190,8 +196,8 @@ def handle(req):
             "serverInfo": SERVER,
             "instructions": (
                 "Call lookup_property_truth(address) only to retrieve a selected bundled row. "
-                "Treat absent addresses as unsupported and recheck official sources before "
-                "relying on any returned row."
+                "Treat absent addresses as unsupported. Check retrieved_at and open the exact "
+                "official record before relying on a returned row."
             ),
         }}
     if method in ("notifications/initialized", "initialized"):

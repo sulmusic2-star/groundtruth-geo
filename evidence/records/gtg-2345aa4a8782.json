@@ -1,0 +1,413 @@
+{
+  "schema_version": "2.0",
+  "item_id": "gtg-2345aa4a8782",
+  "task": "contamination_nearby",
+  "retrieved_at": "2026-08-20T20:14:12Z",
+  "status": "verified",
+  "property_identity": {
+    "status": "verified_reviewed_alias",
+    "requested_address": "200 N Spring St, Los Angeles, CA",
+    "matched_address": "200 S SPRING ST, LOS ANGELES, CA, 90012",
+    "longitude": -118.245593600365,
+    "latitude": 34.051621750302,
+    "geocoder": "United States Census Geocoder",
+    "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=200+N+Spring+St%2C+Los+Angeles%2C+CA&benchmark=Public_AR_Current&format=json",
+    "response_sha256": "17a19e727b10a3418d9574fb7c1019581e0c7ae00870b4315068a1c34f3b6522",
+    "reviewed_exception": {
+      "accepted_match": "200 S SPRING ST, LOS ANGELES, CA, 90012",
+      "reason": "The Census range match reverses the street direction; the City of Los Angeles identifies City Hall as 200 N Spring St.",
+      "official_identity_url": "https://cityclerk.lacity.org/cal/"
+    },
+    "raw_response": {
+      "result": {
+        "input": {
+          "address": {
+            "address": "200 N Spring St, Los Angeles, CA"
+          },
+          "benchmark": {
+            "isDefault": true,
+            "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+            "id": "4",
+            "benchmarkName": "Public_AR_Current"
+          }
+        },
+        "addressMatches": [
+          {
+            "tigerLine": {
+              "side": "L",
+              "tigerLineId": "141618119"
+            },
+            "coordinates": {
+              "x": -118.245593600365,
+              "y": 34.051621750302
+            },
+            "addressComponents": {
+              "zip": "90012",
+              "streetName": "SPRING",
+              "preType": "",
+              "city": "LOS ANGELES",
+              "preDirection": "S",
+              "suffixDirection": "",
+              "fromAddress": "200",
+              "state": "CA",
+              "suffixType": "ST",
+              "toAddress": "298",
+              "suffixQualifier": "",
+              "preQualifier": ""
+            },
+            "matchedAddress": "200 S SPRING ST, LOS ANGELES, CA, 90012"
+          }
+        ]
+      }
+    }
+  },
+  "official_queries": [
+    {
+      "source": "EPA Envirofacts Superfund",
+      "record_url": "https://geopub.epa.gov/ArcGIS/rest/services/EMEF/efpoints/MapServer/0/query?f=json&geometry=-118.245593600365%2C34.051621750302&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&distance=0.25&units=esriSRUnit_StatuteMile&outSR=4326",
+      "response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+      "returned_record_count": 0,
+      "qualifying_record_count": 0,
+      "qualifying_records": [],
+      "raw_response": {
+        "displayFieldName": "PRIMARY_NAME",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "registry_id": "Registry ID",
+          "site_id": "Site ID",
+          "primary_name": "Primary Name",
+          "location_address": "Address",
+          "city_name": "City",
+          "county_name": "County",
+          "state_code": "State",
+          "epa_region": "EPA Region",
+          "postal_code": "ZIP Code",
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "pgm_sys_acrnm": "Program_System Acronym",
+          "pgm_sys_id": "Program System ID",
+          "fips_code": "FIPS Code",
+          "huc_code": "HUC Code",
+          "facility_url": "Facility URL",
+          "profile_url": "Profile URL"
+        },
+        "geometryType": "esriGeometryPoint",
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "registry_id",
+            "type": "esriFieldTypeString",
+            "alias": "Registry ID",
+            "length": 12
+          },
+          {
+            "name": "site_id",
+            "type": "esriFieldTypeString",
+            "alias": "Site ID",
+            "length": 7
+          },
+          {
+            "name": "primary_name",
+            "type": "esriFieldTypeString",
+            "alias": "Primary Name",
+            "length": 73
+          },
+          {
+            "name": "location_address",
+            "type": "esriFieldTypeString",
+            "alias": "Address",
+            "length": 50
+          },
+          {
+            "name": "city_name",
+            "type": "esriFieldTypeString",
+            "alias": "City",
+            "length": 57
+          },
+          {
+            "name": "county_name",
+            "type": "esriFieldTypeString",
+            "alias": "County",
+            "length": 20
+          },
+          {
+            "name": "state_code",
+            "type": "esriFieldTypeString",
+            "alias": "State",
+            "length": 2
+          },
+          {
+            "name": "epa_region",
+            "type": "esriFieldTypeString",
+            "alias": "EPA Region",
+            "length": 9
+          },
+          {
+            "name": "postal_code",
+            "type": "esriFieldTypeString",
+            "alias": "ZIP Code",
+            "length": 10
+          },
+          {
+            "name": "latitude",
+            "type": "esriFieldTypeDouble",
+            "alias": "Latitude"
+          },
+          {
+            "name": "longitude",
+            "type": "esriFieldTypeDouble",
+            "alias": "Longitude"
+          },
+          {
+            "name": "pgm_sys_acrnm",
+            "type": "esriFieldTypeString",
+            "alias": "Program_System Acronym",
+            "length": 4
+          },
+          {
+            "name": "pgm_sys_id",
+            "type": "esriFieldTypeString",
+            "alias": "Program System ID",
+            "length": 12
+          },
+          {
+            "name": "fips_code",
+            "type": "esriFieldTypeString",
+            "alias": "FIPS Code",
+            "length": 2
+          },
+          {
+            "name": "huc_code",
+            "type": "esriFieldTypeString",
+            "alias": "HUC Code",
+            "length": 2
+          },
+          {
+            "name": "facility_url",
+            "type": "esriFieldTypeString",
+            "alias": "Facility URL",
+            "length": 67
+          },
+          {
+            "name": "profile_url",
+            "type": "esriFieldTypeString",
+            "alias": "Profile URL",
+            "length": 66
+          }
+        ],
+        "features": []
+      }
+    },
+    {
+      "source": "EPA Envirofacts Brownfields",
+      "record_url": "https://geopub.epa.gov/ArcGIS/rest/services/EMEF/efpoints/MapServer/5/query?f=json&geometry=-118.245593600365%2C34.051621750302&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&distance=0.25&units=esriSRUnit_StatuteMile&outSR=4326",
+      "response_sha256": "e9eeb57334d0e6530f432339739ea431d15223cfbc2742d3892cd179b6e5a27e",
+      "returned_record_count": 1,
+      "qualifying_record_count": 1,
+      "qualifying_records": [
+        {
+          "OBJECTID": 9762,
+          "registry_id": "110039529800",
+          "primary_name": "BANDINI CANYON POCKET PARK",
+          "location_address": "O FARRELL AND BANDINI",
+          "city_name": "LOS ANGELES",
+          "county_name": "LOS ANGELES",
+          "state_code": "CA",
+          "epa_region": "Region 09",
+          "postal_code": "",
+          "latitude": 34.0522,
+          "longitude": -118.2428,
+          "pgm_sys_acrnm": "ACRES",
+          "pgm_sys_id": "11453",
+          "fips_code": "",
+          "huc_code": "",
+          "facility_url": "https://ofmpub.epa.gov/apex/cimc/f?p=CIMC:31::::Y,31,0:P31_ID:11453",
+          "geometry": {
+            "x": -118.24279999999999,
+            "y": 34.05220000000003
+          },
+          "program_layer": "Brownfields"
+        }
+      ],
+      "raw_response": {
+        "displayFieldName": "PRIMARY_NAME",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "registry_id": "Registry ID",
+          "primary_name": "Primary Name",
+          "location_address": "Address",
+          "city_name": "City",
+          "county_name": "County",
+          "state_code": "State",
+          "epa_region": "EPA Region",
+          "postal_code": "ZIP Code",
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "pgm_sys_acrnm": "Program_System Acronym",
+          "pgm_sys_id": "Program System ID",
+          "fips_code": "FIPS Code",
+          "huc_code": "HUC Code",
+          "facility_url": "Facility URL"
+        },
+        "geometryType": "esriGeometryPoint",
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "registry_id",
+            "type": "esriFieldTypeString",
+            "alias": "Registry ID",
+            "length": 12
+          },
+          {
+            "name": "primary_name",
+            "type": "esriFieldTypeString",
+            "alias": "Primary Name",
+            "length": 79
+          },
+          {
+            "name": "location_address",
+            "type": "esriFieldTypeString",
+            "alias": "Address",
+            "length": 80
+          },
+          {
+            "name": "city_name",
+            "type": "esriFieldTypeString",
+            "alias": "City",
+            "length": 39
+          },
+          {
+            "name": "county_name",
+            "type": "esriFieldTypeString",
+            "alias": "County",
+            "length": 35
+          },
+          {
+            "name": "state_code",
+            "type": "esriFieldTypeString",
+            "alias": "State",
+            "length": 2
+          },
+          {
+            "name": "epa_region",
+            "type": "esriFieldTypeString",
+            "alias": "EPA Region",
+            "length": 9
+          },
+          {
+            "name": "postal_code",
+            "type": "esriFieldTypeString",
+            "alias": "ZIP Code",
+            "length": 10
+          },
+          {
+            "name": "latitude",
+            "type": "esriFieldTypeDouble",
+            "alias": "Latitude"
+          },
+          {
+            "name": "longitude",
+            "type": "esriFieldTypeDouble",
+            "alias": "Longitude"
+          },
+          {
+            "name": "pgm_sys_acrnm",
+            "type": "esriFieldTypeString",
+            "alias": "Program_System Acronym",
+            "length": 5
+          },
+          {
+            "name": "pgm_sys_id",
+            "type": "esriFieldTypeString",
+            "alias": "Program System ID",
+            "length": 6
+          },
+          {
+            "name": "fips_code",
+            "type": "esriFieldTypeString",
+            "alias": "FIPS Code",
+            "length": 2
+          },
+          {
+            "name": "huc_code",
+            "type": "esriFieldTypeString",
+            "alias": "HUC Code",
+            "length": 2
+          },
+          {
+            "name": "facility_url",
+            "type": "esriFieldTypeString",
+            "alias": "Facility URL",
+            "length": 68
+          }
+        ],
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 9762,
+              "registry_id": "110039529800",
+              "primary_name": "BANDINI CANYON POCKET PARK",
+              "location_address": "O FARRELL AND BANDINI",
+              "city_name": "LOS ANGELES",
+              "county_name": "LOS ANGELES",
+              "state_code": "CA",
+              "epa_region": "Region 09",
+              "postal_code": "",
+              "latitude": 34.0522,
+              "longitude": -118.2428,
+              "pgm_sys_acrnm": "ACRES",
+              "pgm_sys_id": "11453",
+              "fips_code": "",
+              "huc_code": "",
+              "facility_url": "https://ofmpub.epa.gov/apex/cimc/f?p=CIMC:31::::Y,31,0:P31_ID:11453"
+            },
+            "geometry": {
+              "x": -118.24279999999999,
+              "y": 34.05220000000003
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "derivation_rule": {
+    "id": "epa-superfund-brownfields-quarter-mile-v2",
+    "plain_language": "Count unique EPA Superfund and Brownfields program records within 0.25 statute mile of the geocoded point.",
+    "predicate": "distance_miles <= 0.25 and program_layer in {'Superfund','Brownfields'}",
+    "deduplication_key": [
+      "program_layer",
+      "registry_id",
+      "pgm_sys_id_or_site_id"
+    ]
+  },
+  "gold_answer": {
+    "has_nearby_site": true,
+    "count": 1,
+    "radius_miles": 0.25,
+    "programs": [
+      "Brownfields",
+      "Superfund"
+    ]
+  },
+  "review": {
+    "automated_official_source_check": true,
+    "independent_human_review": false,
+    "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+  }
+}

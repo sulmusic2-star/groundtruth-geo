@@ -1,0 +1,409 @@
+{
+  "schema_version": "2.0",
+  "item_id": "gtg-9464428a9faa",
+  "task": "contamination_nearby",
+  "retrieved_at": "2026-08-20T20:14:12Z",
+  "status": "verified",
+  "property_identity": {
+    "status": "verified_census_match",
+    "requested_address": "600 Congress Ave, Austin, TX",
+    "matched_address": "600 CONGRESS AVE, AUSTIN, TX, 78701",
+    "longitude": -97.742856218692,
+    "latitude": 30.268138089752,
+    "geocoder": "United States Census Geocoder",
+    "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=600+Congress+Ave%2C+Austin%2C+TX&benchmark=Public_AR_Current&format=json",
+    "response_sha256": "98f3530c20da0115298af25ebc3f6b07184cb3c66ec93933b8b31787707a26f5",
+    "reviewed_exception": null,
+    "raw_response": {
+      "result": {
+        "input": {
+          "address": {
+            "address": "600 Congress Ave, Austin, TX"
+          },
+          "benchmark": {
+            "isDefault": true,
+            "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+            "id": "4",
+            "benchmarkName": "Public_AR_Current"
+          }
+        },
+        "addressMatches": [
+          {
+            "tigerLine": {
+              "side": "L",
+              "tigerLineId": "63943451"
+            },
+            "coordinates": {
+              "x": -97.742856218692,
+              "y": 30.268138089752
+            },
+            "addressComponents": {
+              "zip": "78701",
+              "streetName": "CONGRESS",
+              "preType": "",
+              "city": "AUSTIN",
+              "preDirection": "",
+              "suffixDirection": "",
+              "fromAddress": "600",
+              "state": "TX",
+              "suffixType": "AVE",
+              "toAddress": "698",
+              "suffixQualifier": "",
+              "preQualifier": ""
+            },
+            "matchedAddress": "600 CONGRESS AVE, AUSTIN, TX, 78701"
+          }
+        ]
+      }
+    }
+  },
+  "official_queries": [
+    {
+      "source": "EPA Envirofacts Superfund",
+      "record_url": "https://geopub.epa.gov/ArcGIS/rest/services/EMEF/efpoints/MapServer/0/query?f=json&geometry=-97.742856218692%2C30.268138089752&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&distance=0.25&units=esriSRUnit_StatuteMile&outSR=4326",
+      "response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+      "returned_record_count": 0,
+      "qualifying_record_count": 0,
+      "qualifying_records": [],
+      "raw_response": {
+        "displayFieldName": "PRIMARY_NAME",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "registry_id": "Registry ID",
+          "site_id": "Site ID",
+          "primary_name": "Primary Name",
+          "location_address": "Address",
+          "city_name": "City",
+          "county_name": "County",
+          "state_code": "State",
+          "epa_region": "EPA Region",
+          "postal_code": "ZIP Code",
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "pgm_sys_acrnm": "Program_System Acronym",
+          "pgm_sys_id": "Program System ID",
+          "fips_code": "FIPS Code",
+          "huc_code": "HUC Code",
+          "facility_url": "Facility URL",
+          "profile_url": "Profile URL"
+        },
+        "geometryType": "esriGeometryPoint",
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "registry_id",
+            "type": "esriFieldTypeString",
+            "alias": "Registry ID",
+            "length": 12
+          },
+          {
+            "name": "site_id",
+            "type": "esriFieldTypeString",
+            "alias": "Site ID",
+            "length": 7
+          },
+          {
+            "name": "primary_name",
+            "type": "esriFieldTypeString",
+            "alias": "Primary Name",
+            "length": 73
+          },
+          {
+            "name": "location_address",
+            "type": "esriFieldTypeString",
+            "alias": "Address",
+            "length": 50
+          },
+          {
+            "name": "city_name",
+            "type": "esriFieldTypeString",
+            "alias": "City",
+            "length": 57
+          },
+          {
+            "name": "county_name",
+            "type": "esriFieldTypeString",
+            "alias": "County",
+            "length": 20
+          },
+          {
+            "name": "state_code",
+            "type": "esriFieldTypeString",
+            "alias": "State",
+            "length": 2
+          },
+          {
+            "name": "epa_region",
+            "type": "esriFieldTypeString",
+            "alias": "EPA Region",
+            "length": 9
+          },
+          {
+            "name": "postal_code",
+            "type": "esriFieldTypeString",
+            "alias": "ZIP Code",
+            "length": 10
+          },
+          {
+            "name": "latitude",
+            "type": "esriFieldTypeDouble",
+            "alias": "Latitude"
+          },
+          {
+            "name": "longitude",
+            "type": "esriFieldTypeDouble",
+            "alias": "Longitude"
+          },
+          {
+            "name": "pgm_sys_acrnm",
+            "type": "esriFieldTypeString",
+            "alias": "Program_System Acronym",
+            "length": 4
+          },
+          {
+            "name": "pgm_sys_id",
+            "type": "esriFieldTypeString",
+            "alias": "Program System ID",
+            "length": 12
+          },
+          {
+            "name": "fips_code",
+            "type": "esriFieldTypeString",
+            "alias": "FIPS Code",
+            "length": 2
+          },
+          {
+            "name": "huc_code",
+            "type": "esriFieldTypeString",
+            "alias": "HUC Code",
+            "length": 2
+          },
+          {
+            "name": "facility_url",
+            "type": "esriFieldTypeString",
+            "alias": "Facility URL",
+            "length": 67
+          },
+          {
+            "name": "profile_url",
+            "type": "esriFieldTypeString",
+            "alias": "Profile URL",
+            "length": 66
+          }
+        ],
+        "features": []
+      }
+    },
+    {
+      "source": "EPA Envirofacts Brownfields",
+      "record_url": "https://geopub.epa.gov/ArcGIS/rest/services/EMEF/efpoints/MapServer/5/query?f=json&geometry=-97.742856218692%2C30.268138089752&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&distance=0.25&units=esriSRUnit_StatuteMile&outSR=4326",
+      "response_sha256": "1169d148bb331315714e7fe5dc9a722de6b38add163b13ef9aaa999263703702",
+      "returned_record_count": 1,
+      "qualifying_record_count": 1,
+      "qualifying_records": [
+        {
+          "OBJECTID": 7232,
+          "registry_id": "110038743820",
+          "primary_name": "MARY LEE COMMUNITY",
+          "location_address": "600 CONGRESS AVE",
+          "city_name": "AUSTIN",
+          "county_name": "TRAVIS",
+          "state_code": "TX",
+          "epa_region": "Region 06",
+          "postal_code": "78701",
+          "latitude": 30.26835,
+          "longitude": -97.74271,
+          "pgm_sys_acrnm": "ACRES",
+          "pgm_sys_id": "10899",
+          "fips_code": "",
+          "huc_code": "",
+          "facility_url": "https://ofmpub.epa.gov/apex/cimc/f?p=CIMC:31::::Y,31,0:P31_ID:10899",
+          "geometry": {
+            "x": -97.74270999999999,
+            "y": 30.268350000000055
+          },
+          "program_layer": "Brownfields"
+        }
+      ],
+      "raw_response": {
+        "displayFieldName": "PRIMARY_NAME",
+        "fieldAliases": {
+          "OBJECTID": "OBJECTID",
+          "registry_id": "Registry ID",
+          "primary_name": "Primary Name",
+          "location_address": "Address",
+          "city_name": "City",
+          "county_name": "County",
+          "state_code": "State",
+          "epa_region": "EPA Region",
+          "postal_code": "ZIP Code",
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "pgm_sys_acrnm": "Program_System Acronym",
+          "pgm_sys_id": "Program System ID",
+          "fips_code": "FIPS Code",
+          "huc_code": "HUC Code",
+          "facility_url": "Facility URL"
+        },
+        "geometryType": "esriGeometryPoint",
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        },
+        "fields": [
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "registry_id",
+            "type": "esriFieldTypeString",
+            "alias": "Registry ID",
+            "length": 12
+          },
+          {
+            "name": "primary_name",
+            "type": "esriFieldTypeString",
+            "alias": "Primary Name",
+            "length": 79
+          },
+          {
+            "name": "location_address",
+            "type": "esriFieldTypeString",
+            "alias": "Address",
+            "length": 80
+          },
+          {
+            "name": "city_name",
+            "type": "esriFieldTypeString",
+            "alias": "City",
+            "length": 39
+          },
+          {
+            "name": "county_name",
+            "type": "esriFieldTypeString",
+            "alias": "County",
+            "length": 35
+          },
+          {
+            "name": "state_code",
+            "type": "esriFieldTypeString",
+            "alias": "State",
+            "length": 2
+          },
+          {
+            "name": "epa_region",
+            "type": "esriFieldTypeString",
+            "alias": "EPA Region",
+            "length": 9
+          },
+          {
+            "name": "postal_code",
+            "type": "esriFieldTypeString",
+            "alias": "ZIP Code",
+            "length": 10
+          },
+          {
+            "name": "latitude",
+            "type": "esriFieldTypeDouble",
+            "alias": "Latitude"
+          },
+          {
+            "name": "longitude",
+            "type": "esriFieldTypeDouble",
+            "alias": "Longitude"
+          },
+          {
+            "name": "pgm_sys_acrnm",
+            "type": "esriFieldTypeString",
+            "alias": "Program_System Acronym",
+            "length": 5
+          },
+          {
+            "name": "pgm_sys_id",
+            "type": "esriFieldTypeString",
+            "alias": "Program System ID",
+            "length": 6
+          },
+          {
+            "name": "fips_code",
+            "type": "esriFieldTypeString",
+            "alias": "FIPS Code",
+            "length": 2
+          },
+          {
+            "name": "huc_code",
+            "type": "esriFieldTypeString",
+            "alias": "HUC Code",
+            "length": 2
+          },
+          {
+            "name": "facility_url",
+            "type": "esriFieldTypeString",
+            "alias": "Facility URL",
+            "length": 68
+          }
+        ],
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 7232,
+              "registry_id": "110038743820",
+              "primary_name": "MARY LEE COMMUNITY",
+              "location_address": "600 CONGRESS AVE",
+              "city_name": "AUSTIN",
+              "county_name": "TRAVIS",
+              "state_code": "TX",
+              "epa_region": "Region 06",
+              "postal_code": "78701",
+              "latitude": 30.26835,
+              "longitude": -97.74271,
+              "pgm_sys_acrnm": "ACRES",
+              "pgm_sys_id": "10899",
+              "fips_code": "",
+              "huc_code": "",
+              "facility_url": "https://ofmpub.epa.gov/apex/cimc/f?p=CIMC:31::::Y,31,0:P31_ID:10899"
+            },
+            "geometry": {
+              "x": -97.74270999999999,
+              "y": 30.268350000000055
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "derivation_rule": {
+    "id": "epa-superfund-brownfields-quarter-mile-v2",
+    "plain_language": "Count unique EPA Superfund and Brownfields program records within 0.25 statute mile of the geocoded point.",
+    "predicate": "distance_miles <= 0.25 and program_layer in {'Superfund','Brownfields'}",
+    "deduplication_key": [
+      "program_layer",
+      "registry_id",
+      "pgm_sys_id_or_site_id"
+    ]
+  },
+  "gold_answer": {
+    "has_nearby_site": true,
+    "count": 1,
+    "radius_miles": 0.25,
+    "programs": [
+      "Brownfields",
+      "Superfund"
+    ]
+  },
+  "review": {
+    "automated_official_source_check": true,
+    "independent_human_review": false,
+    "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+  }
+}
