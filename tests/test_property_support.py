@@ -98,6 +98,22 @@ class PropertySupportTests(unittest.TestCase):
         result = PSR.fema_relation(support, features)
         self.assertEqual(result["classification"], "mixed")
 
+    def test_conflicting_overlapping_fema_attributes_are_mixed(self):
+        support = box(-71.001, 41.999, -70.999, 42.001)
+        features = [
+            {
+                "attributes": {"SFHA_TF": "T", "FLD_ZONE": "AE"},
+                "geometry": support,
+                "key": ("a",),
+            },
+            {
+                "attributes": {"SFHA_TF": "F", "FLD_ZONE": "X"},
+                "geometry": box(-71.001, 41.999, -71.0, 42.001),
+                "key": ("b",),
+            },
+        ]
+        self.assertEqual(PSR.fema_relation(support, features)["classification"], "mixed")
+
     def test_historic_partial_overlap_is_mixed(self):
         support = box(-71.001, 41.999, -70.999, 42.001)
         feature = {

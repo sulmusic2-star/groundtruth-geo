@@ -128,13 +128,25 @@ def fema_relation(support_geometry: Any, features: list[dict]) -> dict:
         }
     sfha = unary_union(sfha_polygons) if sfha_polygons else None
     non_sfha = unary_union(non_sfha_polygons) if non_sfha_polygons else None
-    if sfha is not None and sfha.covers(support_local):
+    sfha_area = support_local.intersection(sfha).area if sfha is not None else 0.0
+    non_sfha_area = support_local.intersection(non_sfha).area if non_sfha is not None else 0.0
+    if sfha_area > AREA_EPSILON_SQUARE_METERS and non_sfha_area > AREA_EPSILON_SQUARE_METERS:
+        # Overlap between contradictory FEMA attributes is not allowed to turn
+        # into "yes" merely because the SFHA union happens to cover everything.
+        classification = "mixed"
+    elif sfha is not None and sfha.covers(support_local):
         classification = "certain_yes"
     elif non_sfha is not None and non_sfha.covers(support_local):
         classification = "certain_no"
     else:
         classification = "mixed"
-    return {"classification": classification, "zones": entries, "uncovered_square_meters": round(uncovered, 6)}
+    return {
+        "classification": classification,
+        "zones": entries,
+        "sfha_support_area_percent": round(100.0 * sfha_area / support_local.area, 6),
+        "non_sfha_support_area_percent": round(100.0 * non_sfha_area / support_local.area, 6),
+        "uncovered_square_meters": round(uncovered, 6),
+    }
 
 
 def historic_relation(support_geometry: Any, features: list[dict]) -> dict:
