@@ -64,6 +64,16 @@ jobs:
       - name: Validate append-only source history
         run: python3 source_history.py --validate
 
+      - name: Reproduce the whole-property sensitive-case review
+        run: python3 property_support_review.py --output /tmp/property-support-review.json
+
+      - name: Verify the signed private-challenge commitment
+        run: |
+          openssl pkeyutl -verify -rawin -pubin \
+            -inkey challenge/commitments/groundtruth-geo-private-100-20260821.public.pem \
+            -in challenge/commitments/groundtruth-geo-private-100-20260821.json \
+            -sigfile challenge/commitments/groundtruth-geo-private-100-20260821.sig
+
       - name: Run benchmark and audit tests
         run: python3 -m unittest discover -s tests -v
 

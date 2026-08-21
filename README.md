@@ -32,6 +32,9 @@ evidence, and stopped when it could not know.
 | `runs/openai-gpt-4-1-mini-closed-book-20260820/` | Exact prompt, requests, responses, traces, predictions, hashes, model version, and audit for one observed run. |
 | `ground_truth_mcp.py` | Local MCP server exposing only the bundled public records. |
 | `proof/private-holdout-receipt.json` | Public-safe receipt for a separate private, permit-free 100-case Massachusetts set; no addresses or gold answers are exposed. |
+| `property_support/` | Official local address, building, and parcel receipts for coordinate-sensitive public cases. |
+| `property_support_review.py` | Whole-property certain-yes, certain-no, mixed, or blocked review. |
+| `challenge/` | Blind challenge builder, strict submission validator, private scorer, commitment, and external attestation. |
 
 ## Public questions
 
@@ -83,6 +86,14 @@ center answers agreed with the benchmark. Seven public cases and 23 private
 cases changed under at least one tested displacement. Those are sensitivity
 flags, not wrong answers or an estimate of geocoder error. See
 `docs/spatial-uncertainty-and-history.md`.
+
+The sensitive cases now have a separate whole-property review using official
+local address points linked to public building or parcel geometry. It does not
+overwrite the point-based benchmark. Five of the seven sensitive cases remain
+consistent over the selected property support, one Chicago historic-district
+case is mixed across the building footprint, and one Savannah case is blocked
+because local official records do not confirm the requested property. See
+`docs/property-support-and-blind-challenge.md`.
 
 To refresh the public evidence from the live official services:
 
@@ -166,6 +177,13 @@ receipt commits to the private questions, gold answers, and evidence manifest by
 hash while keeping all cases and answers private. A third automated geometry
 engine passed all 100 center answers and ran 5,700 perturbation samples; the
 detailed report remains private. Independent human review is still pending.
+
+The private set is also packaged as a 100-item blind challenge with opaque item
+identifiers, a salted gold commitment, an Ed25519 signature, a fixed prediction
+schema, submission hashes, and a private scorer. These controls make later
+tampering detectable. They do not create evaluator independence: that requires
+an unaffiliated participant and, for professional-review claims, a qualified
+reviewer who signs the attestation.
 
 ## Origin and license
 
