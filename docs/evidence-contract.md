@@ -87,6 +87,14 @@ change in the approximate geocoded coordinate changes the official spatial
 result. Sensitive, boundary-contact and unavailable cases require abstention,
 stronger property-location evidence, or qualified review.
 
+Stronger property-location evidence is stored as a separate support record; it
+never silently replaces the original point task. An official property support
+requires one exact local address result linked to one public building footprint
+or parcel. Address, geometry, currency, and redistribution eligibility are
+checked separately. Whole-property review returns `certain_yes`, `certain_no`
+or `mixed`; it does not force a binary answer when a decision boundary crosses
+the building or parcel.
+
 The primary class uses this precedence: `geometry_unavailable`,
 `boundary_contact`, `sensitive`, then `stable_through_100m_tested`. The report
 also stores every applicable flag, so a boundary-contact case that changes
