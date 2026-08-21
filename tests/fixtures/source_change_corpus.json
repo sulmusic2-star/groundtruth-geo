@@ -1,0 +1,13 @@
+{
+  "schema_version": "groundtruth_geo_synthetic_source_change_corpus.v1",
+  "claim_boundary": "Synthetic conformance fixtures exercise change classification; they are not observations of past government edits.",
+  "cases": [
+    {"name": "unchanged", "changes": {}, "expected": "unchanged"},
+    {"name": "metadata_only", "changes": {"raw_evidence_sha256": "raw-2"}, "expected": "metadata_only_change"},
+    {"name": "record", "changes": {"official_records_sha256": "records-2"}, "expected": "record_change"},
+    {"name": "geometry", "changes": {"geometry_sha256": "geometry-2"}, "expected": "geometry_change"},
+    {"name": "identity", "changes": {"identity_semantic_sha256": "identity-2"}, "expected": "property_identity_change"},
+    {"name": "classification", "changes": {"answer_sha256": "answer-2"}, "expected": "classification_change"},
+    {"name": "unavailable", "changes": {"available": false}, "expected": "source_unavailable"}
+  ]
+}
