@@ -1,9 +1,8 @@
 # CI — proves the benchmark, grader, and MCP server actually run on every push.
 #
-# No API keys, no network, no external services. The whole pipeline is the
-# deterministic local check itself: if the benchmark JSONL goes invalid, the
-# grader regresses, or the MCP server stops returning records, the build
-# goes red.
+# No API keys or live government calls. After pinned Python dependencies are
+# installed, the benchmark, stored evidence, geometry and history checks run
+# entirely against repository artifacts.
 
 name: ci
 
@@ -22,6 +21,9 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: "3.11"
+
+      - name: Install pinned independent geometry engine
+        run: python3 -m pip install -r requirements-spatial.txt
 
       - name: Verify benchmark JSONL — every line is valid JSON with required fields
         run: |
@@ -51,6 +53,16 @@ jobs:
           python3 replicated_review.py \
             --collection public \
             --output /tmp/groundtruth-replicated-review.json
+
+      - name: Validate neighborhood geometry and run third-engine perturbation review
+        run: |
+          python3 collect_spatial_evidence.py --validate
+          python3 geospatial_review.py \
+            --collection public \
+            --output /tmp/groundtruth-geospatial-review.json
+
+      - name: Validate append-only source history
+        run: python3 source_history.py --validate
 
       - name: Run benchmark and audit tests
         run: python3 -m unittest discover -s tests -v

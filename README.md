@@ -21,6 +21,11 @@ evidence, and stopped when it could not know.
 | `groundtruth_geo.jsonl` | 33 questions: 11 addresses × 3 task families. |
 | `evidence/records/` | Dated receipts with the matched property, exact official queries, returned records, hashes, and derivation rules. |
 | `refresh_evidence.py` | Refreshes or validates every public evidence receipt. |
+| `spatial_evidence/` | Bounded official geometry and layer metadata used for coordinate-sensitivity tests. |
+| `collect_spatial_evidence.py` | Captures all sources before writing, or validates bounded geometry, without deciding the answer. |
+| `geospatial_review.py` | Third derivation using GEOS/Shapely and PROJ/PyProj plus a 57-point perturbation matrix. |
+| `source_history.py` | Creates append-only, hash-chained snapshots and classifies semantic source changes. |
+| `history/snapshots/` | Real dated, hash-chained source-history snapshots and semantic replay evidence. |
 | `grade_groundtruth.py` | Deterministic answer grader; no LLM judge. |
 | `audit_run.py` | Scores wrong property, wrong source, unsupported answer, unusable citation, failure to abstain, and stale evidence. |
 | `run_model.py` | Reproducible OpenAI Responses API runner. |
@@ -45,6 +50,10 @@ They make the selected reference answers reproducible.
 
 ```bash
 python3 refresh_evidence.py --validate
+python3 -m pip install -r requirements-spatial.txt
+python3 collect_spatial_evidence.py --validate
+python3 geospatial_review.py --collection public
+python3 source_history.py --validate
 python3 -m unittest discover -s tests -v
 python3 grade_groundtruth.py
 ```
@@ -65,6 +74,15 @@ mutations, and replayed 227 unique government record URLs without drift. This
 is **replicated automated review**, not independent human review or a
 representative accuracy estimate. The method and claim boundary are documented
 in `docs/replicated-review-protocol.md`.
+
+GroundTruth-Geo also has a third derivation path using GEOS and PROJ rather than
+ArcGIS response counts alone. It reconstructs Esri polygons, includes boundary
+contact, computes geodesic distance, and moves each coordinate through 57 fixed
+positions from 0 to 100 meters. On August 21, 2026, all 33 public and 100 private
+center answers agreed with the benchmark. Seven public cases and 23 private
+cases changed under at least one tested displacement. Those are sensitivity
+flags, not wrong answers or an estimate of geocoder error. See
+`docs/spatial-uncertainty-and-history.md`.
 
 To refresh the public evidence from the live official services:
 
@@ -145,8 +163,9 @@ independent accuracy or freshness after the recorded retrieval time.
 The private set contains 100 permit-free cases across 39 properties and 22
 Massachusetts municipalities. It is stratified, not representative. The public
 receipt commits to the private questions, gold answers, and evidence manifest by
-hash while keeping all cases and answers private. Independent review is still
-pending.
+hash while keeping all cases and answers private. A third automated geometry
+engine passed all 100 center answers and ran 5,700 perturbation samples; the
+detailed report remains private. Independent human review is still pending.
 
 ## Origin and license
 

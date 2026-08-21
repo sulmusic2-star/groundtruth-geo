@@ -73,3 +73,22 @@ claim to include every state cleanup program or every regulated facility.
 
 Automated verification is not independent review. Public documentation must
 say so until a qualified external reviewer has signed the audit manifest.
+
+## Coordinate sensitivity
+
+Center-point verification and coordinate sensitivity are separate gates. The
+third GEOS/PROJ implementation must reproduce the center answer before a case
+can pass. Its 57-position perturbation matrix then labels the case as stable
+through the tested positions, sensitive, boundary-contact, or unavailable.
+
+A sensitive result does not invalidate the stored center answer. It prevents
+the system from presenting that answer with ordinary confidence when a small
+change in the approximate geocoded coordinate changes the official spatial
+result. Sensitive, boundary-contact and unavailable cases require abstention,
+stronger property-location evidence, or qualified review.
+
+The primary class uses this precedence: `geometry_unavailable`,
+`boundary_contact`, `sensitive`, then `stable_through_100m_tested`. The report
+also stores every applicable flag, so a boundary-contact case that changes
+under perturbation retains both `boundary_contact` and `sensitive`; primary
+class precedence never erases the overlapping risk.
