@@ -8,6 +8,8 @@ answers. It checks whether a system chose the right property, used the right
 official source, supported its answer, supplied a usable record link, used dated
 evidence, and stopped when it could not know.
 
+Developed alongside [Lasting Ground](https://sulmusic2-star.github.io/case-studies/lasting-ground/), the main property-research project. This repository exposes a bounded part of the evaluation work; it does not measure the full application's production accuracy.
+
 > **What this is not.** The 33 public cases were selected across seven states.
 > They are not a representative sample, statewide or national coverage proof,
 > an independent audit, or a product accuracy score. The evidence was retrieved
@@ -128,8 +130,7 @@ To make a new run, set an API key in the environment and use a new output path:
 python3 run_model.py \
   --model gpt-4.1-mini-2025-04-14 \
   --output-dir runs/private/my-run
-python3 audit_run.py \
-  --run-dir runs/private/my-run
+python3 audit_run.py runs/private/my-run
 ```
 
 The private run directory is ignored by git. Review it before deciding whether
