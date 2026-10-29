@@ -3,14 +3,14 @@
 [![ci](https://github.com/sulmusic2-star/groundtruth-geo/actions/workflows/ci.yml/badge.svg)](https://github.com/sulmusic2-star/groundtruth-geo/actions/workflows/ci.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-2c5b3a)](LICENSE)
 
-GroundTruth-Geo is a small, inspectable test set for address-specific property
+GroundTruth-Geo is a small test set for address-specific property
 answers. It checks whether a system chose the right property, used the right
 official source, supported its answer, supplied a usable record link, used dated
-evidence, and stopped when it could not know.
+evidence, and abstained when the evidence was insufficient.
 
-Developed alongside [Lasting Ground](https://sulmusic2-star.github.io/case-studies/lasting-ground/), the main property-research project. This repository exposes a bounded part of the evaluation work; it does not measure the full application's production accuracy.
+Developed alongside [Lasting Ground](https://sulmusic2-star.github.io/case-studies/lasting-ground/), the main property-research project. This repository contains selected evaluation work; it does not measure the full application's production accuracy.
 
-> **What this is not.** The 33 public cases were selected across seven states.
+> The 33 public cases were selected across seven states.
 > They are not a representative sample, statewide or national coverage proof,
 > an independent audit, or a product accuracy score. The evidence was retrieved
 > on August 20, 2026 and is not continuously current. No customer, revenue, or
@@ -119,8 +119,8 @@ The model abstained on all 33 questions.
 | Critical errors | 0 |
 | Answers still needed | 33 |
 
-That is a useful safety baseline, not an accuracy victory: the model avoided
-unsupported property claims but did not answer any property question. See the
+The model avoided unsupported property claims by abstaining on every question.
+This run provides no evidence of its ability to answer those questions correctly. See the
 run directory for the exact prompts, predictions, response traces, hashes, and
 model identifiers.
 
@@ -192,4 +192,4 @@ The selected rows came from Lasting Ground development work. The separate source
 acquisition system is out of scope here. [lastingground.com](https://lastingground.com)
 is a public demonstration; paid use is not claimed.
 
-MIT — see [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).
